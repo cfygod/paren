@@ -134,3 +134,452 @@
 2018-12-14 15:09:53,528 [http-nio-8111-exec-1] INFO  c.alibaba.druid.pool.DruidDataSource 106 - {dataSource-1} inited
 2018-12-14 15:09:54,000 [http-nio-8111-exec-1] INFO  c.cfygit.parent.service.helloService 31 - [{"creatTime":1544696672000,"id":5,"name":"5","updateTime":1544696675000},{"creatTime":1544696666000,"id":4,"name":"4","updateTime":1544696668000}]
 2018-12-14 15:09:54,001 [http-nio-8111-exec-1] INFO  com.cfygit.parent.aop.ReqAspect 59 - 执行方法后:/h
+2018-12-14 16:06:13,082 [main] INFO  com.cfygit.parent.ParentApplication 50 - Starting ParentApplication on ecitic-PC with PID 356556 (D:\wangyegithub\parent\target\classes started by ecitic in D:\wangyegithub\parent)
+2018-12-14 16:06:13,090 [main] INFO  com.cfygit.parent.ParentApplication 652 - No active profile set, falling back to default profiles: default
+2018-12-14 16:06:13,243 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext 589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7c24b813: startup date [Fri Dec 14 16:06:13 CST 2018]; root of context hierarchy
+2018-12-14 16:06:14,454 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 328 - Bean 'com.alibaba.druid.spring.boot.autoconfigure.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-14 16:06:15,301 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 91 - Tomcat initialized with port(s): 8111 (http)
+2018-12-14 16:06:15,320 [main] INFO  o.a.coyote.http11.Http11NioProtocol 180 - Initializing ProtocolHandler ["http-nio-8111"]
+2018-12-14 16:06:15,336 [main] INFO  o.a.catalina.core.StandardService 180 - Starting service [Tomcat]
+2018-12-14 16:06:15,336 [main] INFO  o.a.catalina.core.StandardEngine 180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-12-14 16:06:15,342 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener 180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_92\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\VanDyke Software\Clients\;D:\java\jdk1.8.0_92\bin;D:\java\jdk1.8.0_92\jre\bin;D:\Program Files\maven\apache-maven-3.3.9\bin;C:\Program Files (x86)\MySQL\MySQL Server 5.5\bin;C:\Program Files\TortoiseSVN\bin;c:\windows\system32;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit;D:\Program Files\Git\cmd;D:\Program Files\maven\apache-maven-3.3.9\bin;D:\oracleclient\instantclient_12_2;C:\Windows;C:\Windows\system32\wbem;D:\erlang\erl10.0.1\bin;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;.]
+2018-12-14 16:06:15,507 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 180 - Initializing Spring embedded WebApplicationContext
+2018-12-14 16:06:15,508 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader 285 - Root WebApplicationContext: initialization completed in 2266 ms
+2018-12-14 16:06:15,801 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet dispatcherServlet mapped to [/]
+2018-12-14 16:06:15,804 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet statViewServlet mapped to [/druid/*]
+2018-12-14 16:06:15,810 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-12-14 16:06:15,810 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-12-14 16:06:15,811 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-12-14 16:06:15,811 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-12-14 16:06:15,811 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 256 - Mapping filter: 'webStatFilter' to urls: [/*]
+2018-12-14 16:06:16,577 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext 557 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'hello' defined in file [D:\wangyegithub\parent\target\classes\com\cfygit\parent\controller\hello.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'helloService' is expected to be of type 'com.cfygit.parent.service.helloService' but was actually of type 'com.sun.proxy.$Proxy80'
+2018-12-14 16:06:16,580 [main] INFO  o.a.catalina.core.StandardService 180 - Stopping service [Tomcat]
+2018-12-14 16:06:16,626 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener 101 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-12-14 16:07:59,088 [main] INFO  com.cfygit.parent.ParentApplication 50 - Starting ParentApplication on ecitic-PC with PID 358012 (D:\wangyegithub\parent\target\classes started by ecitic in D:\wangyegithub\parent)
+2018-12-14 16:07:59,095 [main] INFO  com.cfygit.parent.ParentApplication 652 - No active profile set, falling back to default profiles: default
+2018-12-14 16:07:59,167 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext 589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4de4b452: startup date [Fri Dec 14 16:07:59 CST 2018]; root of context hierarchy
+2018-12-14 16:08:00,424 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 328 - Bean 'com.alibaba.druid.spring.boot.autoconfigure.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-14 16:08:01,214 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 91 - Tomcat initialized with port(s): 8111 (http)
+2018-12-14 16:08:01,232 [main] INFO  o.a.coyote.http11.Http11NioProtocol 180 - Initializing ProtocolHandler ["http-nio-8111"]
+2018-12-14 16:08:01,246 [main] INFO  o.a.catalina.core.StandardService 180 - Starting service [Tomcat]
+2018-12-14 16:08:01,247 [main] INFO  o.a.catalina.core.StandardEngine 180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-12-14 16:08:01,252 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener 180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_92\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\VanDyke Software\Clients\;D:\java\jdk1.8.0_92\bin;D:\java\jdk1.8.0_92\jre\bin;D:\Program Files\maven\apache-maven-3.3.9\bin;C:\Program Files (x86)\MySQL\MySQL Server 5.5\bin;C:\Program Files\TortoiseSVN\bin;c:\windows\system32;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit;D:\Program Files\Git\cmd;D:\Program Files\maven\apache-maven-3.3.9\bin;D:\oracleclient\instantclient_12_2;C:\Windows;C:\Windows\system32\wbem;D:\erlang\erl10.0.1\bin;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;.]
+2018-12-14 16:08:01,419 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 180 - Initializing Spring embedded WebApplicationContext
+2018-12-14 16:08:01,420 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader 285 - Root WebApplicationContext: initialization completed in 2253 ms
+2018-12-14 16:08:01,725 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet dispatcherServlet mapped to [/]
+2018-12-14 16:08:01,727 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet statViewServlet mapped to [/druid/*]
+2018-12-14 16:08:01,731 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-12-14 16:08:01,732 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-12-14 16:08:01,732 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-12-14 16:08:01,733 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-12-14 16:08:01,733 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 256 - Mapping filter: 'webStatFilter' to urls: [/*]
+2018-12-14 16:08:02,472 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext 557 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'hello' defined in file [D:\wangyegithub\parent\target\classes\com\cfygit\parent\controller\hello.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'helloService' is expected to be of type 'com.cfygit.parent.service.helloService' but was actually of type 'com.sun.proxy.$Proxy80'
+2018-12-14 16:08:02,474 [main] INFO  o.a.catalina.core.StandardService 180 - Stopping service [Tomcat]
+2018-12-14 16:08:02,501 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener 101 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-12-14 16:12:11,397 [main] INFO  com.cfygit.parent.ParentApplication 50 - Starting ParentApplication on ecitic-PC with PID 356984 (D:\wangyegithub\parent\target\classes started by ecitic in D:\wangyegithub\parent)
+2018-12-14 16:12:11,405 [main] INFO  com.cfygit.parent.ParentApplication 652 - No active profile set, falling back to default profiles: default
+2018-12-14 16:12:11,597 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext 589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@87a85e1: startup date [Fri Dec 14 16:12:11 CST 2018]; root of context hierarchy
+2018-12-14 16:12:13,704 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 91 - Tomcat initialized with port(s): 8111 (http)
+2018-12-14 16:12:13,722 [main] INFO  o.a.coyote.http11.Http11NioProtocol 180 - Initializing ProtocolHandler ["http-nio-8111"]
+2018-12-14 16:12:13,735 [main] INFO  o.a.catalina.core.StandardService 180 - Starting service [Tomcat]
+2018-12-14 16:12:13,736 [main] INFO  o.a.catalina.core.StandardEngine 180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-12-14 16:12:13,741 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener 180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_92\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\VanDyke Software\Clients\;D:\java\jdk1.8.0_92\bin;D:\java\jdk1.8.0_92\jre\bin;D:\Program Files\maven\apache-maven-3.3.9\bin;C:\Program Files (x86)\MySQL\MySQL Server 5.5\bin;C:\Program Files\TortoiseSVN\bin;c:\windows\system32;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit;D:\Program Files\Git\cmd;D:\Program Files\maven\apache-maven-3.3.9\bin;D:\oracleclient\instantclient_12_2;C:\Windows;C:\Windows\system32\wbem;D:\erlang\erl10.0.1\bin;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;.]
+2018-12-14 16:12:13,902 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 180 - Initializing Spring embedded WebApplicationContext
+2018-12-14 16:12:13,902 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader 285 - Root WebApplicationContext: initialization completed in 2306 ms
+2018-12-14 16:12:14,200 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet dispatcherServlet mapped to [/]
+2018-12-14 16:12:14,202 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet statViewServlet mapped to [/druid/*]
+2018-12-14 16:12:14,208 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-12-14 16:12:14,209 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-12-14 16:12:14,209 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-12-14 16:12:14,209 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-12-14 16:12:14,209 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 256 - Mapping filter: 'webStatFilter' to urls: [/*]
+2018-12-14 16:12:15,473 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter 567 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@87a85e1: startup date [Fri Dec 14 16:12:11 CST 2018]; root of context hierarchy
+2018-12-14 16:12:15,584 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/getMapping/{id}],methods=[GET],consumes=[application/json],produces=[application/json;charset=UTF-8]}" onto public void com.cfygit.parent.controller.hello.getMapping(java.lang.Long)
+2018-12-14 16:12:15,586 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/putMapping/{id}],methods=[PUT]}" onto public void com.cfygit.parent.controller.hello.putMapping(java.lang.Long)
+2018-12-14 16:12:15,587 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/h/{id}],methods=[GET]}" onto public void com.cfygit.parent.controller.hello.sayHellow(java.lang.Long)
+2018-12-14 16:12:15,587 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/postMapping/{id}],methods=[POST],consumes=[application/json],produces=[application/json;charset=UTF-8]}" onto public void com.cfygit.parent.controller.hello.postMapping(java.lang.Long)
+2018-12-14 16:12:15,588 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/h]}" onto public java.lang.String com.cfygit.parent.controller.hello.sayHello()
+2018-12-14 16:12:15,588 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/deleteMapping/{id}],methods=[DELETE]}" onto public void com.cfygit.parent.controller.hello.deleteMapping(java.lang.Long)
+2018-12-14 16:12:15,588 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/patchMapping/{id}],methods=[PATCH]}" onto public void com.cfygit.parent.controller.hello.patchMapping(java.lang.Long)
+2018-12-14 16:12:15,589 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/test/a.json],methods=[GET]}" onto public void com.cfygit.parent.controller.hello.GetMappingANT()
+2018-12-14 16:12:15,590 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> com.cfygit.parent.exception.ErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-12-14 16:12:15,591 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView com.cfygit.parent.exception.ErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+2018-12-14 16:12:15,667 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 16:12:15,667 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 16:12:15,743 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 16:12:16,219 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 434 - Registering beans for JMX exposure on startup
+2018-12-14 16:12:16,221 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 896 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-12-14 16:12:16,229 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 669 - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2018-12-14 16:12:16,247 [main] INFO  o.a.coyote.http11.Http11NioProtocol 180 - Starting ProtocolHandler ["http-nio-8111"]
+2018-12-14 16:12:16,264 [main] INFO  o.a.tomcat.util.net.NioSelectorPool 180 - Using a shared selector for servlet write/read
+2018-12-14 16:12:16,287 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 205 - Tomcat started on port(s): 8111 (http) with context path ''
+2018-12-14 16:12:16,292 [main] INFO  com.cfygit.parent.ParentApplication 59 - Started ParentApplication in 5.885 seconds (JVM running for 7.037)
+2018-12-14 16:12:46,981 [main] INFO  com.cfygit.parent.ParentApplication 50 - Starting ParentApplication on ecitic-PC with PID 357464 (D:\wangyegithub\parent\target\classes started by ecitic in D:\wangyegithub\parent)
+2018-12-14 16:12:46,991 [main] INFO  com.cfygit.parent.ParentApplication 652 - No active profile set, falling back to default profiles: default
+2018-12-14 16:12:47,201 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext 589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@d29f28: startup date [Fri Dec 14 16:12:47 CST 2018]; root of context hierarchy
+2018-12-14 16:12:48,419 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 328 - Bean 'com.alibaba.druid.spring.boot.autoconfigure.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-14 16:12:49,186 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 91 - Tomcat initialized with port(s): 8111 (http)
+2018-12-14 16:12:49,203 [main] INFO  o.a.coyote.http11.Http11NioProtocol 180 - Initializing ProtocolHandler ["http-nio-8111"]
+2018-12-14 16:12:49,217 [main] INFO  o.a.catalina.core.StandardService 180 - Starting service [Tomcat]
+2018-12-14 16:12:49,218 [main] INFO  o.a.catalina.core.StandardEngine 180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-12-14 16:12:49,225 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener 180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_92\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\VanDyke Software\Clients\;D:\java\jdk1.8.0_92\bin;D:\java\jdk1.8.0_92\jre\bin;D:\Program Files\maven\apache-maven-3.3.9\bin;C:\Program Files (x86)\MySQL\MySQL Server 5.5\bin;C:\Program Files\TortoiseSVN\bin;c:\windows\system32;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit;D:\Program Files\Git\cmd;D:\Program Files\maven\apache-maven-3.3.9\bin;D:\oracleclient\instantclient_12_2;C:\Windows;C:\Windows\system32\wbem;D:\erlang\erl10.0.1\bin;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;.]
+2018-12-14 16:12:49,393 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 180 - Initializing Spring embedded WebApplicationContext
+2018-12-14 16:12:49,394 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader 285 - Root WebApplicationContext: initialization completed in 2193 ms
+2018-12-14 16:12:49,689 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet dispatcherServlet mapped to [/]
+2018-12-14 16:12:49,692 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet statViewServlet mapped to [/druid/*]
+2018-12-14 16:12:49,697 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-12-14 16:12:49,697 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-12-14 16:12:49,697 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-12-14 16:12:49,698 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-12-14 16:12:49,698 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 256 - Mapping filter: 'webStatFilter' to urls: [/*]
+2018-12-14 16:12:50,447 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext 557 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'hello' defined in file [D:\wangyegithub\parent\target\classes\com\cfygit\parent\controller\hello.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'helloService' is expected to be of type 'com.cfygit.parent.service.helloService' but was actually of type 'com.sun.proxy.$Proxy80'
+2018-12-14 16:12:50,449 [main] INFO  o.a.catalina.core.StandardService 180 - Stopping service [Tomcat]
+2018-12-14 16:12:50,477 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener 101 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-12-14 16:13:03,545 [main] INFO  com.cfygit.parent.ParentApplication 50 - Starting ParentApplication on ecitic-PC with PID 332296 (D:\wangyegithub\parent\target\classes started by ecitic in D:\wangyegithub\parent)
+2018-12-14 16:13:03,565 [main] INFO  com.cfygit.parent.ParentApplication 652 - No active profile set, falling back to default profiles: default
+2018-12-14 16:13:03,808 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext 589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@d29f28: startup date [Fri Dec 14 16:13:03 CST 2018]; root of context hierarchy
+2018-12-14 16:13:05,069 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 328 - Bean 'com.alibaba.druid.spring.boot.autoconfigure.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-14 16:13:05,818 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 91 - Tomcat initialized with port(s): 8111 (http)
+2018-12-14 16:13:05,836 [main] INFO  o.a.coyote.http11.Http11NioProtocol 180 - Initializing ProtocolHandler ["http-nio-8111"]
+2018-12-14 16:13:05,849 [main] INFO  o.a.catalina.core.StandardService 180 - Starting service [Tomcat]
+2018-12-14 16:13:05,849 [main] INFO  o.a.catalina.core.StandardEngine 180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-12-14 16:13:05,855 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener 180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_92\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\VanDyke Software\Clients\;D:\java\jdk1.8.0_92\bin;D:\java\jdk1.8.0_92\jre\bin;D:\Program Files\maven\apache-maven-3.3.9\bin;C:\Program Files (x86)\MySQL\MySQL Server 5.5\bin;C:\Program Files\TortoiseSVN\bin;c:\windows\system32;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit;D:\Program Files\Git\cmd;D:\Program Files\maven\apache-maven-3.3.9\bin;D:\oracleclient\instantclient_12_2;C:\Windows;C:\Windows\system32\wbem;D:\erlang\erl10.0.1\bin;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;.]
+2018-12-14 16:13:06,017 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 180 - Initializing Spring embedded WebApplicationContext
+2018-12-14 16:13:06,018 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader 285 - Root WebApplicationContext: initialization completed in 2209 ms
+2018-12-14 16:13:06,327 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet dispatcherServlet mapped to [/]
+2018-12-14 16:13:06,330 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet statViewServlet mapped to [/druid/*]
+2018-12-14 16:13:06,334 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-12-14 16:13:06,334 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-12-14 16:13:06,335 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-12-14 16:13:06,335 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-12-14 16:13:06,336 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 256 - Mapping filter: 'webStatFilter' to urls: [/*]
+2018-12-14 16:13:07,102 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext 557 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'hello' defined in file [D:\wangyegithub\parent\target\classes\com\cfygit\parent\controller\hello.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'helloService' is expected to be of type 'com.cfygit.parent.service.helloService' but was actually of type 'com.sun.proxy.$Proxy80'
+2018-12-14 16:13:07,105 [main] INFO  o.a.catalina.core.StandardService 180 - Stopping service [Tomcat]
+2018-12-14 16:13:07,131 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener 101 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-12-14 16:13:28,254 [main] INFO  com.cfygit.parent.ParentApplication 50 - Starting ParentApplication on ecitic-PC with PID 92996 (D:\wangyegithub\parent\target\classes started by ecitic in D:\wangyegithub\parent)
+2018-12-14 16:13:28,340 [main] INFO  com.cfygit.parent.ParentApplication 652 - No active profile set, falling back to default profiles: default
+2018-12-14 16:13:28,481 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext 589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1e6454ec: startup date [Fri Dec 14 16:13:28 CST 2018]; root of context hierarchy
+2018-12-14 16:13:30,503 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 91 - Tomcat initialized with port(s): 8111 (http)
+2018-12-14 16:13:30,526 [main] INFO  o.a.coyote.http11.Http11NioProtocol 180 - Initializing ProtocolHandler ["http-nio-8111"]
+2018-12-14 16:13:30,540 [main] INFO  o.a.catalina.core.StandardService 180 - Starting service [Tomcat]
+2018-12-14 16:13:30,541 [main] INFO  o.a.catalina.core.StandardEngine 180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-12-14 16:13:30,547 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener 180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_92\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\VanDyke Software\Clients\;D:\java\jdk1.8.0_92\bin;D:\java\jdk1.8.0_92\jre\bin;D:\Program Files\maven\apache-maven-3.3.9\bin;C:\Program Files (x86)\MySQL\MySQL Server 5.5\bin;C:\Program Files\TortoiseSVN\bin;c:\windows\system32;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit;D:\Program Files\Git\cmd;D:\Program Files\maven\apache-maven-3.3.9\bin;D:\oracleclient\instantclient_12_2;C:\Windows;C:\Windows\system32\wbem;D:\erlang\erl10.0.1\bin;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;.]
+2018-12-14 16:13:30,736 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 180 - Initializing Spring embedded WebApplicationContext
+2018-12-14 16:13:30,737 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader 285 - Root WebApplicationContext: initialization completed in 2257 ms
+2018-12-14 16:13:31,031 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet dispatcherServlet mapped to [/]
+2018-12-14 16:13:31,033 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet statViewServlet mapped to [/druid/*]
+2018-12-14 16:13:31,038 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-12-14 16:13:31,039 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-12-14 16:13:31,040 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-12-14 16:13:31,040 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-12-14 16:13:31,041 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 256 - Mapping filter: 'webStatFilter' to urls: [/*]
+2018-12-14 16:13:32,278 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter 567 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1e6454ec: startup date [Fri Dec 14 16:13:28 CST 2018]; root of context hierarchy
+2018-12-14 16:13:32,387 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/getMapping/{id}],methods=[GET],consumes=[application/json],produces=[application/json;charset=UTF-8]}" onto public void com.cfygit.parent.controller.hello.getMapping(java.lang.Long)
+2018-12-14 16:13:32,389 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/putMapping/{id}],methods=[PUT]}" onto public void com.cfygit.parent.controller.hello.putMapping(java.lang.Long)
+2018-12-14 16:13:32,389 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/h/{id}],methods=[GET]}" onto public void com.cfygit.parent.controller.hello.sayHellow(java.lang.Long)
+2018-12-14 16:13:32,389 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/postMapping/{id}],methods=[POST],consumes=[application/json],produces=[application/json;charset=UTF-8]}" onto public void com.cfygit.parent.controller.hello.postMapping(java.lang.Long)
+2018-12-14 16:13:32,391 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/h]}" onto public java.lang.String com.cfygit.parent.controller.hello.sayHello()
+2018-12-14 16:13:32,391 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/deleteMapping/{id}],methods=[DELETE]}" onto public void com.cfygit.parent.controller.hello.deleteMapping(java.lang.Long)
+2018-12-14 16:13:32,392 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/patchMapping/{id}],methods=[PATCH]}" onto public void com.cfygit.parent.controller.hello.patchMapping(java.lang.Long)
+2018-12-14 16:13:32,392 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/test/a.json],methods=[GET]}" onto public void com.cfygit.parent.controller.hello.GetMappingANT()
+2018-12-14 16:13:32,394 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> com.cfygit.parent.exception.ErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-12-14 16:13:32,394 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView com.cfygit.parent.exception.ErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+2018-12-14 16:13:32,469 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 16:13:32,469 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 16:13:32,546 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 16:13:32,967 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 434 - Registering beans for JMX exposure on startup
+2018-12-14 16:13:32,969 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 896 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-12-14 16:13:32,978 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 669 - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2018-12-14 16:13:32,999 [main] INFO  o.a.coyote.http11.Http11NioProtocol 180 - Starting ProtocolHandler ["http-nio-8111"]
+2018-12-14 16:13:33,018 [main] INFO  o.a.tomcat.util.net.NioSelectorPool 180 - Using a shared selector for servlet write/read
+2018-12-14 16:13:33,039 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 205 - Tomcat started on port(s): 8111 (http) with context path ''
+2018-12-14 16:13:33,044 [main] INFO  com.cfygit.parent.ParentApplication 59 - Started ParentApplication in 6.023 seconds (JVM running for 7.265)
+2018-12-14 16:13:54,631 [main] INFO  com.cfygit.parent.ParentApplication 50 - Starting ParentApplication on ecitic-PC with PID 357480 (D:\wangyegithub\parent\target\classes started by ecitic in D:\wangyegithub\parent)
+2018-12-14 16:13:54,770 [main] INFO  com.cfygit.parent.ParentApplication 652 - No active profile set, falling back to default profiles: default
+2018-12-14 16:13:54,881 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext 589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2accdbb5: startup date [Fri Dec 14 16:13:54 CST 2018]; root of context hierarchy
+2018-12-14 16:13:56,744 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 91 - Tomcat initialized with port(s): 8111 (http)
+2018-12-14 16:13:56,767 [main] INFO  o.a.coyote.http11.Http11NioProtocol 180 - Initializing ProtocolHandler ["http-nio-8111"]
+2018-12-14 16:13:56,785 [main] INFO  o.a.catalina.core.StandardService 180 - Starting service [Tomcat]
+2018-12-14 16:13:56,786 [main] INFO  o.a.catalina.core.StandardEngine 180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-12-14 16:13:56,795 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener 180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_92\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\VanDyke Software\Clients\;D:\java\jdk1.8.0_92\bin;D:\java\jdk1.8.0_92\jre\bin;D:\Program Files\maven\apache-maven-3.3.9\bin;C:\Program Files (x86)\MySQL\MySQL Server 5.5\bin;C:\Program Files\TortoiseSVN\bin;c:\windows\system32;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit;D:\Program Files\Git\cmd;D:\Program Files\maven\apache-maven-3.3.9\bin;D:\oracleclient\instantclient_12_2;C:\Windows;C:\Windows\system32\wbem;D:\erlang\erl10.0.1\bin;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;.]
+2018-12-14 16:13:56,978 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 180 - Initializing Spring embedded WebApplicationContext
+2018-12-14 16:13:56,979 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader 285 - Root WebApplicationContext: initialization completed in 2099 ms
+2018-12-14 16:13:57,278 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet dispatcherServlet mapped to [/]
+2018-12-14 16:13:57,280 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet statViewServlet mapped to [/druid/*]
+2018-12-14 16:13:57,285 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-12-14 16:13:57,285 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-12-14 16:13:57,285 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-12-14 16:13:57,286 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-12-14 16:13:57,286 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 256 - Mapping filter: 'webStatFilter' to urls: [/*]
+2018-12-14 16:13:58,564 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter 567 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2accdbb5: startup date [Fri Dec 14 16:13:54 CST 2018]; root of context hierarchy
+2018-12-14 16:13:58,668 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/getMapping/{id}],methods=[GET],consumes=[application/json],produces=[application/json;charset=UTF-8]}" onto public void com.cfygit.parent.controller.hello.getMapping(java.lang.Long)
+2018-12-14 16:13:58,669 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/putMapping/{id}],methods=[PUT]}" onto public void com.cfygit.parent.controller.hello.putMapping(java.lang.Long)
+2018-12-14 16:13:58,669 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/h/{id}],methods=[GET]}" onto public void com.cfygit.parent.controller.hello.sayHellow(java.lang.Long)
+2018-12-14 16:13:58,670 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/postMapping/{id}],methods=[POST],consumes=[application/json],produces=[application/json;charset=UTF-8]}" onto public void com.cfygit.parent.controller.hello.postMapping(java.lang.Long)
+2018-12-14 16:13:58,670 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/h]}" onto public java.lang.String com.cfygit.parent.controller.hello.sayHello()
+2018-12-14 16:13:58,670 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/deleteMapping/{id}],methods=[DELETE]}" onto public void com.cfygit.parent.controller.hello.deleteMapping(java.lang.Long)
+2018-12-14 16:13:58,671 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/patchMapping/{id}],methods=[PATCH]}" onto public void com.cfygit.parent.controller.hello.patchMapping(java.lang.Long)
+2018-12-14 16:13:58,671 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/test/a.json],methods=[GET]}" onto public void com.cfygit.parent.controller.hello.GetMappingANT()
+2018-12-14 16:13:58,674 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> com.cfygit.parent.exception.ErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-12-14 16:13:58,674 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView com.cfygit.parent.exception.ErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+2018-12-14 16:13:58,747 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 16:13:58,747 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 16:13:58,829 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 16:13:59,315 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 434 - Registering beans for JMX exposure on startup
+2018-12-14 16:13:59,317 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 896 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-12-14 16:13:59,327 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 669 - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2018-12-14 16:13:59,347 [main] INFO  o.a.coyote.http11.Http11NioProtocol 180 - Starting ProtocolHandler ["http-nio-8111"]
+2018-12-14 16:13:59,367 [main] INFO  o.a.tomcat.util.net.NioSelectorPool 180 - Using a shared selector for servlet write/read
+2018-12-14 16:13:59,390 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 205 - Tomcat started on port(s): 8111 (http) with context path ''
+2018-12-14 16:13:59,396 [main] INFO  com.cfygit.parent.ParentApplication 59 - Started ParentApplication in 5.716 seconds (JVM running for 6.943)
+2018-12-14 16:14:29,791 [main] INFO  com.cfygit.parent.ParentApplication 50 - Starting ParentApplication on ecitic-PC with PID 333772 (D:\wangyegithub\parent\target\classes started by ecitic in D:\wangyegithub\parent)
+2018-12-14 16:14:29,809 [main] INFO  com.cfygit.parent.ParentApplication 652 - No active profile set, falling back to default profiles: default
+2018-12-14 16:14:29,888 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext 589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@31e5415e: startup date [Fri Dec 14 16:14:29 CST 2018]; root of context hierarchy
+2018-12-14 16:14:32,253 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 91 - Tomcat initialized with port(s): 8111 (http)
+2018-12-14 16:14:32,276 [main] INFO  o.a.coyote.http11.Http11NioProtocol 180 - Initializing ProtocolHandler ["http-nio-8111"]
+2018-12-14 16:14:32,290 [main] INFO  o.a.catalina.core.StandardService 180 - Starting service [Tomcat]
+2018-12-14 16:14:32,290 [main] INFO  o.a.catalina.core.StandardEngine 180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-12-14 16:14:32,298 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener 180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_92\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\VanDyke Software\Clients\;D:\java\jdk1.8.0_92\bin;D:\java\jdk1.8.0_92\jre\bin;D:\Program Files\maven\apache-maven-3.3.9\bin;C:\Program Files (x86)\MySQL\MySQL Server 5.5\bin;C:\Program Files\TortoiseSVN\bin;c:\windows\system32;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit;D:\Program Files\Git\cmd;D:\Program Files\maven\apache-maven-3.3.9\bin;D:\oracleclient\instantclient_12_2;C:\Windows;C:\Windows\system32\wbem;D:\erlang\erl10.0.1\bin;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;.]
+2018-12-14 16:14:32,487 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 180 - Initializing Spring embedded WebApplicationContext
+2018-12-14 16:14:32,488 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader 285 - Root WebApplicationContext: initialization completed in 2600 ms
+2018-12-14 16:14:32,790 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet dispatcherServlet mapped to [/]
+2018-12-14 16:14:32,793 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet statViewServlet mapped to [/druid/*]
+2018-12-14 16:14:32,796 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-12-14 16:14:32,797 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-12-14 16:14:32,798 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-12-14 16:14:32,798 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-12-14 16:14:32,798 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 256 - Mapping filter: 'webStatFilter' to urls: [/*]
+2018-12-14 16:14:34,073 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter 567 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@31e5415e: startup date [Fri Dec 14 16:14:29 CST 2018]; root of context hierarchy
+2018-12-14 16:14:34,173 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/getMapping/{id}],methods=[GET],consumes=[application/json],produces=[application/json;charset=UTF-8]}" onto public void com.cfygit.parent.controller.hello.getMapping(java.lang.Long)
+2018-12-14 16:14:34,174 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/putMapping/{id}],methods=[PUT]}" onto public void com.cfygit.parent.controller.hello.putMapping(java.lang.Long)
+2018-12-14 16:14:34,174 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/h/{id}],methods=[GET]}" onto public void com.cfygit.parent.controller.hello.sayHellow(java.lang.Long)
+2018-12-14 16:14:34,175 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/postMapping/{id}],methods=[POST],consumes=[application/json],produces=[application/json;charset=UTF-8]}" onto public void com.cfygit.parent.controller.hello.postMapping(java.lang.Long)
+2018-12-14 16:14:34,175 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/h]}" onto public java.lang.String com.cfygit.parent.controller.hello.sayHello()
+2018-12-14 16:14:34,175 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/deleteMapping/{id}],methods=[DELETE]}" onto public void com.cfygit.parent.controller.hello.deleteMapping(java.lang.Long)
+2018-12-14 16:14:34,176 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/patchMapping/{id}],methods=[PATCH]}" onto public void com.cfygit.parent.controller.hello.patchMapping(java.lang.Long)
+2018-12-14 16:14:34,176 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/test/a.json],methods=[GET]}" onto public void com.cfygit.parent.controller.hello.GetMappingANT()
+2018-12-14 16:14:34,179 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> com.cfygit.parent.exception.ErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-12-14 16:14:34,180 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView com.cfygit.parent.exception.ErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+2018-12-14 16:14:34,248 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 16:14:34,249 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 16:14:34,318 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 16:14:34,759 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 434 - Registering beans for JMX exposure on startup
+2018-12-14 16:14:34,761 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 896 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-12-14 16:14:34,770 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 669 - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2018-12-14 16:14:34,786 [main] INFO  o.a.coyote.http11.Http11NioProtocol 180 - Starting ProtocolHandler ["http-nio-8111"]
+2018-12-14 16:14:34,805 [main] INFO  o.a.tomcat.util.net.NioSelectorPool 180 - Using a shared selector for servlet write/read
+2018-12-14 16:14:34,827 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 205 - Tomcat started on port(s): 8111 (http) with context path ''
+2018-12-14 16:14:34,831 [main] INFO  com.cfygit.parent.ParentApplication 59 - Started ParentApplication in 5.922 seconds (JVM running for 7.115)
+2018-12-14 16:15:02,938 [main] INFO  com.cfygit.parent.ParentApplication 50 - Starting ParentApplication on ecitic-PC with PID 93176 (D:\wangyegithub\parent\target\classes started by ecitic in D:\wangyegithub\parent)
+2018-12-14 16:15:02,947 [main] INFO  com.cfygit.parent.ParentApplication 652 - No active profile set, falling back to default profiles: default
+2018-12-14 16:15:03,109 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext 589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@550ee7e5: startup date [Fri Dec 14 16:15:03 CST 2018]; root of context hierarchy
+2018-12-14 16:15:04,933 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 91 - Tomcat initialized with port(s): 8111 (http)
+2018-12-14 16:15:04,951 [main] INFO  o.a.coyote.http11.Http11NioProtocol 180 - Initializing ProtocolHandler ["http-nio-8111"]
+2018-12-14 16:15:04,965 [main] INFO  o.a.catalina.core.StandardService 180 - Starting service [Tomcat]
+2018-12-14 16:15:04,965 [main] INFO  o.a.catalina.core.StandardEngine 180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-12-14 16:15:04,971 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener 180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_92\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\VanDyke Software\Clients\;D:\java\jdk1.8.0_92\bin;D:\java\jdk1.8.0_92\jre\bin;D:\Program Files\maven\apache-maven-3.3.9\bin;C:\Program Files (x86)\MySQL\MySQL Server 5.5\bin;C:\Program Files\TortoiseSVN\bin;c:\windows\system32;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit;D:\Program Files\Git\cmd;D:\Program Files\maven\apache-maven-3.3.9\bin;D:\oracleclient\instantclient_12_2;C:\Windows;C:\Windows\system32\wbem;D:\erlang\erl10.0.1\bin;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;.]
+2018-12-14 16:15:05,135 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 180 - Initializing Spring embedded WebApplicationContext
+2018-12-14 16:15:05,136 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader 285 - Root WebApplicationContext: initialization completed in 2027 ms
+2018-12-14 16:15:05,433 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet dispatcherServlet mapped to [/]
+2018-12-14 16:15:05,434 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet statViewServlet mapped to [/druid/*]
+2018-12-14 16:15:05,440 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-12-14 16:15:05,441 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-12-14 16:15:05,441 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-12-14 16:15:05,441 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-12-14 16:15:05,442 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 256 - Mapping filter: 'webStatFilter' to urls: [/*]
+2018-12-14 16:15:06,724 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter 567 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@550ee7e5: startup date [Fri Dec 14 16:15:03 CST 2018]; root of context hierarchy
+2018-12-14 16:15:06,824 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/getMapping/{id}],methods=[GET],consumes=[application/json],produces=[application/json;charset=UTF-8]}" onto public void com.cfygit.parent.controller.hello.getMapping(java.lang.Long)
+2018-12-14 16:15:06,825 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/putMapping/{id}],methods=[PUT]}" onto public void com.cfygit.parent.controller.hello.putMapping(java.lang.Long)
+2018-12-14 16:15:06,826 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/h/{id}],methods=[GET]}" onto public void com.cfygit.parent.controller.hello.sayHellow(java.lang.Long)
+2018-12-14 16:15:06,826 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/postMapping/{id}],methods=[POST],consumes=[application/json],produces=[application/json;charset=UTF-8]}" onto public void com.cfygit.parent.controller.hello.postMapping(java.lang.Long)
+2018-12-14 16:15:06,826 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/h]}" onto public java.lang.String com.cfygit.parent.controller.hello.sayHello()
+2018-12-14 16:15:06,827 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/deleteMapping/{id}],methods=[DELETE]}" onto public void com.cfygit.parent.controller.hello.deleteMapping(java.lang.Long)
+2018-12-14 16:15:06,827 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/patchMapping/{id}],methods=[PATCH]}" onto public void com.cfygit.parent.controller.hello.patchMapping(java.lang.Long)
+2018-12-14 16:15:06,827 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/test/a.json],methods=[GET]}" onto public void com.cfygit.parent.controller.hello.GetMappingANT()
+2018-12-14 16:15:06,829 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> com.cfygit.parent.exception.ErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-12-14 16:15:06,830 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView com.cfygit.parent.exception.ErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+2018-12-14 16:15:06,902 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 16:15:06,902 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 16:15:06,990 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 16:15:07,422 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 434 - Registering beans for JMX exposure on startup
+2018-12-14 16:15:07,424 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 896 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-12-14 16:15:07,432 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 669 - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2018-12-14 16:15:07,452 [main] INFO  o.a.coyote.http11.Http11NioProtocol 180 - Starting ProtocolHandler ["http-nio-8111"]
+2018-12-14 16:15:07,470 [main] INFO  o.a.tomcat.util.net.NioSelectorPool 180 - Using a shared selector for servlet write/read
+2018-12-14 16:15:07,492 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 205 - Tomcat started on port(s): 8111 (http) with context path ''
+2018-12-14 16:15:07,496 [main] INFO  com.cfygit.parent.ParentApplication 59 - Started ParentApplication in 5.972 seconds (JVM running for 7.316)
+2018-12-14 16:15:25,335 [main] INFO  com.cfygit.parent.ParentApplication 50 - Starting ParentApplication on ecitic-PC with PID 354284 (D:\wangyegithub\parent\target\classes started by ecitic in D:\wangyegithub\parent)
+2018-12-14 16:15:25,383 [main] INFO  com.cfygit.parent.ParentApplication 652 - No active profile set, falling back to default profiles: default
+2018-12-14 16:15:25,593 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext 589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@446293d: startup date [Fri Dec 14 16:15:25 CST 2018]; root of context hierarchy
+2018-12-14 16:15:26,721 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 328 - Bean 'com.alibaba.druid.spring.boot.autoconfigure.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-14 16:15:27,503 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 91 - Tomcat initialized with port(s): 8111 (http)
+2018-12-14 16:15:27,520 [main] INFO  o.a.coyote.http11.Http11NioProtocol 180 - Initializing ProtocolHandler ["http-nio-8111"]
+2018-12-14 16:15:27,535 [main] INFO  o.a.catalina.core.StandardService 180 - Starting service [Tomcat]
+2018-12-14 16:15:27,535 [main] INFO  o.a.catalina.core.StandardEngine 180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-12-14 16:15:27,541 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener 180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_92\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\VanDyke Software\Clients\;D:\java\jdk1.8.0_92\bin;D:\java\jdk1.8.0_92\jre\bin;D:\Program Files\maven\apache-maven-3.3.9\bin;C:\Program Files (x86)\MySQL\MySQL Server 5.5\bin;C:\Program Files\TortoiseSVN\bin;c:\windows\system32;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit;D:\Program Files\Git\cmd;D:\Program Files\maven\apache-maven-3.3.9\bin;D:\oracleclient\instantclient_12_2;C:\Windows;C:\Windows\system32\wbem;D:\erlang\erl10.0.1\bin;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;.]
+2018-12-14 16:15:27,703 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 180 - Initializing Spring embedded WebApplicationContext
+2018-12-14 16:15:27,704 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader 285 - Root WebApplicationContext: initialization completed in 2111 ms
+2018-12-14 16:15:28,008 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet dispatcherServlet mapped to [/]
+2018-12-14 16:15:28,010 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet statViewServlet mapped to [/druid/*]
+2018-12-14 16:15:28,015 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-12-14 16:15:28,017 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-12-14 16:15:28,017 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-12-14 16:15:28,017 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-12-14 16:15:28,017 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 256 - Mapping filter: 'webStatFilter' to urls: [/*]
+2018-12-14 16:15:28,759 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext 557 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'hello' defined in file [D:\wangyegithub\parent\target\classes\com\cfygit\parent\controller\hello.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'helloService' is expected to be of type 'com.cfygit.parent.service.helloService' but was actually of type 'com.sun.proxy.$Proxy80'
+2018-12-14 16:15:28,762 [main] INFO  o.a.catalina.core.StandardService 180 - Stopping service [Tomcat]
+2018-12-14 16:15:28,790 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener 101 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-12-14 16:15:42,583 [main] INFO  com.cfygit.parent.ParentApplication 50 - Starting ParentApplication on ecitic-PC with PID 354856 (D:\wangyegithub\parent\target\classes started by ecitic in D:\wangyegithub\parent)
+2018-12-14 16:15:42,590 [main] INFO  com.cfygit.parent.ParentApplication 652 - No active profile set, falling back to default profiles: default
+2018-12-14 16:15:42,714 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext 589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@76c3e77a: startup date [Fri Dec 14 16:15:42 CST 2018]; root of context hierarchy
+2018-12-14 16:15:44,708 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 91 - Tomcat initialized with port(s): 8111 (http)
+2018-12-14 16:15:44,725 [main] INFO  o.a.coyote.http11.Http11NioProtocol 180 - Initializing ProtocolHandler ["http-nio-8111"]
+2018-12-14 16:15:44,737 [main] INFO  o.a.catalina.core.StandardService 180 - Starting service [Tomcat]
+2018-12-14 16:15:44,737 [main] INFO  o.a.catalina.core.StandardEngine 180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-12-14 16:15:44,744 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener 180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_92\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\VanDyke Software\Clients\;D:\java\jdk1.8.0_92\bin;D:\java\jdk1.8.0_92\jre\bin;D:\Program Files\maven\apache-maven-3.3.9\bin;C:\Program Files (x86)\MySQL\MySQL Server 5.5\bin;C:\Program Files\TortoiseSVN\bin;c:\windows\system32;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit;D:\Program Files\Git\cmd;D:\Program Files\maven\apache-maven-3.3.9\bin;D:\oracleclient\instantclient_12_2;C:\Windows;C:\Windows\system32\wbem;D:\erlang\erl10.0.1\bin;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;.]
+2018-12-14 16:15:44,914 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 180 - Initializing Spring embedded WebApplicationContext
+2018-12-14 16:15:44,914 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader 285 - Root WebApplicationContext: initialization completed in 2200 ms
+2018-12-14 16:15:45,221 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet dispatcherServlet mapped to [/]
+2018-12-14 16:15:45,223 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet statViewServlet mapped to [/druid/*]
+2018-12-14 16:15:45,227 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-12-14 16:15:45,228 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-12-14 16:15:45,228 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-12-14 16:15:45,228 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-12-14 16:15:45,228 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 256 - Mapping filter: 'webStatFilter' to urls: [/*]
+2018-12-14 16:15:46,491 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter 567 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@76c3e77a: startup date [Fri Dec 14 16:15:42 CST 2018]; root of context hierarchy
+2018-12-14 16:15:46,593 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/getMapping/{id}],methods=[GET],consumes=[application/json],produces=[application/json;charset=UTF-8]}" onto public void com.cfygit.parent.controller.hello.getMapping(java.lang.Long)
+2018-12-14 16:15:46,596 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/putMapping/{id}],methods=[PUT]}" onto public void com.cfygit.parent.controller.hello.putMapping(java.lang.Long)
+2018-12-14 16:15:46,596 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/h/{id}],methods=[GET]}" onto public void com.cfygit.parent.controller.hello.sayHellow(java.lang.Long)
+2018-12-14 16:15:46,597 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/postMapping/{id}],methods=[POST],consumes=[application/json],produces=[application/json;charset=UTF-8]}" onto public void com.cfygit.parent.controller.hello.postMapping(java.lang.Long)
+2018-12-14 16:15:46,597 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/h]}" onto public java.lang.String com.cfygit.parent.controller.hello.sayHello()
+2018-12-14 16:15:46,598 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/deleteMapping/{id}],methods=[DELETE]}" onto public void com.cfygit.parent.controller.hello.deleteMapping(java.lang.Long)
+2018-12-14 16:15:46,598 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/patchMapping/{id}],methods=[PATCH]}" onto public void com.cfygit.parent.controller.hello.patchMapping(java.lang.Long)
+2018-12-14 16:15:46,598 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/test/a.json],methods=[GET]}" onto public void com.cfygit.parent.controller.hello.GetMappingANT()
+2018-12-14 16:15:46,599 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> com.cfygit.parent.exception.ErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-12-14 16:15:46,600 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView com.cfygit.parent.exception.ErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+2018-12-14 16:15:46,673 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 16:15:46,673 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 16:15:46,742 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 16:15:47,173 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 434 - Registering beans for JMX exposure on startup
+2018-12-14 16:15:47,176 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 896 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-12-14 16:15:47,184 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 669 - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2018-12-14 16:15:47,203 [main] INFO  o.a.coyote.http11.Http11NioProtocol 180 - Starting ProtocolHandler ["http-nio-8111"]
+2018-12-14 16:15:47,222 [main] INFO  o.a.tomcat.util.net.NioSelectorPool 180 - Using a shared selector for servlet write/read
+2018-12-14 16:15:47,243 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 205 - Tomcat started on port(s): 8111 (http) with context path ''
+2018-12-14 16:15:47,248 [main] INFO  com.cfygit.parent.ParentApplication 59 - Started ParentApplication in 5.824 seconds (JVM running for 7.09)
+2018-12-14 16:16:11,178 [http-nio-8111-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 180 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-12-14 16:16:11,178 [http-nio-8111-exec-1] INFO  o.s.web.servlet.DispatcherServlet 494 - FrameworkServlet 'dispatcherServlet': initialization started
+2018-12-14 16:16:11,226 [http-nio-8111-exec-1] INFO  o.s.web.servlet.DispatcherServlet 513 - FrameworkServlet 'dispatcherServlet': initialization completed in 47 ms
+2018-12-14 16:16:11,282 [http-nio-8111-exec-1] INFO  com.cfygit.parent.aop.ReqAspect 56 - 执行方法前:127.0.0.1
+2018-12-14 16:16:11,289 [http-nio-8111-exec-1] INFO  com.cfygit.parent.controller.hello 20 - ffz
+2018-12-14 16:16:11,442 [http-nio-8111-exec-1] INFO  c.alibaba.druid.pool.DruidDataSource 106 - {dataSource-1} inited
+2018-12-14 16:16:11,884 [http-nio-8111-exec-1] INFO  c.cfygit.parent.service.helloService 31 - [{"creatTime":1544696672000,"id":5,"name":"5","updateTime":1544696675000},{"creatTime":1544696666000,"id":4,"name":"4","updateTime":1544696668000}]
+2018-12-14 16:16:11,885 [http-nio-8111-exec-1] INFO  com.cfygit.parent.aop.ReqAspect 59 - 执行方法后:/h
+2018-12-14 16:18:10,277 [http-nio-8111-exec-3] INFO  com.cfygit.parent.aop.ReqAspect 56 - 执行方法前:127.0.0.1
+2018-12-14 16:18:10,287 [http-nio-8111-exec-3] INFO  com.cfygit.parent.aop.ReqAspect 59 - 执行方法后:/druid-monitor/druid/sql.html
+2018-12-14 16:42:08,609 [main] INFO  com.cfygit.parent.ParentApplication 50 - Starting ParentApplication on ecitic-PC with PID 3668 (D:\wangyegithub\parent\target\classes started by ecitic in D:\wangyegithub\parent)
+2018-12-14 16:42:08,615 [main] INFO  com.cfygit.parent.ParentApplication 652 - No active profile set, falling back to default profiles: default
+2018-12-14 16:42:08,843 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext 589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7e7be63f: startup date [Fri Dec 14 16:42:08 CST 2018]; root of context hierarchy
+2018-12-14 16:42:10,759 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 91 - Tomcat initialized with port(s): 8111 (http)
+2018-12-14 16:42:10,780 [main] INFO  o.a.coyote.http11.Http11NioProtocol 180 - Initializing ProtocolHandler ["http-nio-8111"]
+2018-12-14 16:42:10,794 [main] INFO  o.a.catalina.core.StandardService 180 - Starting service [Tomcat]
+2018-12-14 16:42:10,795 [main] INFO  o.a.catalina.core.StandardEngine 180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-12-14 16:42:10,802 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener 180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_92\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\VanDyke Software\Clients\;D:\java\jdk1.8.0_92\bin;D:\java\jdk1.8.0_92\jre\bin;D:\Program Files\maven\apache-maven-3.3.9\bin;C:\Program Files (x86)\MySQL\MySQL Server 5.5\bin;C:\Program Files\TortoiseSVN\bin;c:\windows\system32;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit;D:\Program Files\Git\cmd;D:\Program Files\maven\apache-maven-3.3.9\bin;D:\oracleclient\instantclient_12_2;C:\Windows;C:\Windows\system32\wbem;D:\erlang\erl10.0.1\bin;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;.]
+2018-12-14 16:42:10,967 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 180 - Initializing Spring embedded WebApplicationContext
+2018-12-14 16:42:10,967 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader 285 - Root WebApplicationContext: initialization completed in 2124 ms
+2018-12-14 16:42:11,265 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet dispatcherServlet mapped to [/]
+2018-12-14 16:42:11,267 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet statViewServlet mapped to [/druid/*]
+2018-12-14 16:42:11,272 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-12-14 16:42:11,273 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-12-14 16:42:11,273 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-12-14 16:42:11,274 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-12-14 16:42:11,274 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 256 - Mapping filter: 'webStatFilter' to urls: [/*]
+2018-12-14 16:42:12,568 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter 567 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7e7be63f: startup date [Fri Dec 14 16:42:08 CST 2018]; root of context hierarchy
+2018-12-14 16:42:12,682 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/getMapping/{id}],methods=[GET],consumes=[application/json],produces=[application/json;charset=UTF-8]}" onto public void com.cfygit.parent.controller.hello.getMapping(java.lang.Long)
+2018-12-14 16:42:12,683 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/putMapping/{id}],methods=[PUT]}" onto public void com.cfygit.parent.controller.hello.putMapping(java.lang.Long)
+2018-12-14 16:42:12,684 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/h/{id}],methods=[GET]}" onto public void com.cfygit.parent.controller.hello.sayHellow(java.lang.Long)
+2018-12-14 16:42:12,684 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/postMapping/{id}],methods=[POST],consumes=[application/json],produces=[application/json;charset=UTF-8]}" onto public void com.cfygit.parent.controller.hello.postMapping(java.lang.Long)
+2018-12-14 16:42:12,684 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/h]}" onto public java.lang.String com.cfygit.parent.controller.hello.sayHello()
+2018-12-14 16:42:12,685 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/deleteMapping/{id}],methods=[DELETE]}" onto public void com.cfygit.parent.controller.hello.deleteMapping(java.lang.Long)
+2018-12-14 16:42:12,686 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/patchMapping/{id}],methods=[PATCH]}" onto public void com.cfygit.parent.controller.hello.patchMapping(java.lang.Long)
+2018-12-14 16:42:12,686 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/test/a.json],methods=[GET]}" onto public void com.cfygit.parent.controller.hello.GetMappingANT()
+2018-12-14 16:42:12,689 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> com.cfygit.parent.exception.ErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-12-14 16:42:12,690 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView com.cfygit.parent.exception.ErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+2018-12-14 16:42:12,762 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 16:42:12,762 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 16:42:12,836 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 16:42:13,289 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 434 - Registering beans for JMX exposure on startup
+2018-12-14 16:42:13,290 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 896 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-12-14 16:42:13,299 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 669 - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2018-12-14 16:42:13,315 [main] INFO  o.a.coyote.http11.Http11NioProtocol 180 - Starting ProtocolHandler ["http-nio-8111"]
+2018-12-14 16:42:13,333 [main] INFO  o.a.tomcat.util.net.NioSelectorPool 180 - Using a shared selector for servlet write/read
+2018-12-14 16:42:13,353 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 205 - Tomcat started on port(s): 8111 (http) with context path ''
+2018-12-14 16:42:13,358 [main] INFO  com.cfygit.parent.ParentApplication 59 - Started ParentApplication in 5.994 seconds (JVM running for 7.223)
+2018-12-14 16:43:33,137 [http-nio-8111-exec-10] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 180 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-12-14 16:43:33,137 [http-nio-8111-exec-10] INFO  o.s.web.servlet.DispatcherServlet 494 - FrameworkServlet 'dispatcherServlet': initialization started
+2018-12-14 16:43:33,188 [http-nio-8111-exec-10] INFO  o.s.web.servlet.DispatcherServlet 513 - FrameworkServlet 'dispatcherServlet': initialization completed in 51 ms
+2018-12-14 16:43:33,226 [http-nio-8111-exec-10] INFO  com.cfygit.parent.aop.ReqAspect 56 - 执行方法前:127.0.0.1
+2018-12-14 16:43:33,231 [http-nio-8111-exec-10] INFO  com.cfygit.parent.controller.hello 20 - ffz
+2018-12-14 16:43:33,355 [http-nio-8111-exec-10] INFO  c.alibaba.druid.pool.DruidDataSource 106 - {dataSource-1} inited
+2018-12-14 16:43:33,715 [http-nio-8111-exec-10] INFO  c.cfygit.parent.service.helloService 31 - [{"creatTime":1544696672000,"id":5,"name":"5","updateTime":1544696675000},{"creatTime":1544696666000,"id":4,"name":"4","updateTime":1544696668000}]
+2018-12-14 16:43:33,715 [http-nio-8111-exec-10] INFO  com.cfygit.parent.aop.ReqAspect 59 - 执行方法后:/h
+2018-12-14 16:44:16,387 [http-nio-8111-exec-9] INFO  com.cfygit.parent.aop.ReqAspect 56 - 执行方法前:127.0.0.1
+2018-12-14 16:44:16,388 [http-nio-8111-exec-9] INFO  com.cfygit.parent.controller.hello 20 - ffz
+2018-12-14 16:44:16,398 [http-nio-8111-exec-9] INFO  c.cfygit.parent.service.helloService 31 - [{"creatTime":1544696672000,"id":5,"name":"5","updateTime":1544696675000},{"creatTime":1544696666000,"id":4,"name":"4","updateTime":1544696668000}]
+2018-12-14 16:44:16,399 [http-nio-8111-exec-9] INFO  com.cfygit.parent.aop.ReqAspect 59 - 执行方法后:/h
+2018-12-14 17:03:22,101 [main] INFO  com.cfygit.parent.ParentApplication 50 - Starting ParentApplication on ecitic-PC with PID 358008 (D:\wangyegithub\parent\target\classes started by ecitic in D:\wangyegithub\parent)
+2018-12-14 17:03:22,108 [main] INFO  com.cfygit.parent.ParentApplication 652 - No active profile set, falling back to default profiles: default
+2018-12-14 17:03:22,231 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext 589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2bfc268b: startup date [Fri Dec 14 17:03:22 CST 2018]; root of context hierarchy
+2018-12-14 17:03:24,016 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 91 - Tomcat initialized with port(s): 8111 (http)
+2018-12-14 17:03:24,034 [main] INFO  o.a.coyote.http11.Http11NioProtocol 180 - Initializing ProtocolHandler ["http-nio-8111"]
+2018-12-14 17:03:24,046 [main] INFO  o.a.catalina.core.StandardService 180 - Starting service [Tomcat]
+2018-12-14 17:03:24,047 [main] INFO  o.a.catalina.core.StandardEngine 180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-12-14 17:03:24,053 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener 180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_92\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\VanDyke Software\Clients\;D:\java\jdk1.8.0_92\bin;D:\java\jdk1.8.0_92\jre\bin;D:\Program Files\maven\apache-maven-3.3.9\bin;C:\Program Files (x86)\MySQL\MySQL Server 5.5\bin;C:\Program Files\TortoiseSVN\bin;c:\windows\system32;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit;D:\Program Files\Git\cmd;D:\Program Files\maven\apache-maven-3.3.9\bin;D:\oracleclient\instantclient_12_2;C:\Windows;C:\Windows\system32\wbem;D:\erlang\erl10.0.1\bin;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;.]
+2018-12-14 17:03:24,241 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 180 - Initializing Spring embedded WebApplicationContext
+2018-12-14 17:03:24,241 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader 285 - Root WebApplicationContext: initialization completed in 2010 ms
+2018-12-14 17:03:24,534 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet dispatcherServlet mapped to [/]
+2018-12-14 17:03:24,536 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 185 - Servlet statViewServlet mapped to [/druid/*]
+2018-12-14 17:03:24,541 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-12-14 17:03:24,541 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-12-14 17:03:24,542 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-12-14 17:03:24,542 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-12-14 17:03:24,543 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 256 - Mapping filter: 'webStatFilter' to urls: [/*]
+2018-12-14 17:03:25,803 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter 567 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2bfc268b: startup date [Fri Dec 14 17:03:22 CST 2018]; root of context hierarchy
+2018-12-14 17:03:25,908 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/getMapping/{id}],methods=[GET],consumes=[application/json],produces=[application/json;charset=UTF-8]}" onto public void com.cfygit.parent.controller.hello.getMapping(java.lang.Long)
+2018-12-14 17:03:25,909 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/putMapping/{id}],methods=[PUT]}" onto public void com.cfygit.parent.controller.hello.putMapping(java.lang.Long)
+2018-12-14 17:03:25,910 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/h/{id}],methods=[GET]}" onto public void com.cfygit.parent.controller.hello.sayHellow(java.lang.Long)
+2018-12-14 17:03:25,910 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/postMapping/{id}],methods=[POST],consumes=[application/json],produces=[application/json;charset=UTF-8]}" onto public void com.cfygit.parent.controller.hello.postMapping(java.lang.Long)
+2018-12-14 17:03:25,911 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/h]}" onto public java.lang.String com.cfygit.parent.controller.hello.sayHello()
+2018-12-14 17:03:25,911 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/deleteMapping/{id}],methods=[DELETE]}" onto public void com.cfygit.parent.controller.hello.deleteMapping(java.lang.Long)
+2018-12-14 17:03:25,911 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/patchMapping/{id}],methods=[PATCH]}" onto public void com.cfygit.parent.controller.hello.patchMapping(java.lang.Long)
+2018-12-14 17:03:25,912 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[/test/a.json],methods=[GET]}" onto public void com.cfygit.parent.controller.hello.GetMappingANT()
+2018-12-14 17:03:25,913 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> com.cfygit.parent.exception.ErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-12-14 17:03:25,914 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 548 - Mapped "{[],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView com.cfygit.parent.exception.ErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+2018-12-14 17:03:25,983 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 17:03:25,983 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 17:03:26,050 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-14 17:03:26,467 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 434 - Registering beans for JMX exposure on startup
+2018-12-14 17:03:26,469 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 896 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-12-14 17:03:26,477 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 669 - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2018-12-14 17:03:26,494 [main] INFO  o.a.coyote.http11.Http11NioProtocol 180 - Starting ProtocolHandler ["http-nio-8111"]
+2018-12-14 17:03:26,514 [main] INFO  o.a.tomcat.util.net.NioSelectorPool 180 - Using a shared selector for servlet write/read
+2018-12-14 17:03:26,535 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 205 - Tomcat started on port(s): 8111 (http) with context path ''
+2018-12-14 17:03:26,539 [main] INFO  com.cfygit.parent.ParentApplication 59 - Started ParentApplication in 5.79 seconds (JVM running for 7.112)
+2018-12-14 17:03:57,774 [http-nio-8111-exec-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 180 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-12-14 17:03:57,775 [http-nio-8111-exec-5] INFO  o.s.web.servlet.DispatcherServlet 494 - FrameworkServlet 'dispatcherServlet': initialization started
+2018-12-14 17:03:57,816 [http-nio-8111-exec-5] INFO  o.s.web.servlet.DispatcherServlet 513 - FrameworkServlet 'dispatcherServlet': initialization completed in 41 ms
+2018-12-14 17:03:57,846 [http-nio-8111-exec-5] INFO  com.cfygit.parent.aop.ReqAspect 56 - 执行方法前:127.0.0.1
+2018-12-14 17:03:57,851 [http-nio-8111-exec-5] INFO  com.cfygit.parent.controller.hello 20 - ffz
+2018-12-14 17:03:57,967 [http-nio-8111-exec-5] INFO  c.alibaba.druid.pool.DruidDataSource 106 - {dataSource-1} inited
+2018-12-14 17:03:58,328 [http-nio-8111-exec-5] INFO  c.cfygit.parent.service.helloService 31 - [{"creatTime":1544696672000,"id":5,"name":"5","updateTime":1544696675000},{"creatTime":1544696666000,"id":4,"name":"4","updateTime":1544696668000}]
+2018-12-14 17:03:58,329 [http-nio-8111-exec-5] INFO  com.cfygit.parent.aop.ReqAspect 59 - 执行方法后:/h
