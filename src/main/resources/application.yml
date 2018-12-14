@@ -29,7 +29,7 @@ spring:
         testWhileIdle: true
         testOnBorrow: false
         testOnReturn: false
-        filters: stat,wall,log4j
+        filters: stat,wall,Slf4j
         ## 初始化连接池的连接数量 大小，最小，最大
         initialSize: 5
         minIdle: 5
@@ -49,7 +49,7 @@ spring:
         maxPoolPreparedStatementPerConnectionSize: 20
         connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
         reset-enable: false
-        spring.datasource.useGlobalDataSourceStat: true
+        useGlobalDataSourceStat: true
 
 
 ## 该配置节点为独立的节点，有很多同学容易将这个配置放在spring的节点下，导致配置无法被识别
