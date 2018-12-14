@@ -1,5 +1,7 @@
 package com.cfygit.parent.service;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.cfygit.parent.mapper.CfyTestMapper;
 import com.cfygit.parent.model.CfyTest;
 import com.cfygit.parent.model.CfyTestExample;
@@ -26,7 +28,8 @@ public class helloService  {
         CfyTestExample.Criteria criteria = cfyTestExample.createCriteria();
         cfyTestExample.setOrderByClause(" id desc");
         List<CfyTest> list = cfyTestMapper.selectByExample(cfyTestExample);
-        return list.toString();
+        log.info(JSON.toJSONString(list));
+        return JSON.toJSONString(list);
     }
 
 }
