@@ -1,11 +1,5 @@
 server:
   port: 8110
-  undertow:
-    accesslog:
-      enabled: true
-    io-threads: 4
-    worker-threads: 512
-    buffer-size: 1024
 
 logging:
   config: classpath:log/logback-boot.xml
