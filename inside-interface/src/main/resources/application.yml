@@ -1,0 +1,15 @@
+server:
+  port: 8112
+spring:
+  profiles:
+    active: local
+  application:
+    name: inside-service
+
+---
+spring:
+  profiles: local
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8110/eureka/
