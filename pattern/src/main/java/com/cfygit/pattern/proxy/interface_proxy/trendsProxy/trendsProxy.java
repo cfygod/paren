@@ -18,7 +18,7 @@ public class trendsProxy {
      * jdk代理和cglib 代理
      * 区别起来 就是 jdk 代理必须有统一的顶层接口，cglib不需要可以直接用类。jdk代理用到了反射机制和动态生成字节码技术，cglib是不能继承final类的，只是使用了字节码技术
      * 在spring的应用中默认是jdk动态代理，如果直接一个类，那么是cglib代理。
-     * 但是加了 事务或者aop 就会出现代理哟
+     * cglib动态代理模式：会在加载的
      *
      * 参考：
      * http://www.cnblogs.com/hongxinlaoking/p/4684652.html

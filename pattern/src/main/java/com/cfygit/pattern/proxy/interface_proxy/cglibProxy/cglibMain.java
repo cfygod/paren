@@ -17,6 +17,7 @@ public class cglibMain {
         Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(CfyCgibBase.class);
         enhancer.setCallback(new CglibProxy());
+        //创建代理对象
         CfyCgibBase cfyCgibBase = (CfyCgibBase) enhancer.create();
         cfyCgibBase.cglibCfy("1111111");
     }
