@@ -1,11 +1,14 @@
 package com.cfygit.webapi;
 
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 参考：https://blog.csdn.net/u012734441/article/details/78256256?locationNum=1&fps=1
@@ -25,6 +28,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * SychronousMethodHandler 拦截器，用来处理解析方法上的元数据，生成一个http请求模板
  */
 
+@RestController
 @SpringBootApplication
 @MapperScan("com.cfygit.webapi.mapper")
 @EnableEurekaClient
@@ -35,6 +39,8 @@ public class WebApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(WebApiApplication.class, args);
 	}
+
+
 
 }
 

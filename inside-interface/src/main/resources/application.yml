@@ -1,5 +1,5 @@
 server:
-  port: 8112
+  port: 8113
 spring:
   profiles:
     active: local
