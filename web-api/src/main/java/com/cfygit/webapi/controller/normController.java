@@ -24,8 +24,8 @@ import javax.validation.Valid;
 public class normController {
 
     @RequestMapping(path = "/norm/demo")
-    public TestvalidVo setSomething(@RequestBody @Valid TestvalidVo testvalidVo){
-        return testvalidVo;
+    public ResponseEntity setSomething(@RequestBody @Valid TestvalidVo testvalidVo){
+        return ResponseEntity.ok(testvalidVo);
     }
 
 
