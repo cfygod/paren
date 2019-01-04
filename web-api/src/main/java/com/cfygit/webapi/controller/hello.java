@@ -41,7 +41,7 @@ public class hello {
 
     /**
      * 向服务器提交信息
-     *
+     *若指定consumes为application/json,那么服务器仅处理request Content-Type为“application/json”类型的请求
      * @param id
      */
     @PostMapping(path = "/postMapping/{id}",

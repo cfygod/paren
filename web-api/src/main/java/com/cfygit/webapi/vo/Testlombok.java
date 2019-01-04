@@ -8,4 +8,5 @@ import lombok.Data;
 public class Testlombok {
     private String name;
     private String age;
+
 }
