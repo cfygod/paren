@@ -65,6 +65,12 @@
 			<version>${lombok.version}</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- hystrix -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+		</dependency>
+
 		<!-- MySql 8.0.13 Connector -->
 		<dependency>
 			<groupId>mysql</groupId>

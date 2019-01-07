@@ -1,11 +1,12 @@
 package com.cfygit.webapi.controller;
 
-import com.cfygit.webapi.feign.testFeign;
 import com.cfygit.webapi.interfaceInside.InsudeInterface;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
@@ -20,8 +21,10 @@ public class hello {
     public String sayHello() {
         log.info("ffz");
         /*return helloService.sayhello();*/
-        return ""+tt.createCart();
+        ResponseEntity<Boolean> c  = tt.createCart();
+        return ""+c;
     }
+
 
     @RequestMapping(path = "/h/{id}", method = RequestMethod.GET)
     public void sayHellow(@PathVariable("id") Long id) {
