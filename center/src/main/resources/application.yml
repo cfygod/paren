@@ -7,13 +7,15 @@ logging:
 spring:
   profiles:
     active: local
+  zipkin:
+      base-url: http://localhost:11008
 eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
   instance:
     hostname: service-center
-# ·şÎñÖĞĞÄÊ¹ÓÃipÌæ´úÊµÀıÃû
+# ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ipï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½
     prefer-ip-address: true
 
 ---

@@ -1,13 +1,19 @@
 package com.cfygit.webapi.controller;
 
 import com.cfygit.webapi.interfaceInside.InsudeInterface;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Map;
 
 @Slf4j
 @RestController
@@ -93,6 +99,33 @@ public class hello {
         log.info("id:===");
     }
 
+    @RequestMapping(value = "/ajaxTest", method = {RequestMethod.GET})
+    @ResponseBody
+    public Map ajaxDemo(HttpServletRequest request, @RequestBody String body) {
 
+        /*try{
+            System.out.println(body);
+        }catch (Exception e){
+            System.out.println("error");
+        }*/
+        Map map = new HashMap();
+        try {
+            InputStream is = request.getInputStream();
+            InputStreamReader isr = new InputStreamReader(is);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuffer sb = new StringBuffer();
+            String tmp = "";
+            while ((tmp = br.readLine()) != null) {
+                sb.append(tmp);
+            }
+            String str = sb.toString();
+            System.out.println(str);
+            map.put("str",str);
+        } catch (Exception e) {
+            map.put("str","11");
+            e.printStackTrace();
+        }
+        return map;
+    }
 
 }
