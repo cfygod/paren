@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://www.cnblogs.com/shifu204/p/6370682.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="origin">
+<title>elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园</title>
+<meta property="og:description" content="转自：http://www.cnblogs.com/miao-zp/p/6003160.html 简单修改 前言 elasticsearch（下面称为ES）是一个基于Lucene的搜索服务器（By 百">
+<link type="text/css" rel="stylesheet" href="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/bundle-CodingLife.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/bundle-CodingLife-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shifu204/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shifu204/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shifu204/wlwmanifest.xml">
+<script src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/osd.js.下载"></script><script src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/amp4ads-host-v0.js.下载"></script><script src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/pubads_impl_rendering_285.js.下载"></script><script async="" src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/analytics.js.下载"></script><script type="text/javascript" src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/encoder.js.下载"></script><script src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/jquery-2.2.0.min.js.下载"></script>
+<script type="text/javascript">var currentBlogApp = 'shifu204', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/blog-common.js.下载" type="text/javascript"></script>
+<link rel="preload" href="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/integrator.js.下载" as="script"><script type="text/javascript" src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/integrator.js.下载"></script><script src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/pubads_impl_285.js.下载" async=""></script></head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="https://www.cnblogs.com/shifu204/"><img id="blogLogo" src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/shifu204/">shifu204</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/shifu204/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/shifu204">联系</a></li>
+<li><a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/shifu204/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="https://www.cnblogs.com/shifu204/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 99&nbsp; </span>
+<span id="stats_article_count">文章 - 0&nbsp; </span>
+<span id="stats-comment_count">评论 - 4</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/shifu204/p/6370682.html">elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body"><p><strong><span style="font-size: 18px">转自：http://www.cnblogs.com/miao-zp/p/6003160.html</span></strong></p>
+<p><strong><span style="font-size: 18px">简单修改</span></strong></p>
+<p>&nbsp;</p>
+<p><strong><span style="font-size: 18px">前言</span></strong></p>
+<p><span style="font-size: 16px">elasticsearch（下面称为ES）是一个基于Lucene的搜索服务器（By 百度百科：<a href="http://baike.baidu.com/link?url=Tur61EYwihcEqXxTrcMzfim-ecQ7CkwBYiOIRvySWo6Y0rZjlgb1XBh9e0WF8-8TLuG4WT48m5nmlUSghvk7d_cGOyQ2p_pjNQ8MvCkFW9u" target="_blank">查看</a>）。所以他需要java的环境即jdk，这里提供懒人一键安装方式</span></p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_82197" class="syntaxhighlighter  csharp"><div class="toolbar"><span><a href="https://www.cnblogs.com/shifu204/p/6370682.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp plain">yum install java*</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>&nbsp;简单配置</p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_127382" class="syntaxhighlighter  csharp"><div class="toolbar"><span><a href="https://www.cnblogs.com/shifu204/p/6370682.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp plain">vim /etc/profile</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>&nbsp;<span style="font-size: 16px">在尾部加上</span></p>
+<div class="cnblogs_code">
+<pre>export JAVA_HOME=/usr/lib/jvm/java-<span style="color: #800080">1.7</span>.<span style="color: #800080">0</span>-openjdk-<span style="color: #800080">1.7</span>.<span style="color: #800080">0.91</span><span style="color: #000000">.x86_64
+export CLASSPATH</span>=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/<span style="color: #000000">tools.jar
+export PATH</span>=$PATH:$JAVA_HOME/bin</pre>
+</div>
+<p>保存退出后使用命令更新配置</p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_917612" class="syntaxhighlighter  csharp"><div class="toolbar"><span><a href="https://www.cnblogs.com/shifu204/p/6370682.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp plain">source /etc/profile</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; color: #888888"><strong>&nbsp;</strong></span></p>
+<p><span style="font-size: 16px">这个命令避免对java不熟悉的开发人员的误操作，能够避免学习繁杂的知识点。这个命令也是保证jvm是比较新的版本，官网上说最好是1.8.0_73的版本（<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html" target="_blank">We recommend installing Java version&nbsp;<span class="strong">1.8.0_73 or later</span></a>）。官网也有各种安装方法（<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html" target="_blank">点击这里查看</a>），这里提供的是yum安装。</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px"><span style="font-size: 18px"><span style="color: #ff9900"><strong>注：</strong>如果已经安装了ES和ik，需要重新安装，需要把/usr/share/elasticsearch/plugins/路径下ik删除，避免版本不匹配导致ES不能启动</span></span></span></p>
+<p><span style="font-size: 18pt; color: #888888; background-color: #ffff00"><span style="color: #000000">安装方法一、yum方式安装</span></span></p>
+<p><span style="font-size: 14pt; background-color: #ffff00">一、ES的yum安装配置</span></p>
+<p><span style="font-size: 16px">由于ES不在yum的本地源，所以我们需要添加ES的yum配置。</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px">1、下载并安装ES的yum公钥</span></p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_670572" class="syntaxhighlighter  csharp"><div class="toolbar"><span><a href="https://www.cnblogs.com/shifu204/p/6370682.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp plain">rpm --import https:</code><code class="csharp comments">//packages.elastic.co/GPG-KEY-elasticsearch</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><span style="font-size: 16px">2、配置ES的yum源</span></p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_570398" class="syntaxhighlighter  csharp"><div class="toolbar"><span><a href="https://www.cnblogs.com/shifu204/p/6370682.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp plain">vim /etc/yum.repos.d/elasticsearch.repo</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>&nbsp;<span style="font-size: 16px">输入下面的内容：</span></p>
+<div class="cnblogs_code"><div>按 Ctrl+C 复制代码</div><textarea style="width: 836px; height: 153.6px; font-family: &quot;Courier New&quot;; font-size: 12px; line-height: 1.5;"></textarea><div>按 Ctrl+C 复制代码</div></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 14pt; background-color: #ffff00">二、yum安装ES</span></p>
+<p><span style="font-size: 16px">1、更新yum的缓存</span></p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_611838" class="syntaxhighlighter  csharp"><div class="toolbar"><span><a href="https://www.cnblogs.com/shifu204/p/6370682.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp plain">yum makecache</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><span style="font-size: 16px">2、安装ES</span></p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_330362" class="syntaxhighlighter  csharp"><div class="toolbar"><span><a href="https://www.cnblogs.com/shifu204/p/6370682.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp plain">yum install elasticsearch</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 14pt; background-color: #ffff00">三、测试ES</span></p>
+<p><span style="font-size: 16px">1、配置和启动ES服务器进程</span></p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_79344" class="syntaxhighlighter  csharp"><div class="toolbar"><span><a href="https://www.cnblogs.com/shifu204/p/6370682.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp plain">/sbin/chkconfig --add elasticsearch</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="csharp plain">systemctl start elasticsearch</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><span style="font-size: 16px">2、查看状态</span></p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_621864" class="syntaxhighlighter  csharp"><div class="toolbar"><span><a href="https://www.cnblogs.com/shifu204/p/6370682.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp plain">systemctl status elasticsearch</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><span style="font-size: 16px">3、运行测试</span></p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_591458" class="syntaxhighlighter  csharp"><div class="toolbar"><span><a href="https://www.cnblogs.com/shifu204/p/6370682.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp plain">curl -X GET localhost:9200</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><span style="font-size: 16px">返回的json结果如下：</span></p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #000000">{
+  </span><span style="color: #800000">"</span><span style="color: #800000">name</span><span style="color: #800000">"</span> : <span style="color: #800000">"</span><span style="color: #800000">Amalgam</span><span style="color: #800000">"</span><span style="color: #000000">,
+  </span><span style="color: #800000">"</span><span style="color: #800000">cluster_name</span><span style="color: #800000">"</span> : <span style="color: #800000">"</span><span style="color: #800000">elasticsearch</span><span style="color: #800000">"</span><span style="color: #000000">,
+  </span><span style="color: #800000">"</span><span style="color: #800000">cluster_uuid</span><span style="color: #800000">"</span> : <span style="color: #800000">"</span><span style="color: #800000">q1JTidLuTNecwBbFNJCUFQ</span><span style="color: #800000">"</span><span style="color: #000000">,
+  </span><span style="color: #800000">"</span><span style="color: #800000">version</span><span style="color: #800000">"</span><span style="color: #000000"> : {
+    </span><span style="color: #800000">"</span><span style="color: #800000">number</span><span style="color: #800000">"</span> : <span style="color: #800000">"</span><span style="color: #800000">2.4.1</span><span style="color: #800000">"</span><span style="color: #000000">,
+    </span><span style="color: #800000">"</span><span style="color: #800000">build_hash</span><span style="color: #800000">"</span> : <span style="color: #800000">"</span><span style="color: #800000">c67dc32e24162035d18d6fe1e952c4cbcbe79d16</span><span style="color: #800000">"</span><span style="color: #000000">,
+    </span><span style="color: #800000">"</span><span style="color: #800000">build_timestamp</span><span style="color: #800000">"</span> : <span style="color: #800000">"</span><span style="color: #800000">2016-09-27T18:57:55Z</span><span style="color: #800000">"</span><span style="color: #000000">,
+    </span><span style="color: #800000">"</span><span style="color: #800000">build_snapshot</span><span style="color: #800000">"</span> : <span style="color: #0000ff">false</span><span style="color: #000000">,
+    </span><span style="color: #800000">"</span><span style="color: #800000">lucene_version</span><span style="color: #800000">"</span> : <span style="color: #800000">"</span><span style="color: #800000">5.5.2</span><span style="color: #800000">"</span><span style="color: #000000">
+  },
+  </span><span style="color: #800000">"</span><span style="color: #800000">tagline</span><span style="color: #800000">"</span> : <span style="color: #800000">"</span><span style="color: #800000">You Know, for Search</span><span style="color: #800000">"</span><span style="color: #000000">
+}</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 14pt; background-color: #ffff00"><span style="line-height: 24px">四、通过IP访问ES的配置</span></span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px"><span style="line-height: 24px">1、打开</span><span style="line-height: 24px">/etc/elasticsearch/<span style="line-height: 24px">elasticsearch.yml</span></span></span></p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_886330" class="syntaxhighlighter  csharp"><div class="toolbar"><span><a href="https://www.cnblogs.com/shifu204/p/6370682.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp plain">vim /etc/elasticsearch/elasticsearch.yml</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>&nbsp;<span style="font-size: 16px">55行的network.host，把后面改为0.0.0.0或者虚拟机ip地址，这样就可以在window系统用浏览器通过访问虚拟机的ip，正确访问效果如下</span></p>
+<p><span style="font-size: 16px"><img src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/1059579-20170206154750947-1588639517.png" alt="" width="583" height="330"><img src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/1059579-20170206154941791-2004861756.png" alt="" width="551" height="330"></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18pt; color: #888888"><strong>&nbsp;</strong><span style="background-color: #ffff00; color: #000000">安装方法二、超级方便的下载rpm包安装方式</span></span></p>
+<p><span style="font-size: 16px; color: #000000"><strong>&nbsp;1.百度elasticsearch,点击官网网址</strong></span></p>
+<p><span style="font-size: 16px; color: #888888"><strong>&nbsp;<img src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/1059579-20170207111519713-1843270100.png" alt=""></strong></span></p>
+<p><span style="font-size: 16px; color: #888888"><strong>&nbsp;</strong></span></p>
+<p><span style="font-size: 16px">&nbsp;2.点击Downloads，选择past releases</span></p>
+<p><img src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/1059579-20170207111941963-554816516.png" alt="" width="929" height="553"></p>
+<p><span style="font-size: 16px">3.找到2.3.5的版本，（由于elasticsearch更新太快，插件更新进度跟不上，2.3.5的版本插件最齐全）</span></p>
+<p><img src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/1059579-20170207112356557-1829265054.png" alt="" width="848" height="387"></p>
+<p><span style="font-size: 16px">4.右键点击RPM选择 -- 复制连接地址</span></p>
+<p><img src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/1059579-20170207112633619-1394926966.png" alt=""></p>
+<p><span style="font-size: 16px">5.在根目录下载rmp包</span></p>
+<div class="cnblogs_code">
+<pre>wget https:<span style="color: #008000">//</span><span style="color: #008000">download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/rpm/elasticsearch/2.3.5/elasticsearch-2.3.5.rpm</span></pre>
+</div>
+<p><span style="font-size: 16px">6.直接解压安装，超级方便，一步到位</span></p>
+<div class="cnblogs_code">
+<pre>rpm -ivh elasticsearch-<span style="color: #800080">2.3</span>.<span style="color: #800080">5</span>.rpm <br><br>systemctl daemon-reloa</pre>
+</div>
+<p><span style="font-size: 16px">7.启动并查看安装状态</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000">systemctl start elasticsearch
+
+systemctl status elasticsearch</span></pre>
+</div>
+<p><span style="font-size: 16px">8.本地查看版本信息</span></p>
+<div class="cnblogs_code">
+<pre>curl -XGET <span style="color: #800000">"</span><span style="color: #800000">127.0.0.1:9200</span><span style="color: #800000">"</span></pre>
+</div>
+<p><img src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/1059579-20170207113314791-1988726404.png" alt=""></p>
+<p><span style="font-size: 16px">9.查找elasticsearch 安装路径与配置路径，并且配置</span></p>
+<div class="cnblogs_code">
+<pre>whereis elasticsearch</pre>
+</div>
+<p><img src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/1059579-20170207113451932-347145346.png" alt=""></p>
+<div class="cnblogs_code">
+<pre>vim /etc/elasticsearch/elasticsearch.yml</pre>
+</div>
+<p>修改：</p>
+<p><img src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/1059579-20170207113734854-1931279742.png" alt=""></p>
+<p>保存退出后重启elasticsearch</p>
+<div class="cnblogs_code">
+<pre>systemctl restart elasticsearch</pre>
+</div>
+<p>在浏览器访问虚拟机ip:9200</p>
+<p><img src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/1059579-20170207113933994-1504963884.png" alt=""></p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="https://www.cnblogs.com/shifu204/category/943631.html" target="_blank">Elasticsearch</a></div>
+<div id="EntryTag">标签: <a href="https://www.cnblogs.com/shifu204/tag/elasticsearch/">elasticsearch</a></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(6370682,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;fe0ae534-55a5-e611-845c-ac853d9f53ac&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/shifu204/" target="_blank"><img src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/20170303170144.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/shifu204/">shifu204</a><br>
+            <a href="http://home.cnblogs.com/u/shifu204/followees">关注 - 1</a><br>
+            <a href="http://home.cnblogs.com/u/shifu204/followers">粉丝 - 9</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;fe0ae534-55a5-e611-845c-ac853d9f53ac&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(6370682,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">0</span>
+    </div>
+    <div class="buryit" onclick="votePost(6370682,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="https://www.cnblogs.com/shifu204/p/6367794.html" class="p_n_p_prefix">« </a> 上一篇：<a href="https://www.cnblogs.com/shifu204/p/6367794.html" title="发布于2017-02-05 15:42">Sphinx 安装与使用（2）-- 配置Coreseek</a><br><a href="https://www.cnblogs.com/shifu204/p/6372565.html" class="p_n_p_prefix">» </a> 下一篇：<a href="https://www.cnblogs.com/shifu204/p/6372565.html" title="发布于2017-02-07 09:26">ES6 学习笔记 （1）</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2017-02-06 15:53</span> <a href="https://www.cnblogs.com/shifu204/">shifu204</a> 阅读(<span id="post_view_count">11664</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=6370682" rel="nofollow">编辑</a> <a href="https://www.cnblogs.com/shifu204/p/6370682.html#" onclick="AddToWz(6370682);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=329829,cb_entryId=6370682,cb_blogApp=currentBlogApp,cb_blogUserGuid='fe0ae534-55a5-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2017/2/6 15:53:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/shifu204/p/6370682.html#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/shifu204/p/6370682.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-工控&#39;)">【推荐】超50万VC++源码: 大型组态工控、电力仿真CAD与GIS源码库！</a><br></div>
+<div id="opt_under_post"></div>
+<script async="async" src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/gpt.js.下载"></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+        googletag.defineSlot('/1090369/C1', [300, 250], 'div-gpt-ad-1546353474406-0').addService(googletag.pubads());
+        googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+  });
+</script>
+<div id="cnblogs_c1" class="c_ad_block">
+<div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;" data-google-query-id="CMjJt-Sx298CFc9uiwodU7wHBw">
+<script>
+if(canShowAdsense()) {
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1546353474406-0'); });
+}
+</script>
+<div id="google_ads_iframe_/1090369/C1_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C1_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C1_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" data-google-container-id="1" data-load-complete="true" src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/saved_resource.html"></iframe></div></div>
+</div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>相关博文：</b><br>·  <a href="https://www.cnblogs.com/sunalong/p/8919060.html" target="_blank" onclick="clickRecomItmem(8919060,&#39;gTdDDgq8PbC7eU3jUzmWJZS9w/JnoH324lKgtlaWvGfuUkUiBR2hm1l1YxKa/vPnTTqU4bQ8OwffTFqrJH89/LuwOQjrHEtwVTyZCHIk12X3vUo1vp0YBwFB+7k3TrNmVnkZ2bxvi4OmEHmgrY3PdG6LE3Q6c7IPb1SXskcYN/RQU+qn9SIDlhtvYQ==&#39;)">CentOS7安装elasticsearch</a><br>·  <a href="https://www.cnblogs.com/maohuidong/p/9964420.html" target="_blank" onclick="clickRecomItmem(9964420,&#39;M+3RJ/z6sxHFPKLmNu1DCouWyUkfvg5UWb1pGW3ifERhkKdFWZA7IbLR+MoOObuRlo9i8ZBfBcza+t9rTg5QY6AEKv/bvVZKb/RI3rhJUa4jGKOpzAP8h6jQujAjPhN96zOODC7BUcm5LJpPnrTvL7//SWh/mdIcSgZt4DOfiO0PbFY=&#39;)">ElasticSearch centos7 安装</a><br>·  <a href="https://www.cnblogs.com/miao-zp/p/6003160.html" target="_blank" onclick="clickRecomItmem(6003160,&#39;CeT4hKk2abAsFPh1bf0mbs1ui54B0sHnmyPP1gT/LPpE/kqZ0RGnkOba1UC0ZmhoC3/9bNecT9mDt4dYVztHucECzl/n30KZz+mFCY9nhiCY6FOJZmABopJliVISTxpoUmU3b1TSaKXGEP/iUoP8I9G+6d1DtWj6q/KFkW/Ty2UY3MU=&#39;)">【elasticsearch】（1）centos7 使用yum安装elasticsearch 2.X</a><br>·  <a href="https://www.cnblogs.com/subendong/p/7220976.html" target="_blank" onclick="clickRecomItmem(7220976,&#39;KZZDR4oB7I4hL0TSIE1nEf46MfEywOPWvn77oQByC6H2gJ2ir6KVwAP9wb5H/xzvBp27mqLijG0UZr8GT+SP2hkwXRQVIN7YLHJluR5S1LinRoSxbSy3dR/c/RyfuYEo2dSTx0ysqmr6/bhl+u6q2VhWmUs8lnTP738JRSpfMXHb7tg=&#39;)">centos7安装elasticsearch5.2.2</a><br>·  <a href="https://www.cnblogs.com/shifu204/p/6373074.html" target="_blank" onclick="clickRecomItmem(6373074,&#39;fRCBdylZNxGmcUkwRCzA4KeiVQXzi7LR4o6WhlY50QAIAst/k/lhuhMJj9MF8hsHZ1vU7eVlz04Qu7Y9r/16Q1oy/Yi4YxYkdDzspEV7IjyHBsr77RXlbKQsuZTSyPz32hNX0xWSJHjzbv4oaSv3EGDsptKi0UItv/f1CBUAIQt33VtZOZ82PRkJ7GDqfuE=&#39;)">elasticsearch安装与使用（2）-- centos7 安装测试的集群工具elasticsearch head</a><br></div></div>
+<div id="cnblogs_c2" class="c_ad_block">
+    <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;" data-google-query-id="CMHTteSx298CFUUaKgodd5QKyA">
+    <script>
+    if(canShowAdsense()) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    <div id="google_ads_iframe_/1090369/C2_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C2_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C2_0" width="468" height="60" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" data-google-container-id="2" data-load-complete="true" src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/saved_resource(1).html"></iframe></div></div>
+</div>
+<div id="under_post_kb"><div class="itnews c_ad_block"><b>最新新闻</b>：<br> ·  <a href="https://news.cnblogs.com/n/616696/" target="_blank">2019年中国互联网预判：存量泥泞，龌龊来临</a><br> ·  <a href="https://news.cnblogs.com/n/616695/" target="_blank">TCL重大资产出售获临时股东大会通过 将剥离家电等终端业务</a><br> ·  <a href="https://news.cnblogs.com/n/616694/" target="_blank">这款惹怒了70万艺考生的App，到底是什么来头？</a><br> ·  <a href="https://news.cnblogs.com/n/616693/" target="_blank">英伟达发布GeForce RTX 2060 售价349美元</a><br> ·  <a href="https://news.cnblogs.com/n/616692/" target="_blank">特斯拉上海超级工厂正式开工 一期年产25万辆纯电动车</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="https://home.cnblogs.com/u/shifu204/">shifu204</a><br>园龄：<a href="https://home.cnblogs.com/u/shifu204/" title="入园时间：2016-11-08">2年1个月</a><br>粉丝：<a href="https://home.cnblogs.com/u/shifu204/followers/">9</a><br>关注：<a href="https://home.cnblogs.com/u/shifu204/followees/">1</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;fe0ae534-55a5-e611-845c-ac853d9f53ac&#39;)">+加关注</a></div><script>getFollowStatus('fe0ae534-55a5-e611-845c-ac853d9f53ac')</script></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2018/12/01&#39;);return false;">&lt;</a></td><td align="center">2019年1月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2019/02/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">30</td><td class="CalOtherMonthDay" align="center">31</td><td align="center">1</td><td align="center">2</td><td align="center">3</td><td align="center">4</td><td class="CalWeekendDay" align="center">5</td></tr><tr><td class="CalWeekendDay" align="center">6</td><td class="CalTodayDay" align="center">7</td><td align="center">8</td><td align="center">9</td><td align="center">10</td><td align="center">11</td><td class="CalWeekendDay" align="center">12</td></tr><tr><td class="CalWeekendDay" align="center">13</td><td align="center">14</td><td align="center">15</td><td align="center">16</td><td align="center">17</td><td align="center">18</td><td class="CalWeekendDay" align="center">19</td></tr><tr><td class="CalWeekendDay" align="center">20</td><td align="center">21</td><td align="center">22</td><td align="center">23</td><td align="center">24</td><td align="center">25</td><td class="CalWeekendDay" align="center">26</td></tr><tr><td class="CalWeekendDay" align="center">27</td><td align="center">28</td><td align="center">29</td><td align="center">30</td><td align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td></tr><tr><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td><td class="CalOtherMonthDay" align="center">8</td><td class="CalOtherMonthDay" align="center">9</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="https://www.cnblogs.com/shifu204/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="https://www.cnblogs.com/shifu204/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="https://www.cnblogs.com/shifu204/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="https://www.cnblogs.com/shifu204/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="https://www.cnblogs.com/shifu204/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div></div><div id="sidebar_toptags" class="sidebar-block">
+<div class="catListTag">
+<h3 class="catListTitle">我的标签</h3>
+<ul>
+<li><a href="https://www.cnblogs.com/shifu204/tag/%E5%A4%A7%E6%95%B0%E6%8D%AE/">大数据</a>(13)</li><li><a href="https://www.cnblogs.com/shifu204/tag/lnamp/">lnamp</a>(10)</li><li><a href="https://www.cnblogs.com/shifu204/tag/%E7%88%AC%E8%99%AB/">爬虫</a>(7)</li><li><a href="https://www.cnblogs.com/shifu204/tag/elasticsearch/">elasticsearch</a>(6)</li><li><a href="https://www.cnblogs.com/shifu204/tag/python/">python</a>(5)</li><li><a href="https://www.cnblogs.com/shifu204/tag/sublime/">sublime</a>(5)</li><li><a href="https://www.cnblogs.com/shifu204/tag/vim/">vim</a>(4)</li><li><a href="https://www.cnblogs.com/shifu204/tag/swoole/">swoole</a>(3)</li><li><a href="https://www.cnblogs.com/shifu204/tag/git/">git</a>(3)</li><li><a href="https://www.cnblogs.com/shifu204/tag/cli/">cli</a>(2)</li><li><a href="https://www.cnblogs.com/shifu204/tag/">更多</a></li>
+</ul>
+</div></div><div id="sidebar_categories">
+<div id="sidebar_postcategory" class="catListPostCategory sidebar-block">
+<h3 class="catListTitle">随笔分类</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="https://www.cnblogs.com/shifu204/category/943157.html">Crontab(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="https://www.cnblogs.com/shifu204/category/943631.html">Elasticsearch(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="https://www.cnblogs.com/shifu204/category/943029.html">Git(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="https://www.cnblogs.com/shifu204/category/941953.html">Javascript(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="https://www.cnblogs.com/shifu204/category/941951.html">Liunx(20)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="https://www.cnblogs.com/shifu204/category/957487.html">Mysql(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="https://www.cnblogs.com/shifu204/category/941952.html">PHP(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_7" href="https://www.cnblogs.com/shifu204/category/1214715.html">python(11)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_8" href="https://www.cnblogs.com/shifu204/category/943169.html">Sphinx(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_9" href="https://www.cnblogs.com/shifu204/category/942567.html">Sublime(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_10" href="https://www.cnblogs.com/shifu204/category/943027.html">Vim(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_11" href="https://www.cnblogs.com/shifu204/category/953089.html">工具(20)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_12" href="https://www.cnblogs.com/shifu204/category/1286533.html">羽毛球(2)</a> </li>
+
+</ul>
+
+</div>
+
+<div id="sidebar_postarchive" class="catListPostArchive sidebar-block">
+<h3 class="catListTitle">随笔档案</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="https://www.cnblogs.com/shifu204/archive/2018/11.html">2018年11月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="https://www.cnblogs.com/shifu204/archive/2018/10.html">2018年10月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="https://www.cnblogs.com/shifu204/archive/2018/09.html">2018年9月 (15)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="https://www.cnblogs.com/shifu204/archive/2018/08.html">2018年8月 (8)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_4" href="https://www.cnblogs.com/shifu204/archive/2018/07.html">2018年7月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_5" href="https://www.cnblogs.com/shifu204/archive/2018/06.html">2018年6月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_6" href="https://www.cnblogs.com/shifu204/archive/2018/05.html">2018年5月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_7" href="https://www.cnblogs.com/shifu204/archive/2017/11.html">2017年11月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_8" href="https://www.cnblogs.com/shifu204/archive/2017/09.html">2017年9月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_9" href="https://www.cnblogs.com/shifu204/archive/2017/08.html">2017年8月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_10" href="https://www.cnblogs.com/shifu204/archive/2017/07.html">2017年7月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_11" href="https://www.cnblogs.com/shifu204/archive/2017/06.html">2017年6月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_12" href="https://www.cnblogs.com/shifu204/archive/2017/05.html">2017年5月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_13" href="https://www.cnblogs.com/shifu204/archive/2017/04.html">2017年4月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_14" href="https://www.cnblogs.com/shifu204/archive/2017/03.html">2017年3月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_15" href="https://www.cnblogs.com/shifu204/archive/2017/02.html">2017年2月 (26)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_16" href="https://www.cnblogs.com/shifu204/archive/2017/01.html">2017年1月 (8)</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/shifu204/p/6644557.html#3958015">1. Re:微信开发（1） -- 将本地开发环境映射到公网访问</a></li>
+        <li class="recent_comment_body">很多工具都可以做到的，比如ssh，或者开源工具Holer，设置一个access key就完成了映射<br><a href="https://www.cnblogs.com/shifu204/p/6370682.html" target="_blank"></a></li>
+        <li class="recent_comment_author">--东.Dom</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/shifu204/p/7260540.html#3801104">2. Re:阿里云服务器 端口开放问题 浏览器钟输入ip 访问服务器</a></li>
+        <li class="recent_comment_body">谢谢谢谢您</li>
+        <li class="recent_comment_author">--TheCodeBear</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/shifu204/p/6376683.html#3800140">3. Re:elasticsearch安装与使用（5）-- search guard安装与配置</a></li>
+        <li class="recent_comment_body">博主，能加个好友么~探讨下sg...QQ:775878550</li>
+        <li class="recent_comment_author">--xinxinzaibokeyuan</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/shifu204/p/6376683.html#3617605">4. Re:elasticsearch安装与使用（5）-- search guard安装与配置</a></li>
+        <li class="recent_comment_body">请问一下，生成证书步骤执行完，没有生成node-0-keystore.jks，显示Illegal option:  -ext。 请问是什么原因呢</li>
+        <li class="recent_comment_author">--lingerchouz</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="https://www.cnblogs.com/shifu204/p/6370682.html">1. elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法(11662)</a></li><li><a href="https://www.cnblogs.com/shifu204/p/7088614.html">2. Thinkphp5 使用命令行模式（cli模式）(10197)</a></li><li><a href="https://www.cnblogs.com/shifu204/p/7243576.html">3. 通过yum安装PHP7(8919)</a></li><li><a href="https://www.cnblogs.com/shifu204/p/6376683.html">4. elasticsearch安装与使用（5）-- search guard安装与配置(7901)</a></li><li><a href="https://www.cnblogs.com/shifu204/p/7350328.html">5. 微信开发（3） -- 支付后接收回调信息测试(6337)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="https://www.cnblogs.com/shifu204/p/6376683.html">1. elasticsearch安装与使用（5）-- search guard安装与配置(2)</a></li><li><a href="https://www.cnblogs.com/shifu204/p/7260540.html">2. 阿里云服务器 端口开放问题 浏览器钟输入ip 访问服务器(1)</a></li><li><a href="https://www.cnblogs.com/shifu204/p/6644557.html">3. 微信开发（1） -- 将本地开发环境映射到公网访问(1)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"><ul><li><a href="https://www.cnblogs.com/shifu204/p/6376683.html">1. elasticsearch安装与使用（5）-- search guard安装与配置(2)</a></li><li><a href="https://www.cnblogs.com/shifu204/p/6366450.html">2. Vim使用技巧（1） -- 普通模式技巧 【持续更新】(1)</a></li><li><a href="https://www.cnblogs.com/shifu204/p/7260540.html">3. 阿里云服务器 端口开放问题 浏览器钟输入ip 访问服务器(1)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2019 shifu204
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+<iframe id="google_osd_static_frame_9451584177659" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./elasticsearch安装与使用（1）-- centos7 elasticsearch的两种简单安装方法 - shifu204 - 博客园_files/saved_resource(2).html"></iframe></body></html>

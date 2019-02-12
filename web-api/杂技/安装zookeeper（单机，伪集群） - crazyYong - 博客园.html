@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://www.cnblogs.com/crazylqy/p/7119030.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="origin">
+    <title>安装zookeeper（单机，伪集群） - crazyYong - 博客园</title>
+<meta property="og:description" content="1.登陆zookeeper官网下载 https://zookeeper.apache.org/ zookeeper-3.4.8.tar.gz 解压：tar -zxvf zookeeper-3.4.8.">
+    <link type="text/css" rel="stylesheet" href="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/bundle-SimpleBlue.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/bundle-SimpleBlue-mobile.css">
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/crazylqy/rss">
+    <link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/crazylqy/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/crazylqy/wlwmanifest.xml">
+    <script src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/osd.js.下载"></script><script src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/amp4ads-host-v0.js.下载"></script><script src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/pubads_impl_rendering_297.js.下载"></script><script async="" src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/analytics.js.下载"></script><script type="text/javascript" src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/encoder.js.下载"></script><script src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/jquery-2.2.0.min.js.下载"></script>
+    <script>var currentBlogId=203262;var currentBlogApp='crazylqy',cb_enable_mathjax=false;var isLogined=false;</script>
+    <script src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/blog-common.js.下载" type="text/javascript"></script>
+<link rel="preload" href="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/integrator.js.下载" as="script"><script type="text/javascript" src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/integrator.js.下载"></script><script src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/pubads_impl_297.js.下载" async=""></script></head>
+<body>
+<a name="top"></a>
+
+
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+		
+<!--done-->
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/crazylqy/">crazyYong</a></div>
+<div class="subtitle"></div>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+<li id="nav_myhome"><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/crazylqy/">首页</a></li>
+<li id="nav_newpost"><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li id="nav_contact"><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/crazyYong">联系</a></li>
+<li id="nav_rss"><a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/crazylqy/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="https://www.cnblogs.com/crazylqy/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li id="nav_admin"><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<!--done-->
+随笔-528&nbsp;
+文章-1&nbsp;
+评论-49&nbsp;
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+        <div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/crazylqy/p/7119030.html">安装zookeeper（单机，伪集群）</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body"><p>&nbsp;1.登陆zookeeper官网下载 <a title="https://zookeeper.apache.org/" href="https://zookeeper.apache.org/" target="_blank">https://zookeeper.apache.org/</a></p>
+<p>zookeeper-3.4.8.tar.gz</p>
+<p>&nbsp;</p>
+<p><strong>解压</strong>：tar -zxvf zookeeper-3.4.8.tar.gz</p>
+<p><img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/464291-20170704221735737-247432928.png" alt=""></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18pt"><strong><span style="color: #ff0000">1.单机</span></strong></span></p>
+<p>&nbsp;</p>
+<p>进入conf文件夹 创建一个配置文件zoo.cfg。</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000">tickTime=2000
+initLimit=10
+syncLimit=5
+dataDir=/usr/local/zookeeper/zk/data
+clientPort=2181</span></pre>
+</div>
+<p>前提创建了<span style="color: #000000">/usr/local/zookeeper/zk/data文件夹</span></p>
+<p>&nbsp;<img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/464291-20170704222120269-1190659142.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;tickTime：Zookeeper 服务器之间或客户端与服务器之间心跳的时间间隔。<br>dataDir：Zookeeper 保存数据的目录，默认情况下，Zookeeper 将写数据的日志文件也保存在这个目录里。<br>clientPort：Zookeeper 服务器监听端口，用来接受客户端的访问请求。</p>
+<p>&nbsp;</p>
+<p>配置完以后，就可以启动zookeeper服务了，进入Zookeeper/bin目录，运行下面的命令来启动Zookeeper服务</p>
+<p>&nbsp;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000">[root@localhost bin]# ./zkServer.sh start
+ZooKeeper JMX enabled by default
+Using config: /usr/local/software/zookeeper-3.4.8/bin/../conf/zoo.cfg
+Starting zookeeper ... STARTED</span></pre>
+</div>
+<p>默认加载conf名为 zoo.cfg文件，或者可以这样指定文件</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000">[root@localhost bin]# ./zkServer.sh start ../conf/zoo.cfg 
+ZooKeeper JMX enabled by default
+Using config: ../conf/zoo.cfg
+Starting zookeeper ... STARTED</span></pre>
+</div>
+<p>&nbsp;</p>
+<p>查看服务状态</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000">./zkServer.sh status ../conf/zoo.cfg 
+ZooKeeper JMX enabled by default
+Using config: ../conf/zoo.cfg
+Mode: standalone</span></pre>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;使用Zookeeper的客户端来连接并测试了</p>
+<p>&nbsp;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000">$ ./zkCli.sh  
+或  
+$ ./zkCli.sh -server 127.0.0.1:2181 </span></pre>
+</div>
+<p>连接之后可以时候help来查看有哪些命令可以使用</p>
+<p>&nbsp;<img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/464291-20170704222808097-1668553720.png" alt=""></p>
+<p>&nbsp;</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #000000">[zk: 127.0.0.1:2181(CONNECTED) 0] ls / #查看根节点  
+[zookeeper]  
+   
+[zk: 127.0.0.1:2181(CONNECTED) 1] create /mykey1 myvalue1 #创建一个新节点mykey1  
+Created /mykey1  
+[zk: 127.0.0.1:2181(CONNECTED) 2] create /mykey2 myvalue2 #创建一个新节点mykey2  
+Created /mykey2  
+   
+[zk: 127.0.0.1:2181(CONNECTED) 13] ls / #查看根节点  
+[mykey1, mykey2, zookeeper]  
+   
+[zk: 127.0.0.1:2181(CONNECTED) 23] get /mykey1 #获取mykey1节点  
+myvalue1  
+cZxid = 0x6  
+ctime = Sat Sep 20 21:00:17 CST 2014  
+mZxid = 0x8  
+mtime = Sat Sep 20 21:01:06 CST 2014  
+pZxid = 0x6  
+cversion = 0  
+dataVersion = 1  
+aclVersion = 0  
+ephemeralOwner = 0x0  
+dataLength = 9  
+numChildren = 0  
+   
+[zk: 127.0.0.1:2181(CONNECTED) 23] get /mykey2 #获取mykey2节点  
+myvalue2  
+cZxid = 0x6  
+ctime = Sat Sep 20 21:00:17 CST 2014  
+mZxid = 0x8  
+mtime = Sat Sep 20 21:01:06 CST 2014  
+pZxid = 0x6  
+cversion = 0  
+dataVersion = 1  
+aclVersion = 0  
+ephemeralOwner = 0x0  
+dataLength = 9  
+numChildren = 0  
+   
+[zk: 127.0.0.1:2181(CONNECTED) 24] set /mykey1 myvalue11 #获取mykey1节点  
+[zk: 127.0.0.1:2181(CONNECTED) 25] set /mykey2 myvalue22 #获取mykey2节点  
+   
+[zk: 127.0.0.1:2181(CONNECTED) 26] set /mykey1 #删除mykey1节点  
+[zk: 127.0.0.1:2181(CONNECTED) 27] set /mykey2 #删除mykey2节点  </span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p><img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/464291-20170704222945784-1622457169.png" alt=""></p>
+<p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+<p><span style="font-size: 18pt"><strong><span style="color: #ff0000">&nbsp;2.集群</span></strong></span></p>
+<p>&nbsp;</p>
+<h3><strong>注意事项</strong></h3>
+<p>在一台机器上部署了3个server，需要注意的是在集群为分布式模式下我们使用的每个配置文档模拟一台机器，也就是说单台机器及上运行多个Zookeeper实例。但是，必须保证每个配置文档的各个端口号不能冲突，除了clientPort不同之外，dataDir也不同。另外，还要在dataDir所对应的目录中创建myid文件来指定对应的Zookeeper服务器实例。</p>
+<p>■&nbsp;clientPort端口：如果在1台机器上部署多个server，那么每台机器都要不同的 clientPort，比如 server1是2181,server2是2182，server3是2183</p>
+<p>■&nbsp;dataDir和dataLogDir：dataDir和dataLogDir也需要区分下，将数据文件和日志文件分开存放，同时每个server的这两变量所对应的路径都是不同的</p>
+<p>■&nbsp;server.X和myid： server.X 这个数字就是对应，data/myid中的数字。在3个server的myid文件中分别写入了0，1，2，那么每个server中的zoo.cfg都配 server.0 server.2,server.3就行了。因为在同一台机器上，后面连着的2个端口，3个server都不要一样，否则端口冲突</p>
+<p>&nbsp;---------------------------------------------</p>
+<p>新建3个配置文件</p>
+<p><img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/464291-20170704223244769-2069066140.png" alt=""></p>
+<p>内容如下</p>
+<p>&nbsp;zoo1.cfg</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #000000">tickTime=2000
+initLimit=10
+syncLimit=5
+dataDir=/usr/local/zookeeper/zk1/data
+clientPort=2182
+dataLogDir=/usr/local/zookeeper/zk1/logs
+
+server.1=localhost:2287:3387
+server.2=localhost:2288:3388
+server.3=localhost:2289:3389</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>zoo2.cfg</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #000000">tickTime=2000
+initLimit=10
+syncLimit=5
+dataDir=/usr/local/zookeeper/zk2/data
+clientPort=2183
+dataLogDir=/usr/local/zookeeper/zk2/logs
+
+server.1=localhost:2287:3387
+server.2=localhost:2288:3388
+server.3=localhost:2289:3389</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>zoo3.cfg</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #000000">tickTime=2000
+initLimit=10
+syncLimit=5
+dataDir=/usr/local/zookeeper/zk3/data
+clientPort=2184
+dataLogDir=/usr/local/zookeeper/zk3/logs
+
+server.1=localhost:2287:3387
+server.2=localhost:2288:3388
+server.3=localhost:2289:3389</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>&nbsp;</p>
+<p>&nbsp;每个实例都初始化相应data和log文件，例如zoo1.cfg的</p>
+<p><img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/464291-20170704224136144-708669960.png" alt=""></p>
+<p>&nbsp;</p>
+<p>启动 &nbsp;zoo1.cfg ，好像成功了</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000">[root@localhost bin]# ./zkServer.sh start ../conf/zoo1.cfg 
+ZooKeeper JMX enabled by default
+Using config: ../conf/zoo1.cfg
+Starting zookeeper ... STARTED</span></pre>
+</div>
+<p>查看状态发现，没成功</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000">[root@localhost bin]# ./zkServer.sh status ../conf/zoo1.cfg 
+ZooKeeper JMX enabled by default
+Using config: ../conf/zoo1.cfg
+Error contacting service. It is probably not running.</span></pre>
+</div>
+<p>应该就是zoo1.cfg出错了，原来是配置文件有错误，要么路径错，要么mypid错了</p>
+<div class="cnblogs_code">
+<pre>zoo.cfg配置文件里dataDir指定的那个目录下创建myid文件,并且指定id,改id为你zoo.cfg文件中server.1=localhost:2888:3888中的    1.只要在myid头部写入1即可.</pre>
+</div>
+<p>&nbsp;<img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/464291-20170704225644456-1078033887.png" alt=""></p>
+<p>vim myid</p>
+<p><img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/464291-20170704224832550-167307429.png" alt=""></p>
+<p>&nbsp;同理，为其他两个实例是指myid</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>在运行完第一条指令之后，会出现一些错误异常，产生异常信息的原因是由于Zookeeper 服务的每个实例都拥有全局配置信息，他们在启动的时候会随时随地的进行Leader选举操作。此时，第一个启动的Zookeeper需要和另外两个 Zookeeper实例进行通信。但是，另外两个Zookeeper实例还没有启动起来，因此就产生了这的异样信息。我们直接将其忽略即可，待把图中“2 号”和“3号”Zookeeper实例启动起来之后，相应的异常信息自然会消失。此时，可以通过下面三条命令，来查询。</p>
+<p>&nbsp;</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #000000">[root@localhost bin]# <span style="color: #ff0000">./zkServer.sh start ../conf/zoo1.cfg</span> 
+ZooKeeper JMX enabled by default
+Using config: ../conf/zoo1.cfg
+Starting zookeeper ... STARTED
+[root@localhost bin]# <span style="color: #ff0000">./zkServer.sh status ../conf/zoo1.cfg</span> 
+ZooKeeper JMX enabled by default
+Using config: ../conf/zoo1.cfg
+Error contacting service. It is probably not running.
+[root@localhost bin]# <span style="color: #ff0000">./zkServer.sh start ../conf/zoo2.cfg</span> 
+ZooKeeper JMX enabled by default
+Using config: ../conf/zoo2.cfg
+Starting zookeeper ... STARTED
+[root@localhost bin]# <span style="color: #ff0000">./zkServer.sh status ../conf/zoo2.cfg</span> 
+ZooKeeper JMX enabled by default
+Using config: ../conf/zoo2.cfg
+<span style="color: #ff0000">Mode: leader</span>
+[root@localhost bin]#<span style="color: #ff0000"> ./zkServer.sh status ../conf/zoo1.cfg</span> 
+ZooKeeper JMX enabled by default
+Using config: ../conf/zoo1.cfg
+<span style="color: #ff0000">Mode: follower</span>
+[root@localhost bin]# <span style="color: #ff0000">./zkServer.sh start ../conf/zoo3.cfg</span> 
+ZooKeeper JMX enabled by default
+Using config: ../conf/zoo3.cfg
+Starting zookeeper ... STARTED
+[root@localhost bin]# <span style="color: #ff0000">./zkServer.sh status ../conf/zoo3.cfg</span> 
+ZooKeeper JMX enabled by default
+Using config: ../conf/zoo3.cfg
+<span style="color: #ff0000">Mode: follower</span></span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>成功</p>
+<p>&nbsp;</p>
+<hr>
+<p>一些命令</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #000000">启动
+./zkServer.sh start ../conf/zoo1.cfg
+停止
+./zkServer.sh stop ../conf/zoo1.cfg
+查看状态
+./zkServer.sh status ../conf/zoo1.cfg
+启动客户端
+./zkCli.sh -server 127.0.0.1:2181 </span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<pre><span style="color: #000000"><span style="color: #ff0000">&nbsp;</span></span></pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><br>出，fa</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="https://www.cnblogs.com/crazylqy/category/1029116.html" target="_blank">zookeeper</a></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(7119030,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;6fdb573e-5d26-e211-aa8f-842b2b196315&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/crazylqy/" target="_blank"><img src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/sample_face.gif" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/crazylqy/">crazyYong</a><br>
+            <a href="http://home.cnblogs.com/u/crazylqy/followees">关注 - 2</a><br>
+            <a href="http://home.cnblogs.com/u/crazylqy/followers">粉丝 - 271</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;6fdb573e-5d26-e211-aa8f-842b2b196315&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(7119030,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">0</span>
+    </div>
+    <div class="buryit" onclick="votePost(7119030,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="https://www.cnblogs.com/crazylqy/p/7110357.html" class="p_n_p_prefix">« </a> 上一篇：<a href="https://www.cnblogs.com/crazylqy/p/7110357.html" title="发布于2017-07-03 11:40">一张图看懂DNS域名解析全过程</a><br><a href="https://www.cnblogs.com/crazylqy/p/7119064.html" class="p_n_p_prefix">» </a> 下一篇：<a href="https://www.cnblogs.com/crazylqy/p/7119064.html" title="发布于2017-07-04 23:22">ZooKeeper学习第一期---Zookeeper简单介绍</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2017-07-04 23:11</span> <a href="https://www.cnblogs.com/crazylqy/">crazyYong</a> 阅读(<span id="post_view_count">7778</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=7119030" rel="nofollow">编辑</a> <a href="https://www.cnblogs.com/crazylqy/p/7119030.html#" onclick="AddToWz(7119030);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=203262,cb_entryId=7119030,cb_blogApp=currentBlogApp,cb_blogUserGuid='6fdb573e-5d26-e211-aa8f-842b2b196315',cb_entryCreatedDate='2017/7/4 23:11:00';loadViewCount(cb_entryId);var cb_postType=1;var isMarkdown=false;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/crazylqy/p/7119030.html#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/crazylqy/p/7119030.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-工控&#39;)">【推荐】超50万VC++源码: 大型组态工控、电力仿真CAD与GIS源码库！</a><br><a href="https://www.cnblogs.com/xhload3d/p/10328669.html" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-图扑&#39;)">【推荐】基于 HTML5 的 WebGL 楼宇自控 3D 可视化监控</a><br></div>
+<div id="opt_under_post"></div>
+<script async="async" src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/gpt.js.下载"></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+        googletag.defineSlot('/1090369/C1', [300, 250], 'div-gpt-ad-1546353474406-0').addService(googletag.pubads());
+        googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+  });
+</script>
+<div id="cnblogs_c1" class="c_ad_block">
+    <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;" data-google-query-id="CNGDj728kuACFZAaKgod3fMGBw"><div id="google_ads_iframe_/1090369/C1_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C1_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C1_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" data-google-container-id="1" style="border: 0px; vertical-align: bottom;" data-load-complete="true" src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/saved_resource.html"></iframe></div></div>
+</div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>相关博文：</b><br>·  <a href="https://www.cnblogs.com/shoren/p/zookeeper.html" target="_blank" onclick="clickRecomItmem(6233563,&#39;zmXIlFwrHaG/EfspO4CahHtQY7KFnLIlY7TydlJbyFDY8hQ8IifP2ZiQX0h6tlrpIQyR9ycwmq9gmCZ1eCS3gPle77r4y8wZw9X7T8bRYzHTjn4R5WGDXQU7ailV4BeDFtJokuy8BMolL7JzJzssTEMNopFe27qCo2plEd40Xtfb5kcvZDU2KHg8SUFYC9l0gA==&#39;)">zookeeper(单机/集群)安装与配置</a><br>·  <a href="https://www.cnblogs.com/erbing/p/7493792.html" target="_blank" onclick="clickRecomItmem(7493792,&#39;JcCeaa+7sx/Ixp0pJK8v/teqk1z9bEaOUh00iuHWHkWdt0SorVq2uLC7Zpd3naOZqKICwNvK8wXgNtQuWcUfMGvns3f9P9ARqQ9SJJqUlhgPc3GEd12lw05GpyQXkiKHPi4h0dqFx1Usm0kv1tDW+479gaRyQHuPno7C+u3cXxWS&#39;)">zookeeper安装和配置(单机+伪集群+集群)</a><br>·  <a href="https://www.cnblogs.com/likui360/p/7798944.html" target="_blank" onclick="clickRecomItmem(7798944,&#39;E72orpDBk6hCZZDroV0ndAQIFNaQakk3zLf8iEP5rBZyjSOZvRh+gDfgUfxSRg8hOVVWZhDUTsR3qor6ancmR+tSm16hn8VocMhK28Svk+URgzmdV30c6zYv3nPIIkS67iYjkEWuJRO4sjMhtfkQNykiBWnZMjA7JQXwr4e+bnG4&#39;)">zookeeper伪集群安装</a><br>·  <a href="https://www.cnblogs.com/wdmlsx/p/9980163.html" target="_blank" onclick="clickRecomItmem(9980163,&#39;VcMe/DjMUwCnKcLaSSpyp2OPKGRDd6TAtf2FwLMyEH6pvto5mnPWvRo/4NtuLKvEumQYIZ8MQK2IGUHdXd/JP8d3iM1NfRE1tZcUk0Jsww4rViYYLfnigpueOmELraWMMC5Roy2+QTEuytNAqm48aJ2Th9nlcAHi7fAbfXTgzHc5&#39;)">CentOS---zookeeper安装（单机、伪集群、集群）</a><br>·  <a href="https://www.cnblogs.com/tohxyblog/p/8214419.html" target="_blank" onclick="clickRecomItmem(8214419,&#39;N5BnBUh7V2mrQY7wE/f53fQZgOPPHEUNZqRi2DGk00iSfaWzx5Wb5lEeWBLPMZH++7bTmOEI5o5hegHRrZhkZVsd9nSqxlQvsOTY3FdQpYXqe0kIGWtE+W1cDgSKEIk0X0FYmZR+SVvviCqlWghDVb4iIfMXBWXGJTTHmbddK/AW&#39;)">Dubbo（三） 安装Zookeeper 单机-集群</a><br></div></div>
+<div id="cnblogs_c2" class="c_ad_block">
+    <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;" data-google-query-id="CI-Ij728kuACFY07lgodvY0J6A"><div id="google_ads_iframe_/1090369/C2_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C2_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C2_0" width="468" height="60" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" data-google-container-id="2" style="border: 0px; vertical-align: bottom;" data-load-complete="true" src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/saved_resource(1).html"></iframe></div></div>
+</div>
+<div id="under_post_kb"><div class="itnews c_ad_block"><b>最新新闻</b>：<br> ·  <a href="https://news.cnblogs.com/n/618461/" target="_blank">苹果视频服务四月中旬发布 叫板Netflix</a><br> ·  <a href="https://news.cnblogs.com/n/618460/" target="_blank">陷入高管流失潮的Snap任命临时CFO</a><br> ·  <a href="https://news.cnblogs.com/n/618459/" target="_blank">蓝牙5.1正式公布：新增位置查找功能 厘米级定位</a><br> ·  <a href="https://news.cnblogs.com/n/618458/" target="_blank">美两大巨头“成绩单”不理想，都提中国</a><br> ·  <a href="https://news.cnblogs.com/n/618457/" target="_blank">12306，骂你，是因为我们想回家</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+ if(enablePostBottom()) {
+    codeHighlight();
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverT2();
+    deliverC1();
+    deliverC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);  
+}
+</script>
+</div>
+
+    
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="https://home.cnblogs.com/u/crazylqy/">crazyYong</a><br>园龄：<a href="https://home.cnblogs.com/u/crazylqy/" title="入园时间：2012-11-04">6年2个月</a><br>粉丝：<a href="https://home.cnblogs.com/u/crazylqy/followers/">271</a><br>关注：<a href="https://home.cnblogs.com/u/crazylqy/followees/">2</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;6fdb573e-5d26-e211-aa8f-842b2b196315&#39;)">+加关注</a></div><script>getFollowStatus('6fdb573e-5d26-e211-aa8f-842b2b196315')</script></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2018/12/01&#39;);return false;">&lt;</a></td><td align="center">2019年1月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2019/02/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">30</td><td class="CalOtherMonthDay" align="center">31</td><td align="center">1</td><td align="center">2</td><td align="center">3</td><td align="center">4</td><td class="CalWeekendDay" align="center">5</td></tr><tr><td class="CalWeekendDay" align="center">6</td><td align="center">7</td><td align="center">8</td><td align="center">9</td><td align="center">10</td><td align="center"><a href="https://www.cnblogs.com/crazylqy/archive/2019/01/11.html"><u>11</u></a></td><td class="CalWeekendDay" align="center">12</td></tr><tr><td class="CalWeekendDay" align="center">13</td><td align="center">14</td><td align="center">15</td><td align="center">16</td><td align="center">17</td><td align="center">18</td><td class="CalWeekendDay" align="center">19</td></tr><tr><td class="CalWeekendDay" align="center">20</td><td align="center">21</td><td align="center">22</td><td align="center">23</td><td align="center">24</td><td align="center">25</td><td class="CalWeekendDay" align="center">26</td></tr><tr><td class="CalWeekendDay" align="center">27</td><td align="center">28</td><td class="CalTodayDay" align="center">29</td><td align="center">30</td><td align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td></tr><tr><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td><td class="CalOtherMonthDay" align="center">8</td><td class="CalOtherMonthDay" align="center">9</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="https://www.cnblogs.com/crazylqy/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="https://www.cnblogs.com/crazylqy/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="https://www.cnblogs.com/crazylqy/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="https://www.cnblogs.com/crazylqy/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="https://www.cnblogs.com/crazylqy/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div></div><div id="sidebar_toptags" class="sidebar-block"></div><div id="sidebar_categories">
+<div class="catListPostCategory">
+<h3 class="catListTitle">随笔分类</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="https://www.cnblogs.com/crazylqy/category/627193.html">(张子秋)从零开始学习jQuery系列(11)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="https://www.cnblogs.com/crazylqy/category/884013.html">aws(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="https://www.cnblogs.com/crazylqy/category/1076239.html">dubbo(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="https://www.cnblogs.com/crazylqy/category/893057.html">eclipse-myeclipse(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="https://www.cnblogs.com/crazylqy/category/652352.html">Ehcache(13)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="https://www.cnblogs.com/crazylqy/category/627459.html">hibernate学习笔记(35)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="https://www.cnblogs.com/crazylqy/category/1200624.html">java8(10)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_7" href="https://www.cnblogs.com/crazylqy/category/1125084.html">javaIO(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_8" href="https://www.cnblogs.com/crazylqy/category/629792.html">javascript(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_9" href="https://www.cnblogs.com/crazylqy/category/638088.html">javaweb学习总结(32)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_10" href="https://www.cnblogs.com/crazylqy/category/1113616.html">java并发编程的艺术（方腾飞 魏鹏 程晓明 ）-2015</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_11" href="https://www.cnblogs.com/crazylqy/category/654734.html">java反射(8)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_12" href="https://www.cnblogs.com/crazylqy/category/655181.html">java集合(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_13" href="https://www.cnblogs.com/crazylqy/category/785618.html">java加密(10)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_14" href="https://www.cnblogs.com/crazylqy/category/722026.html">java设计模式(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_15" href="https://www.cnblogs.com/crazylqy/category/1092536.html">java数据结构与算法(14)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_16" href="https://www.cnblogs.com/crazylqy/category/654193.html">java虚拟机(18)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_17" href="https://www.cnblogs.com/crazylqy/category/643047.html">java杂(30)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_18" href="https://www.cnblogs.com/crazylqy/category/859607.html">jboss(7)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_19" href="https://www.cnblogs.com/crazylqy/category/627188.html">JqueryDemo(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_20" href="https://www.cnblogs.com/crazylqy/category/1008178.html">Linux鸟哥(13)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_21" href="https://www.cnblogs.com/crazylqy/category/652973.html">Linux杂(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_22" href="https://www.cnblogs.com/crazylqy/category/874612.html">linux指令(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_23" href="https://www.cnblogs.com/crazylqy/category/1104143.html">LVS专题(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_24" href="https://www.cnblogs.com/crazylqy/category/838669.html">mangodb(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_25" href="https://www.cnblogs.com/crazylqy/category/897037.html">maven(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_26" href="https://www.cnblogs.com/crazylqy/category/842236.html">mybaties(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_27" href="https://www.cnblogs.com/crazylqy/category/625963.html">MySQL性能调优与架构设计（简朝阳）(22)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_28" href="https://www.cnblogs.com/crazylqy/category/651936.html">mysql杂(28)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_29" href="https://www.cnblogs.com/crazylqy/category/745940.html">netty权威指南(16)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_30" href="https://www.cnblogs.com/crazylqy/category/883974.html">nginx(11)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_31" href="https://www.cnblogs.com/crazylqy/category/967340.html">rabbitMQ(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_32" href="https://www.cnblogs.com/crazylqy/category/810729.html">redis(20)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_33" href="https://www.cnblogs.com/crazylqy/category/650821.html">spring(50)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_34" href="https://www.cnblogs.com/crazylqy/category/760495.html">springsecurity(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_35" href="https://www.cnblogs.com/crazylqy/category/678679.html">struts2.1.6教程(13)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_36" href="https://www.cnblogs.com/crazylqy/category/641852.html">utils(15)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_37" href="https://www.cnblogs.com/crazylqy/category/627180.html">web安全(16)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_38" href="https://www.cnblogs.com/crazylqy/category/1029116.html">zookeeper(10)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_39" href="https://www.cnblogs.com/crazylqy/category/1371582.html">编码(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_40" href="https://www.cnblogs.com/crazylqy/category/1043145.html">第一本docker笔记(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_41" href="https://www.cnblogs.com/crazylqy/category/1104195.html">分布式(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_42" href="https://www.cnblogs.com/crazylqy/category/720073.html">服务器(9)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_43" href="https://www.cnblogs.com/crazylqy/category/856783.html">构建(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_44" href="https://www.cnblogs.com/crazylqy/category/760966.html">集成(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_45" href="https://www.cnblogs.com/crazylqy/category/1104189.html">架构案例(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_46" href="https://www.cnblogs.com/crazylqy/category/863653.html">开发工具(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_47" href="https://www.cnblogs.com/crazylqy/category/841823.html">面试(18)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_48" href="https://www.cnblogs.com/crazylqy/category/838440.html">其他(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_49" href="https://www.cnblogs.com/crazylqy/category/1124780.html">微服务(10)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_50" href="https://www.cnblogs.com/crazylqy/category/625962.html">系统架构(21)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_51" href="https://www.cnblogs.com/crazylqy/category/1072083.html">性能优化(2)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catListPostArchive">
+<h3 class="catListTitle">随笔档案</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="https://www.cnblogs.com/crazylqy/archive/2019/01.html">2019年1月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="https://www.cnblogs.com/crazylqy/archive/2018/12.html">2018年12月 (8)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="https://www.cnblogs.com/crazylqy/archive/2018/07.html">2018年7月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="https://www.cnblogs.com/crazylqy/archive/2018/05.html">2018年5月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_4" href="https://www.cnblogs.com/crazylqy/archive/2018/04.html">2018年4月 (10)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_5" href="https://www.cnblogs.com/crazylqy/archive/2017/12.html">2017年12月 (19)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_6" href="https://www.cnblogs.com/crazylqy/archive/2017/11.html">2017年11月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_7" href="https://www.cnblogs.com/crazylqy/archive/2017/10.html">2017年10月 (36)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_8" href="https://www.cnblogs.com/crazylqy/archive/2017/09.html">2017年9月 (31)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_9" href="https://www.cnblogs.com/crazylqy/archive/2017/08.html">2017年8月 (13)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_10" href="https://www.cnblogs.com/crazylqy/archive/2017/07.html">2017年7月 (17)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_11" href="https://www.cnblogs.com/crazylqy/archive/2017/06.html">2017年6月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_12" href="https://www.cnblogs.com/crazylqy/archive/2017/05.html">2017年5月 (14)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_13" href="https://www.cnblogs.com/crazylqy/archive/2017/03.html">2017年3月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_14" href="https://www.cnblogs.com/crazylqy/archive/2016/12.html">2016年12月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_15" href="https://www.cnblogs.com/crazylqy/archive/2016/10.html">2016年10月 (8)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_16" href="https://www.cnblogs.com/crazylqy/archive/2016/09.html">2016年9月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_17" href="https://www.cnblogs.com/crazylqy/archive/2016/08.html">2016年8月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_18" href="https://www.cnblogs.com/crazylqy/archive/2016/07.html">2016年7月 (18)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_19" href="https://www.cnblogs.com/crazylqy/archive/2016/06.html">2016年6月 (13)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_20" href="https://www.cnblogs.com/crazylqy/archive/2016/05.html">2016年5月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_21" href="https://www.cnblogs.com/crazylqy/archive/2016/04.html">2016年4月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_22" href="https://www.cnblogs.com/crazylqy/archive/2016/02.html">2016年2月 (15)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_23" href="https://www.cnblogs.com/crazylqy/archive/2016/01.html">2016年1月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_24" href="https://www.cnblogs.com/crazylqy/archive/2015/12.html">2015年12月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_25" href="https://www.cnblogs.com/crazylqy/archive/2015/11.html">2015年11月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_26" href="https://www.cnblogs.com/crazylqy/archive/2015/10.html">2015年10月 (19)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_27" href="https://www.cnblogs.com/crazylqy/archive/2015/09.html">2015年9月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_28" href="https://www.cnblogs.com/crazylqy/archive/2015/08.html">2015年8月 (10)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_29" href="https://www.cnblogs.com/crazylqy/archive/2015/04.html">2015年4月 (16)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_30" href="https://www.cnblogs.com/crazylqy/archive/2015/03.html">2015年3月 (53)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_31" href="https://www.cnblogs.com/crazylqy/archive/2015/02.html">2015年2月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_32" href="https://www.cnblogs.com/crazylqy/archive/2015/01.html">2015年1月 (50)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_33" href="https://www.cnblogs.com/crazylqy/archive/2014/12.html">2014年12月 (52)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_34" href="https://www.cnblogs.com/crazylqy/archive/2014/11.html">2014年11月 (55)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_35" href="https://www.cnblogs.com/crazylqy/archive/2014/10.html">2014年10月 (19)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catListArticleCategory">
+<h3 class="catListTitle">文章分类</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_2_Link_0" href="https://www.cnblogs.com/crazylqy/category/638661.html">javaweb 杂</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_scorerank" class="sidebar-block">
+<div class="catListBlogRank">
+<h3 class="catListTitle">积分与排名</h3>
+<ul>
+	<li class="liScore">
+		积分 -	283119
+	</li>
+	<li class="liRank">
+		排名 -	896
+	</li>
+</ul>
+</div>
+
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/crazylqy/p/7995395.html#4169168">1. Re:RPC原理及RPC实例分析</a></li>
+        <li class="recent_comment_body">讲的很好</li>
+        <li class="recent_comment_author">--刘琪</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/crazylqy/p/7132133.html#4154853">2. Re:ZooKeeper学习第七期--ZooKeeper一致性原理</a></li>
+        <li class="recent_comment_body">太6了。拜读。<br>但还是有一个疑问：propose和commit的区别是什么？二者具体代表什么？能否方便告知？hujm20151021@gmail.com，谢谢！</li>
+        <li class="recent_comment_author">--小明要很努力</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/crazylqy/p/7611069.html#4108777">3. Re:Mysql加锁过程详解（1）-基本知识</a></li>
+        <li class="recent_comment_body">好棒 好腻害的样子</li>
+        <li class="recent_comment_author">--李慢慢与李晚晚</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/crazylqy/p/5818745.html#4101397">4. Re:【Linux】linux常用基本命令</a></li>
+        <li class="recent_comment_body">留着以后有用</li>
+        <li class="recent_comment_author">--gwdsss</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/crazylqy/p/6891929.html#4091185">5. Re:Nginx教程(一) Nginx入门教程</a></li>
+        <li class="recent_comment_body">博主这里安装nginx是做什么用处的？</li>
+        <li class="recent_comment_author">--有点懒惰的小青年</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="https://www.cnblogs.com/crazylqy/p/5649860.html">1. linux系统中如何进入退出vim编辑器，方法及区别(217474)</a></li><li><a href="https://www.cnblogs.com/crazylqy/p/5818745.html">2. 【Linux】linux常用基本命令(200480)</a></li><li><a href="https://www.cnblogs.com/crazylqy/p/6891929.html">3. Nginx教程(一) Nginx入门教程(42528)</a></li><li><a href="https://www.cnblogs.com/crazylqy/p/7638780.html">4. 时间复杂度的计算(34324)</a></li><li><a href="https://www.cnblogs.com/crazylqy/p/6891991.html">5. Nginx教程(三) Nginx日志管理(32276)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="https://www.cnblogs.com/crazylqy/p/5818745.html">1. 【Linux】linux常用基本命令(11)</a></li><li><a href="https://www.cnblogs.com/crazylqy/p/7132133.html">2. ZooKeeper学习第七期--ZooKeeper一致性原理(4)</a></li><li><a href="https://www.cnblogs.com/crazylqy/p/5649860.html">3. linux系统中如何进入退出vim编辑器，方法及区别(4)</a></li><li><a href="https://www.cnblogs.com/crazylqy/p/5821105.html">4. linux硬链接与软链接(4)</a></li><li><a href="https://www.cnblogs.com/crazylqy/p/4706223.html">5. Tomcat服务器原理详解(3)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"><ul><li><a href="https://www.cnblogs.com/crazylqy/p/5818745.html">1. 【Linux】linux常用基本命令(22)</a></li><li><a href="https://www.cnblogs.com/crazylqy/p/5649860.html">2. linux系统中如何进入退出vim编辑器，方法及区别(18)</a></li><li><a href="https://www.cnblogs.com/crazylqy/p/4706223.html">3. Tomcat服务器原理详解(7)</a></li><li><a href="https://www.cnblogs.com/crazylqy/p/5821105.html">4. linux硬链接与软链接(4)</a></li><li><a href="https://www.cnblogs.com/crazylqy/p/5542558.html">5. MySQL 主从复制与读写分离概念及架构分析 (转)(4)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2019 crazyYong
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+
+<iframe id="google_osd_static_frame_1626245215421" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./安装zookeeper（单机，伪集群） - crazyYong - 博客园_files/saved_resource(2).html"></iframe></body></html>

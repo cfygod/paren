@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://www.cnblogs.com/bookwed/p/5896619.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="origin">
+<title>mysql在linux下的安装 - bookwed - 博客园</title>
+<meta property="og:description" content="安装环境：系统是 centos6.5 1、下载 下载地址：http://dev.mysql.com/downloads/mysql/5.6.html#downloads 下载版本：我这里选择的5.6.">
+<link type="text/css" rel="stylesheet" href="./mysql在linux下的安装 - bookwed - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./mysql在linux下的安装 - bookwed - 博客园_files/bundle-MountainInk.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./mysql在linux下的安装 - bookwed - 博客园_files/bundle-MountainInk-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/bookwed/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/bookwed/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/bookwed/wlwmanifest.xml">
+<script src="./mysql在linux下的安装 - bookwed - 博客园_files/osd.js.下载"></script><script src="./mysql在linux下的安装 - bookwed - 博客园_files/amp4ads-host-v0.js.下载"></script><script src="./mysql在linux下的安装 - bookwed - 博客园_files/pubads_impl_rendering_201812061.js.下载"></script><script async="" src="./mysql在linux下的安装 - bookwed - 博客园_files/analytics.js.下载"></script><script type="text/javascript" src="./mysql在linux下的安装 - bookwed - 博客园_files/encoder.js.下载"></script><script src="./mysql在linux下的安装 - bookwed - 博客园_files/jquery-2.2.0.min.js.下载"></script>
+<script type="text/javascript">var currentBlogApp = 'bookwed', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="./mysql在linux下的安装 - bookwed - 博客园_files/blog-common.js.下载" type="text/javascript"></script>
+<link rel="preload" href="./mysql在linux下的安装 - bookwed - 博客园_files/integrator.js.下载" as="script"><script type="text/javascript" src="./mysql在linux下的安装 - bookwed - 博客园_files/integrator.js.下载"></script><script src="./mysql在linux下的安装 - bookwed - 博客园_files/pubads_impl_201812061.js.下载" async=""></script></head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="https://www.cnblogs.com/bookwed/"><img id="blogLogo" src="./mysql在linux下的安装 - bookwed - 博客园_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/bookwed/">bookwed</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/bookwed/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/bookwed">联系</a></li>
+<li><a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/bookwed/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="https://www.cnblogs.com/bookwed/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 64&nbsp; </span>
+<span id="stats_article_count">文章 - 0&nbsp; </span>
+<span id="stats-comment_count">评论 - 14</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/bookwed/p/5896619.html">mysql在linux下的安装</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body"><p>安装环境：系统是 centos6.5</p>
+<p>1、下载</p>
+<p>　　　　下载地址：http://dev.mysql.com/downloads/mysql/5.6.html#downloads</p>
+<p>　　　　下载版本：我这里选择的5.6.33，通用版，linux下64位</p>
+<p>　　　　<span style="line-height: 1.5;">也可以直接复制64位的下载地址，通过命令下载：wget&nbsp;</span><span style="line-height: 1.5;">http://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.33-linux-glibc2.5-x86_64.tar.gz</span></p>
+<p>2、解压</p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_749801" class="syntaxhighlighter  bash"><div class="toolbar"><span><a href="https://www.cnblogs.com/bookwed/p/5896619.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="bash comments">#解压</code></div><div class="line number2 index1 alt1"><code class="bash functions">tar</code> <code class="bash plain">-zxvf mysql-5.6.33-linux-glibc2.5-x86_64.</code><code class="bash functions">tar</code><code class="bash plain">.gz</code></div><div class="line number3 index2 alt2"><code class="bash comments">#复制解压后的mysql目录</code></div><div class="line number4 index3 alt1"><code class="bash functions">cp</code> <code class="bash plain">-r mysql-5.6.33-linux-glibc2.5-x86_64 </code><code class="bash plain">/usr/local/mysql</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>3、添加用户组和用户</p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_709729" class="syntaxhighlighter  bash"><div class="toolbar"><span><a href="https://www.cnblogs.com/bookwed/p/5896619.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="bash comments">#添加用户组</code></div><div class="line number2 index1 alt1"><code class="bash plain">groupadd mysql</code></div><div class="line number3 index2 alt2"><code class="bash comments">#添加用户mysql 到用户组mysql</code></div><div class="line number4 index3 alt1"><code class="bash functions">useradd</code> <code class="bash plain">-g mysql mysql</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>4、安装</p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_501590" class="syntaxhighlighter  bash"><div class="toolbar"><span><a href="https://www.cnblogs.com/bookwed/p/5896619.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="bash functions">cd</code> <code class="bash plain">/usr/local/mysql/</code><code class="bash plain">&lt;br&gt;</code><code class="bash functions">mkdir</code> <code class="bash plain">.</code><code class="bash plain">/data/mysql</code></div><div class="line number2 index1 alt1"><code class="bash functions">chown</code> <code class="bash plain">-R mysql:mysql ./</code></div><div class="line number3 index2 alt2"><code class="bash plain">.</code><code class="bash plain">/scripts/mysql_install_db</code> <code class="bash plain">--user=mysql --datadir=</code><code class="bash plain">/usr/local/mysql/data/mysql</code></div><div class="line number4 index3 alt1"><code class="bash functions">cp</code> <code class="bash plain">support-files</code><code class="bash plain">/mysql</code><code class="bash plain">.server </code><code class="bash plain">/etc/init</code><code class="bash plain">.d</code><code class="bash plain">/mysqld</code></div><div class="line number5 index4 alt2"><code class="bash functions">chmod</code> <code class="bash plain">755 </code><code class="bash plain">/etc/init</code><code class="bash plain">.d</code><code class="bash plain">/mysqld</code></div><div class="line number6 index5 alt1"><code class="bash functions">cp</code> <code class="bash plain">support-files</code><code class="bash plain">/my-default</code><code class="bash plain">.cnf </code><code class="bash plain">/etc/my</code><code class="bash plain">.cnf</code></div><div class="line number7 index6 alt2">&nbsp;</div><div class="line number8 index7 alt1"><code class="bash comments">#修改启动脚本</code></div><div class="line number9 index8 alt2"><code class="bash functions">vi</code> <code class="bash plain">/etc/init</code><code class="bash plain">.d</code><code class="bash plain">/mysqld</code></div><div class="line number10 index9 alt1">&nbsp;</div><div class="line number11 index10 alt2"><code class="bash comments">#修改项：</code></div><div class="line number12 index11 alt1"><code class="bash plain">basedir=</code><code class="bash plain">/usr/local/mysql/</code></div><div class="line number13 index12 alt2"><code class="bash plain">datadir=</code><code class="bash plain">/usr/local/mysql/data/mysql</code></div><div class="line number14 index13 alt1">&nbsp;</div><div class="line number15 index14 alt2"><code class="bash comments">#启动服务</code></div><div class="line number16 index15 alt1"><code class="bash plain">service mysqld start</code></div><div class="line number17 index16 alt2">&nbsp;</div><div class="line number18 index17 alt1"><code class="bash comments">#测试连接</code></div><div class="line number19 index18 alt2"><code class="bash plain">.</code><code class="bash plain">/mysql/bin/mysql</code> <code class="bash plain">-uroot</code></div><div class="line number20 index19 alt1">&nbsp;</div><div class="line number21 index20 alt2"><code class="bash comments">#加入环境变量，编辑 /etc/profile，这样可以在任何地方用mysql命令了</code></div><div class="line number22 index21 alt1"><code class="bash functions">export</code> <code class="bash plain">PATH=$PATH:</code><code class="bash plain">/usr/local/mysql//bin</code><code class="bash plain">&lt;br&gt;</code><code class="bash functions">source</code> <code class="bash plain">/etc/profile</code></div><div class="line number23 index22 alt2">&nbsp;</div><div class="line number24 index23 alt1">&nbsp;</div><div class="line number25 index24 alt2"><code class="bash comments">#启动mysql</code></div><div class="line number26 index25 alt1"><code class="bash plain">service mysqld start</code></div><div class="line number27 index26 alt2"><code class="bash comments">#关闭mysql</code></div><div class="line number28 index27 alt1"><code class="bash plain">service mysqld stop</code></div><div class="line number29 index28 alt2"><code class="bash comments">#查看运行状态</code></div><div class="line number30 index29 alt1"><code class="bash plain">service mysqld status</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>5、错误</p>
+<p>　　5.1 sqlyog连接时，报1130错误，是由于没有给远程连接的用户权限问题</p>
+<p>　　　　解决1:更改 ‘mysql’数据库‘user’表‘host’项，从‘localhost’改成‘%’。</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">use mysql;
+</span><span style="color: #0000ff;">select</span> <span style="color: #800000;">'</span><span style="color: #800000;">host</span><span style="color: #800000;">'</span> from user where user=<span style="color: #800000;">'</span><span style="color: #800000;">root</span><span style="color: #800000;">'</span><span style="color: #000000;">; 
+update user set host </span>= <span style="color: #800000;">'</span><span style="color: #800000;">%</span><span style="color: #800000;">'</span> where user =<span style="color: #800000;">'</span><span style="color: #800000;">root</span><span style="color: #800000;">'</span><span style="color: #000000;">;
+flush privileges; </span></pre>
+</div>
+<p>　　　　解决2：直接授权</p>
+<p>　　　　　　GRANT ALL PRIVILEGES ON *.* TO ‘root’@'%’ IDENTIFIED BY ‘youpassword’ WITH GRANT OPTION;</p>
+<p>　　5.2 安装时的一些错误</p>
+<p>　　　　-bash: ./scripts/mysql_install_db: /usr/bin/perl: bad interpreter: 没有那个文件或目录<br>　　　　解决： yum -y install perl perl-devel</p>
+<p>　　　　Installing MySQL system tables..../bin/mysqld: error while loading shared libraries: libaio.so.1: cannot open shared object file: No such file or directory<br>　　　　解决：yum -y install libaio-devel</p>
+<p>6、其他</p>
+<p>　　6.1 配置环境变量</p>
+<p>　　　　vi + /etc/profile</p>
+<p>　　　　export PATH=....:/usr/local/mysql/bin</p>
+<p>　　　　</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="https://www.cnblogs.com/bookwed/category/885443.html" target="_blank">mysql</a></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(5896619,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;8972723a-5dc1-e311-8d02-90b11c0b17d6&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./mysql在linux下的安装 - bookwed - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./mysql在linux下的安装 - bookwed - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/bookwed/" target="_blank"><img src="./mysql在linux下的安装 - bookwed - 博客园_files/sample_face.gif" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/bookwed/">bookwed</a><br>
+            <a href="http://home.cnblogs.com/u/bookwed/followees">关注 - 4</a><br>
+            <a href="http://home.cnblogs.com/u/bookwed/followers">粉丝 - 28</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;8972723a-5dc1-e311-8d02-90b11c0b17d6&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(5896619,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">13</span>
+    </div>
+    <div class="buryit" onclick="votePost(5896619,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">3</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="https://www.cnblogs.com/bookwed/p/5630063.html" class="p_n_p_prefix">« </a> 上一篇：<a href="https://www.cnblogs.com/bookwed/p/5630063.html" title="发布于2016-06-30 15:18">mongoDB的安装（一）</a><br><a href="https://www.cnblogs.com/bookwed/p/5909296.html" class="p_n_p_prefix">» </a> 下一篇：<a href="https://www.cnblogs.com/bookwed/p/5909296.html" title="发布于2016-09-26 15:15">mysql 主从复制配置</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2016-09-22 15:38</span> <a href="https://www.cnblogs.com/bookwed/">bookwed</a> 阅读(<span id="post_view_count">266076</span>) 评论(<span id="post_comment_count">12</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=5896619" rel="nofollow">编辑</a> <a href="https://www.cnblogs.com/bookwed/p/5896619.html#" onclick="AddToWz(5896619);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=182313,cb_entryId=5896619,cb_blogApp=currentBlogApp,cb_blogUserGuid='8972723a-5dc1-e311-8d02-90b11c0b17d6',cb_entryCreatedDate='2016/9/22 15:38:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"><div id="comments_pager_top"></div>
+<br>
+<div class="feedback_area_title">评论列表</div>
+<div class="feedbackNoItems"></div>	
+
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/bookwed/p/5896619.html#3694935" class="layer">#1楼</a><a name="3694935" id="comment_anchor_3694935"></a>  <span class="comment_date">2017-05-18 02:51</span> <a id="a_comment_author_3694935" href="https://www.cnblogs.com/avi9111/" target="_blank">six</a> <a href="http://msg.cnblogs.com/send/six" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3694935" class="blog_comment_body">写的不错，谢谢，很详细，我出现这个问题<br>出现错误：<br>     FATAL ERROR: please install the following Perl modules before executing /usr/local/mysql/scripts/mysql_install_db:<br>初始化mysql数据库提示缺少Data:dumper模块解决方法<br>Data::Dumper   <br>解决方法 ：安装autoconf库<br>  命令：yum-y install autoconf   //此包安装时会安装Data:Dumper模块</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3694935,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3694935,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/bookwed/p/5896619.html#3694936" class="layer">#2楼</a><a name="3694936" id="comment_anchor_3694936"></a>  <span class="comment_date">2017-05-18 03:07</span> <a id="a_comment_author_3694936" href="https://www.cnblogs.com/avi9111/" target="_blank">six</a> <a href="http://msg.cnblogs.com/send/six" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3694936" class="blog_comment_body">一开始以为这句不用执行<br>cp support-files/my-default.cnf /etc/my.cnf<br><br>后来发现重要，必须<br><br><br>另外VI真的不会用<br>用了SecureFX  FTP改文件<br><br>MYSQL启动正常</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3694936,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3694936,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/bookwed/p/5896619.html#3695228" class="layer">#3楼</a><a name="3695228" id="comment_anchor_3695228"></a>[<span class="louzhu">楼主</span>]  <span class="comment_date">2017-05-18 11:40</span> <a id="a_comment_author_3695228" href="https://www.cnblogs.com/bookwed/" target="_blank">bookwed</a> <a href="http://msg.cnblogs.com/send/bookwed" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3695228" class="blog_comment_body"><a href="https://www.cnblogs.com/bookwed/p/5896619.html#3694936" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,3694936);">@</a>
+six<br>vi最好还是多熟悉熟悉，这个还是比较常用的</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3695228,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3695228,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/bookwed/p/5896619.html#3766129" class="layer">#4楼</a><a name="3766129" id="comment_anchor_3766129"></a>  <span class="comment_date">2017-08-25 11:26</span> <a id="a_comment_author_3766129" href="http://home.cnblogs.com/u/1226367/" target="_blank">闲蛋小超人</a> <a href="http://msg.cnblogs.com/send/%E9%97%B2%E8%9B%8B%E5%B0%8F%E8%B6%85%E4%BA%BA" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3766129" class="blog_comment_body">博主  都是按照你写的命令执行的也都没报错   为什么执行./scripts/mysql_install_db --user=mysql --datadir=/usr/local/mysql/data/mysql  这句就报-bash: ./scripts/mysql_install_db: No such file or directory   新手第一次在服务器装mysql   还望指点</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3766129,&#39;Digg&#39;,this)">支持(1)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3766129,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/bookwed/p/5896619.html#3766664" class="layer">#5楼</a><a name="3766664" id="comment_anchor_3766664"></a>  <span class="comment_date">2017-08-25 17:27</span> <a id="a_comment_author_3766664" href="https://www.cnblogs.com/mytzq/" target="_blank">继续潜水</a> <a href="http://msg.cnblogs.com/send/%E7%BB%A7%E7%BB%AD%E6%BD%9C%E6%B0%B4" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3766664" class="blog_comment_body"><a href="https://www.cnblogs.com/bookwed/p/5896619.html#3766129" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,3766129);">@</a>
+闲蛋小超人<br>yum install -y perl-Module-Install.noarch</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3766664,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3766664,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/bookwed/p/5896619.html#3781550" class="layer">#6楼</a><a name="3781550" id="comment_anchor_3781550"></a>  <span class="comment_date">2017-09-12 00:53</span> <a id="a_comment_author_3781550" href="http://home.cnblogs.com/u/1237532/" target="_blank">Cri_minal</a> <a href="http://msg.cnblogs.com/send/Cri_minal" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3781550" class="blog_comment_body">您好，请问启动成功后测试连接说找不到文件怎么解决</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3781550,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3781550,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/bookwed/p/5896619.html#3794693" class="layer">#7楼</a><a name="3794693" id="comment_anchor_3794693"></a>  <span class="comment_date">2017-09-24 11:49</span> <a id="a_comment_author_3794693" href="https://www.cnblogs.com/purplemystic/" target="_blank">mystic_cc</a> <a href="http://msg.cnblogs.com/send/mystic_cc" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3794693" class="blog_comment_body"><a href="https://www.cnblogs.com/bookwed/p/5896619.html#3766664" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,3766664);">@</a>
+继续潜水<br><fieldset class="comment_quote"><legend><a href="https://www.cnblogs.com/bookwed/p/5896619.html#3766664" title="查看引用原文">引用</a></legend><br>@闲蛋小超人<br>yum install -y perl-Module-Install.noarch<br></fieldset><br>没有用啊,install之后,还是报相同的错误</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3794693,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3794693,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3794693_avatar" style="display:none;">http://pic.cnblogs.com/face/1149651/20170419103333.png</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/bookwed/p/5896619.html#3840954" class="layer">#8楼</a><a name="3840954" id="comment_anchor_3840954"></a>  <span class="comment_date">2017-11-15 10:49</span> <a id="a_comment_author_3840954" href="http://home.cnblogs.com/u/1279803/" target="_blank">小王子de梦</a> <a href="http://msg.cnblogs.com/send/%E5%B0%8F%E7%8E%8B%E5%AD%90de%E6%A2%A6" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3840954" class="blog_comment_body">你好，博主，请教一下，运行命令：“./scripts/mysql_install_db --user=mysql --datadir=/usr/local/mysql/data/mysql”报错了，报了这样的错误“./scripts/mysql_install_db: ./bin/my_print_defaults: /lib/ld-linux.so.2: bad ELF interpreter: No such file or directory<br>Neither host 'ip-172-**-**-**' nor 'localhost' could be looked up with<br>./bin/resolveip<br>Please configure the 'hostname' command to return a correct<br>hostname.<br>If you want to solve this at a later stage, restart this script<br>with the --force option<br>”</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3840954,&#39;Digg&#39;,this)">支持(1)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3840954,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/bookwed/p/5896619.html#3948330" class="layer">#9楼</a><a name="3948330" id="comment_anchor_3948330"></a>  <span class="comment_date">2018-04-11 10:00</span> <a id="a_comment_author_3948330" href="https://www.cnblogs.com/yourstars/" target="_blank">Boom__Clap</a> <a href="http://msg.cnblogs.com/send/Boom__Clap" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3948330" class="blog_comment_body">感谢楼主</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3948330,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3948330,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3948330_avatar" style="display:none;">http://pic.cnblogs.com/face/1007916/20160920112717.png</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/bookwed/p/5896619.html#3988654" class="layer">#10楼</a><a name="3988654" id="comment_anchor_3988654"></a>  <span class="comment_date">2018-06-01 17:34</span> <a id="a_comment_author_3988654" href="http://home.cnblogs.com/u/1336082/" target="_blank">王撕葱</a> <a href="http://msg.cnblogs.com/send/%E7%8E%8B%E6%92%95%E8%91%B1" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3988654" class="blog_comment_body">[root@bogon mysql]# cp support-files/mysql.server /etc/init.d/mysqld<br>cp: overwrite ‘/etc/init.d/mysqld’? <br>你好请问我这个是什么情况呢</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3988654,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3988654,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/bookwed/p/5896619.html#4015559" class="layer">#11楼</a><a name="4015559" id="comment_anchor_4015559"></a>  <span class="comment_date">2018-07-08 19:28</span> <a id="a_comment_author_4015559" href="https://www.cnblogs.com/xiaokaivip/" target="_blank">我的改变,拜您所赐。</a> <a href="http://msg.cnblogs.com/send/%E6%88%91%E7%9A%84%E6%94%B9%E5%8F%98%2C%E6%8B%9C%E6%82%A8%E6%89%80%E8%B5%90%E3%80%82" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_4015559" class="blog_comment_body">非常好</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4015559,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4015559,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/bookwed/p/5896619.html#4091738" class="layer">#12楼</a><a name="4091738" id="comment_anchor_4091738"></a><span id="comment-maxId" style="display:none;">4091738</span><span id="comment-maxDate" style="display:none;">2018/10/17 10:37:29</span>  <span class="comment_date">2018-10-17 10:37</span> <a id="a_comment_author_4091738" href="http://home.cnblogs.com/u/1159066/" target="_blank">Lella_晞</a> <a href="http://msg.cnblogs.com/send/Lella_%E6%99%9E" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_4091738" class="blog_comment_body">请问一下mysql启动的时候命令执行不成功，提示mysqld is neither service nor target!?</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4091738,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4091738,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	<div id="comments_pager_bottom"></div></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/bookwed/p/5896619.html#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/bookwed/p/5896619.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】超50万VC++源码: 大型组态工控、电力仿真CAD与GIS源码库！</a><br><a href="http://clickc.admaster.com.cn/c/a113612,b3081535,c1705,i0,m101,8a1,8b3,h" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-EH&#39;)">【活动】华为云12.12会员节全场1折起 满额送Mate20</a><br><a href="http://clickc.admaster.com.cn/c/a116493,b2949399,c1705,i0,m101,8a1,8b3,h" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-会员节&#39;)">【活动】华为云会员节云服务特惠1折起</a><br><a href="https://cloud.tencent.com/developer/conf/2018-beijing?fromSource=gwzcw.1768694.1768694.1768694" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-腾讯云&#39;)">【活动】腾讯云+社区开发者大会12月15日首都北京盛大起航！</a><br></div>
+<div id="opt_under_post"></div>
+<div id="cnblogs_c1" class="c_ad_block"><a href="https://cloud.tencent.com/act/special/amd?fromSource=gwzcw.1351353.1351353.1351353" target="_blank"><img width="300" height="250" src="./mysql在linux下的安装 - bookwed - 博客园_files/24442-20181129113406214-695115565.jpg" alt="腾讯云1129" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;C1&#39;);"></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>相关博文：</b><br>·  <a href="https://www.cnblogs.com/hangxing1996/p/6725970.html" target="_blank" onclick="clickRecomItmem(6725970,&#39;3s6Sy2aDzjb6PdPn2C9FuLKE4Kspuot1u7cX3v3pRSygREhAFRwWIz1ilEV0mgezBPOhj8hVZMUGIAaJGJM7ApAEkO3ivIaD8puwbucEykHBR1ZnxhgzzWZLS3AvrUt0SY4Imp5MJFZV+wSnRA==&#39;)">Mysql在linux下的安装</a><br>·  <a href="https://www.cnblogs.com/mocean/p/6420500.html" target="_blank" onclick="clickRecomItmem(6420500,&#39;zJaj9lM5cNw2GtkBNNdlrCXblIa+ntPRB+EccgZEjAkRcRd/n0F/B7a+Ysnwe7YxRk0/Q0Xwdd/3shhQ4KOjwgFCdeqxU4zgTeF+62988HKe4b9I0WwPtnRHaNQ2X7c5qTNA1MOSS9j339yiRw==&#39;)">linux下安装MySQL</a><br>·  <a href="https://www.cnblogs.com/Jansens520/p/9304739.html" target="_blank" onclick="clickRecomItmem(9304739,&#39;GvCtpG+ARd0MhLlSmsUJcTf5+6U9qCpxJ4pZxOlm8PYxOopG1hxt6wbHEc9Lhsvzp1EJZdLTezw6DPH/u+XBZFb8EmrxqztVXd8oX2uZP4PJJDdkqkWaXNhQTVYR/OfyHKoP2CGMk3MhlCOmAw==&#39;)">Linux下安装MySQL</a><br>·  <a href="https://www.cnblogs.com/jessica-test/p/9047431.html" target="_blank" onclick="clickRecomItmem(9047431,&#39;KOZD7TgFvxDQ+fbrLUdkzkzd21JHDAoSRJy+X822LvAeRUAl9T2f+8cLlqps6Wvjl23+TkKRTtJid3C1+NevIAhPfDMTPsEduW5vIt+z4bOy9XChw6m5xa6QK9405BM77E8BJivC/vHDNxQDDQ==&#39;)">linux下安装mysql</a><br>·  <a href="https://www.cnblogs.com/feiye512/p/9257687.html" target="_blank" onclick="clickRecomItmem(9257687,&#39;rd692speC1MZtk10BtkxGxKLFcZ0vmlwp1CCPq/vDEXfBND7mQitGY2w5ZNaUZ8tRlTKxLUJn5IvczdUDIPXkZcynqYVO12hd1Af3kwBk2lhbJnos+UbHD8mGtjHBB/9yY6BC0FNH59qUwp0Xw==&#39;)">mysql linux安装教程</a><br></div></div>
+<script async="async" src="./mysql在linux下的安装 - bookwed - 博客园_files/gpt.js.下载"></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id="cnblogs_c2" class="c_ad_block">
+    <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;" data-google-query-id="CL3w4ICMmt8CFcc3lgod80ELdg">
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    <div id="google_ads_iframe_/1090369/C2_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C2_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C2_0" width="468" height="60" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" data-google-container-id="1" style="border: 0px; vertical-align: bottom;" data-load-complete="true" src="./mysql在linux下的安装 - bookwed - 博客园_files/saved_resource.html"></iframe></div></div>
+</div>
+<div id="under_post_kb"><div class="itnews c_ad_block"><b>最新新闻</b>：<br> ·  <a href="https://news.cnblogs.com/n/614717/" target="_blank">净化器厂商退潮涌动，雾霾经济学的故事讲不动了？</a><br> ·  <a href="https://news.cnblogs.com/n/614712/" target="_blank">揭秘比亚迪的半导体野心：试图做汽车界的“高通”</a><br> ·  <a href="https://news.cnblogs.com/n/614716/" target="_blank">明年中国将使用新国际单位制：计量迈入量子时代</a><br> ·  <a href="https://news.cnblogs.com/n/614715/" target="_blank">阿里巴巴在澳门推进医疗AI，帮助人类抵御流感疫情</a><br> ·  <a href="https://news.cnblogs.com/n/614714/" target="_blank">为什么说每个人都应该尝试自学编程？</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="https://home.cnblogs.com/u/bookwed/">bookwed</a><br>园龄：<a href="https://home.cnblogs.com/u/bookwed/" title="入园时间：2014-04-11">4年8个月</a><br>粉丝：<a href="https://home.cnblogs.com/u/bookwed/followers/">28</a><br>关注：<a href="https://home.cnblogs.com/u/bookwed/followees/">4</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;8972723a-5dc1-e311-8d02-90b11c0b17d6&#39;)">+加关注</a></div><script>getFollowStatus('8972723a-5dc1-e311-8d02-90b11c0b17d6')</script></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2018/11/01&#39;);return false;">&lt;</a></td><td align="center">2018年12月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2019/01/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">25</td><td class="CalOtherMonthDay" align="center">26</td><td class="CalOtherMonthDay" align="center">27</td><td class="CalOtherMonthDay" align="center">28</td><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td class="CalWeekendDay" align="center">1</td></tr><tr><td class="CalWeekendDay" align="center">2</td><td align="center">3</td><td align="center">4</td><td align="center">5</td><td align="center">6</td><td align="center">7</td><td class="CalWeekendDay" align="center">8</td></tr><tr><td class="CalWeekendDay" align="center">9</td><td align="center">10</td><td align="center">11</td><td class="CalTodayDay" align="center">12</td><td align="center">13</td><td align="center">14</td><td class="CalWeekendDay" align="center">15</td></tr><tr><td class="CalWeekendDay" align="center">16</td><td align="center">17</td><td align="center">18</td><td align="center">19</td><td align="center">20</td><td align="center">21</td><td class="CalWeekendDay" align="center">22</td></tr><tr><td class="CalWeekendDay" align="center">23</td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td align="center">27</td><td align="center">28</td><td class="CalWeekendDay" align="center">29</td></tr><tr><td class="CalWeekendDay" align="center">30</td><td align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="https://www.cnblogs.com/bookwed/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="https://www.cnblogs.com/bookwed/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="https://www.cnblogs.com/bookwed/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="https://www.cnblogs.com/bookwed/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="https://www.cnblogs.com/bookwed/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div></div><div id="sidebar_toptags" class="sidebar-block"></div><div id="sidebar_categories">
+<div id="sidebar_postcategory" class="catListPostCategory sidebar-block">
+<h3 class="catListTitle">随笔分类</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="https://www.cnblogs.com/bookwed/category/733643.html">Centos(12)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="https://www.cnblogs.com/bookwed/category/735643.html">hadoop2.6(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="https://www.cnblogs.com/bookwed/category/970794.html">IO流(14)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="https://www.cnblogs.com/bookwed/category/847100.html">java</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="https://www.cnblogs.com/bookwed/category/795923.html">jenkins(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="https://www.cnblogs.com/bookwed/category/847324.html">mongoDB(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="https://www.cnblogs.com/bookwed/category/885443.html">mysql(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_7" href="https://www.cnblogs.com/bookwed/category/746384.html">Redis(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_8" href="https://www.cnblogs.com/bookwed/category/795922.html">spring(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_9" href="https://www.cnblogs.com/bookwed/category/795926.html">ubuntu(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_10" href="https://www.cnblogs.com/bookwed/category/907293.html">读书笔记(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_11" href="https://www.cnblogs.com/bookwed/category/986605.html">多线程(8)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_12" href="https://www.cnblogs.com/bookwed/category/795924.html">分布式(4)</a> </li>
+
+</ul>
+
+</div>
+
+<div id="sidebar_postarchive" class="catListPostArchive sidebar-block">
+<h3 class="catListTitle">随笔档案</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="https://www.cnblogs.com/bookwed/archive/2018/06.html">2018年6月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="https://www.cnblogs.com/bookwed/archive/2017/06.html">2017年6月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="https://www.cnblogs.com/bookwed/archive/2017/05.html">2017年5月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="https://www.cnblogs.com/bookwed/archive/2017/04.html">2017年4月 (21)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_4" href="https://www.cnblogs.com/bookwed/archive/2017/01.html">2017年1月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_5" href="https://www.cnblogs.com/bookwed/archive/2016/11.html">2016年11月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_6" href="https://www.cnblogs.com/bookwed/archive/2016/09.html">2016年9月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_7" href="https://www.cnblogs.com/bookwed/archive/2016/06.html">2016年6月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_8" href="https://www.cnblogs.com/bookwed/archive/2016/03.html">2016年3月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_9" href="https://www.cnblogs.com/bookwed/archive/2015/10.html">2015年10月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_10" href="https://www.cnblogs.com/bookwed/archive/2015/09.html">2015年9月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_11" href="https://www.cnblogs.com/bookwed/archive/2015/08.html">2015年8月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_12" href="https://www.cnblogs.com/bookwed/archive/2015/07.html">2015年7月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_13" href="https://www.cnblogs.com/bookwed/archive/2015/06.html">2015年6月 (11)</a> </li>
+
+</ul>
+
+</div>
+
+<div id="sidebar_links1261910" class="catList sidebar-block">
+<h3 class="catListTitle">java组件</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_2_Link_0" href="https://www.cnblogs.com/sharpest/p/6102129.html" rel="nofollow">jBox使用方法</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_1" href="https://segmentfault.com/a/1190000011212806#articleHeader6" rel="nofollow">高性能JSON框架之FastJson的简单使用</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/bookwed/p/5896619.html#4091738">1. Re:mysql在linux下的安装</a></li>
+        <li class="recent_comment_body">请问一下mysql启动的时候命令执行不成功，提示mysqld is neither service nor target!?</li>
+        <li class="recent_comment_author">--Lella_晞</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/bookwed/p/5896619.html#4015559">2. Re:mysql在linux下的安装</a></li>
+        <li class="recent_comment_body">非常好</li>
+        <li class="recent_comment_author">--我的改变,拜您所赐。</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/bookwed/p/5896619.html#3988654">3. Re:mysql在linux下的安装</a></li>
+        <li class="recent_comment_body">[root@bogon mysql]# cp support-files/mysql.server /etc/init.d/mysqldcp: overwrite ‘/etc/init.d/mysql......</li>
+        <li class="recent_comment_author">--王撕葱</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/bookwed/p/5896619.html#3948330">4. Re:mysql在linux下的安装</a></li>
+        <li class="recent_comment_body">感谢楼主</li>
+        <li class="recent_comment_author">--Boom__Clap</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/bookwed/p/5896619.html#3840954">5. Re:mysql在linux下的安装</a></li>
+        <li class="recent_comment_body">你好，博主，请教一下，运行命令：“./scripts/mysql_install_db --user=mysql --datadir=/usr/local/mysql/data/mysql”报错了，报......</li>
+        <li class="recent_comment_author">--小王子de梦</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="https://www.cnblogs.com/bookwed/p/5896619.html">1. mysql在linux下的安装(266066)</a></li><li><a href="https://www.cnblogs.com/bookwed/p/4583033.html">2. Jenkins部署到远程（Linux服务器）(12207)</a></li><li><a href="https://www.cnblogs.com/bookwed/p/4602181.html">3. dubbo学习之服务消费者(7162)</a></li><li><a href="https://www.cnblogs.com/bookwed/p/4599829.html">4. 初识zookeeper（一）之zookeeper的安装及配置(6188)</a></li><li><a href="https://www.cnblogs.com/bookwed/p/4816521.html">5. hadoop2.6---windows下开发环境搭建(4569)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="https://www.cnblogs.com/bookwed/p/5896619.html">1. mysql在linux下的安装(12)</a></li><li><a href="https://www.cnblogs.com/bookwed/p/4554943.html">2. jenkins  maven svn 部署web项目到本地Tomcat(2)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"><ul><li><a href="https://www.cnblogs.com/bookwed/p/5896619.html">1. mysql在linux下的安装(13)</a></li><li><a href="https://www.cnblogs.com/bookwed/p/4583033.html">2. Jenkins部署到远程（Linux服务器）(1)</a></li><li><a href="https://www.cnblogs.com/bookwed/p/4602120.html">3. dubbo学习之服务提供者(1)</a></li><li><a href="https://www.cnblogs.com/bookwed/p/6055140.html">4. Java程序性能优化——让你的java程序更快、更稳定(1)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2018 bookwed
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+<iframe id="google_osd_static_frame_7333123518083" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./mysql在linux下的安装 - bookwed - 博客园_files/saved_resource(1).html"></iframe></body></html>

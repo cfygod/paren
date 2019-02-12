@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://www.cnblogs.com/taiyonghai/p/6728707.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nginx详细安装部署教程 - taiyonghai - 博客园</title>
+<link type="text/css" rel="stylesheet" href="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/bundle-coffee.css">
+<link id="mobile-style" media="only screen and (max-width: 768px)" type="text/css" rel="stylesheet" href="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/bundle-coffee-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/taiyonghai/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/taiyonghai/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/taiyonghai/wlwmanifest.xml">
+<script async="" src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/analytics.js.下载"></script><script type="text/javascript" src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/encoder.js.下载"></script><script src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/jquery.js.下载" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'taiyonghai', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/blog-common.js.下载" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/taiyonghai/"><img id="blogLogo" src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/taiyonghai/">小台的IT备忘录</a></h1>
+<h2>希望做个会演讲的IT架构师</h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="navigator">
+			
+<ul id="navList">
+	<li><a id="blog_nav_sitehome" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+	<li><a id="blog_nav_myhome" class="menu" href="http://www.cnblogs.com/taiyonghai/">首页</a></li>
+	<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+	<li><a id="blog_nav_contact" accesskey="9" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/taiyonghai">联系</a></li>
+	<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+	<li><a id="blog_nav_rss" class="menu" href="http://www.cnblogs.com/taiyonghai/rss">订阅</a>
+	<a id="blog_nav_rss_image" class="aHeaderXML" href="http://www.cnblogs.com/taiyonghai/rss"><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/xml.gif" alt="订阅"></a></li>
+</ul>
+
+
+			<div class="blogStats">
+				
+				<div id="blog_stats">
+<!--done-->
+随笔- 84&nbsp;
+文章- 0&nbsp;
+评论- 5&nbsp;
+</div>
+				
+			</div><!--end: blogStats -->
+		</div><!--end: navigator 博客导航栏 -->
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/taiyonghai/p/6728707.html">Nginx详细安装部署教程</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p><span style="font-size: 18px"><strong>一、Nginx简介</strong></span></p>
+<p>Nginx是一个web服务器也可以用来做负载均衡及反向代理使用，目前使用最多的就是负载均衡，具体简介我就不介绍了百度一下有很多，下面直接进入安装步骤</p>
+<p><span style="font-size: 18px"><strong>二、Nginx安装</strong></span></p>
+<p><span style="font-size: 15px"><strong>1、下载Nginx及相关组件</strong></span></p>
+<p>Linux系统是Centos 6.5 64位，我直接切换到root用户下安装</p>
+<p><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/172889-20170418152744852-939208787.png" alt=""></p>
+<p>进入用户目录下载程序</p>
+<p><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/172889-20170418153003446-820207739.png" alt=""></p>
+<p>下载相关组件</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #000000">[root@localhost src]# wget http://nginx.org/download/nginx-1.10.2.tar.gz
+省略安装内容...
+[root@localhost src]# wget http://www.openssl.org/source/openssl-fips-2.0.10.tar.gz
+省略安装内容...
+[root@localhost src]# wget http://zlib.net/zlib-1.2.11.tar.gz
+省略安装内容...
+[root@localhost src]# wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.40.tar.gz
+省略安装内容...</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>安装c++编译环境，如已安装可略过</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000">[root@localhost src]# yum install gcc-c++
+省略安装内容...
+<span style="color: #ff0000">期间会有确认提示输入y回车</span>
+Is this ok [y/N]:y
+省略安装内容...</span></pre>
+</div>
+<p><span style="font-size: 15px"><strong>2、安装Nginx及相关组件</strong></span></p>
+<p>openssl安装</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000">[root@localhost src]# tar zxvf openssl-fips-2.0.10.tar.gz<br>省略安装内容...
+[root@localhost src]# cd openssl-fips-2.0.10
+[root@localhost openssl-fips-2.0.10]# ./config &amp;&amp; make &amp;&amp; make install<br>省略安装内容...</span></pre>
+</div>
+<p>pcre安装</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000">[root@localhost src]# tar zxvf pcre-8.40.tar.gz<br>省略安装内容...
+[root@localhost src]# cd pcre-8.40
+[root@localhost pcre-8.40]# ./configure &amp;&amp; make &amp;&amp; make install<br>省略安装内容...</span></pre>
+</div>
+<p>zlib安装</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000">[root@localhost src]# tar zxvf zlib-1.2.11.tar.gz<br>省略安装内容...
+[root@localhost src]# cd zlib-1.2.11
+[root@localhost zlib-1.2.11]# ./configure &amp;&amp; make &amp;&amp; make install<br>省略安装内容...</span></pre>
+</div>
+<p>nginx安装</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000">[root@localhost src]# tar zxvf nginx-1.10.2.tar.gz<br>省略安装内容...
+[root@localhost src]# cd nginx-1.10.2
+[root@localhost nginx-1.10.2]# ./configure &amp;&amp; make &amp;&amp; make install<br>省略安装内容...</span></pre>
+</div>
+<p><span style="font-size: 15px"><strong>3、启动Nginx</strong></span></p>
+<p>先找一下nginx安装到什么位置上了</p>
+<p>&nbsp;<img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/172889-20170418154742915-713647057.png" alt=""></p>
+<p>进入nginx目录并启动</p>
+<p><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/172889-20170418154804759-1842869219.png" alt=""></p>
+<p>报错了，error while loading shared libraries: libpcre.so.1: cannot open shared object file: No such file or directory，按照下面方式解决</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #000000">1.用whereis libpcre.so.1命令找到libpcre.so.1在哪里
+2.用ln -s /usr/local/lib/libpcre.so.1 /lib64命令做个软连接就可以了
+3.用sbin/nginx启动Nginx
+4.用ps -aux | grep nginx查看状态<br></span></pre>
+<pre><span>[root@localhost nginx]# whereis libpcre.so.1<br></span>[root@localhost nginx]# ln -s /usr/local/lib/libpcre.so.1 /lib64<br>[root@localhost nginx]# sbin/nginx<br>[root@localhost nginx]# ps -aux | grep nginx<span>&nbsp;</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/172889-20170418162004024-2058687645.png" alt=""></p>
+<p>进入Linux系统的图形界面，打开浏览器输入localhost会看到下图，说明nginx启动成功</p>
+<p><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/172889-20170418162145790-461736932.png" alt=""></p>
+<p>nginx的基本操作</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #000000">启动
+[root@localhost ~]# /usr/local/nginx/sbin/nginx
+停止/重启
+[root@localhost ~]# /usr/local/nginx/sbin/nginx -s stop(quit、reload)
+命令帮助
+[root@localhost ~]# /usr/local/nginx/sbin/nginx -h
+验证配置文件
+[root@localhost ~]# /usr/local/nginx/sbin/nginx -t
+配置文件
+[root@localhost ~]# vim /usr/local/nginx/conf/nginx.conf</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p><span style="font-size: 15px"><strong>4、简单配置Nginx</strong></span></p>
+<p>打开nginx配置文件位于nginx目录下的conf文件夹下</p>
+<p><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/172889-20170418164812196-1164065507.png" alt=""></p>
+<p>简单介绍一下vim的语法</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #000000">默认vim打开后是不能录入的，需要按键才能操作，具体如下：
+开启编辑：按“i”或者“Insert”键
+退出编辑：“Esc”键
+退出vim：“:q”
+保存vim：“:w”
+保存退出vim：“:wq”
+不保存退出vim：“:q!”</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>"#"代表注释，最重要的是server{}块这部分就代表每一个web站点，详细的配置介绍可以查阅我的另一片配置文章，此处我们先暂时设置三个站点</p>
+<p>&nbsp;<img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/172889-20170418173628696-1685332558.png" alt=""></p>
+<p>分别使用不同的端口80、81、82保存退出并且重启nginx</p>
+<p><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/172889-20170418174444118-588824024.png" alt=""></p>
+<p><span style="font-size: 15px"><strong>5、开启外网访问</strong></span></p>
+<p>在Linux系统中默认有防火墙Iptables管理者所有的端口，只启用默认远程连接22端口其他都关闭，咱们上面设置的80等等也是关闭的，所以我们需要先把应用的端口开启</p>
+<p><strong>方法一</strong>直接关闭防火墙，这样性能较好，但安全性较差，如果有前置防火墙可以采取这种方式</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000">关闭防火墙
+[root@localhost ~]# service iptables stop
+关闭开机自启动防火墙
+[root@localhost ~]# chkconfig iptables off
+[root@localhost ~]# chkconfig --list|grep ipt</span></pre>
+</div>
+<p>下面是防火墙的其他操作命令</p>
+<p><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/172889-20170418175910868-1921833075.png" alt=""></p>
+<p><strong>方法二</strong>将开启的端口加入防火墙白名单中，这种方式较安全但性能也相对较差</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000">编辑防火墙白名单
+[root@localhost ~]# vim /etc/sysconfig/iptables
+增加下面一行代码
+-A INPUT -p tcp -m state -- state NEW -m tcp --dport 80 -j ACCEPT
+保存退出，重启防火墙
+[root@localhost ~]# service iptables restart</span></pre>
+</div>
+<p><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/172889-20170418180736931-1955851185.png" alt=""></p>
+<p>&nbsp;</p>
+<p>Linux配置完毕了，使用另一台电脑而非安装nginx的电脑，我是用的windows系统，配置一下host在“C:\Windows\System32\drivers\etc”下的hosts中配置一下域名重定向</p>
+<div class="cnblogs_code">
+<pre>10.11.13.22 nginx.test.com nginx.test1.com nginx.test2.com</pre>
+</div>
+<p>然后cmd再ping一下这个域名是否正确指向了这个IP上</p>
+<p><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/172889-20170418174908977-27238342.png" alt=""></p>
+<p>正确指向后在telnet一下80端口看一下是否可以与端口通信（如果telnet提示没有此命令是没有安装客户端，在启用或禁用windows功能处安装后再操作即可）</p>
+<p><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/172889-20170418175445712-2089843604.png" alt=""></p>
+<p>得到以下界面及代表通信成功</p>
+<p><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/172889-20170418175512790-352719306.png" alt=""></p>
+<p>打开这台Windows系统内的浏览器，输入nginx.test.com会得到以下结果，就说明外网访问成功</p>
+<p><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/172889-20170418181546415-521855633.png" alt=""></p>
+<p>如果防火墙你依然启用，只是设置了启用端口，那我们访问81那个端口会发现无法访问，因为我并没有加入白名单</p>
+<p><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/172889-20170418181649259-174579881.png" alt=""></p>
+<p>到此Nginx服务器雏形部署完成。</p>
+<p><strong><span style="font-size: 15px">6、Nginx负载均衡配置</span></strong></p>
+<p>&nbsp;Nginx集反向代理和负载均衡于一身，在配置文件中修改配就可以实现</p>
+<p>首先我们打开配置文件</p>
+<div class="cnblogs_code">
+<pre>[root@localhost nginx]# vim conf/nginx.conf</pre>
+</div>
+<p>&nbsp;每一个server就是一个虚拟主机，我们有一个当作web服务器来使用</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000">listen 80;代表监听80端口
+server_name xxx.com;代表外网访问的域名
+location / {};代表一个过滤器，/匹配所有请求，我们还可以根据自己的情况定义不同的过滤，比如对静态文件js、css、image制定专属过滤
+root html;代表站点根目录
+index index.html;代表默认主页</span></pre>
+</div>
+<p>&nbsp;<img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/172889-20170419164359634-2043724986.png" alt=""></p>
+<p>这样配置完毕我们输入域名就可以访问到该站点了。</p>
+<p>负载均衡功能往往在接收到某个请求后分配到后端的多台服务器上，那我们就需要upstream{}块来配合使用</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #000000">upstream xxx{};upstream模块是命名一个后端服务器组，<span style="color: #ff0000">组名必须为后端服务器站点域名</span>，内部可以写多台服务器ip和port，还可以设置跳转规则及权重等等
+ip_hash;代表使用ip地址方式分配跳转后端服务器，同一ip请求每次都会访问同一台后端服务器
+server;代表后端服务器地址
+
+server{};server模块依然是接收外部请求的部分
+server_name;代表外网访问域名
+location / {};同样代表过滤器，用于制定不同请求的不同操作
+proxy_pass;代表后端服务器组名，<span style="color: #ff0000">此组名必须为后端服务器站点域名</span>
+
+<span style="color: #ff0000">server_name和upstream{}的组名可以不一致，server_name是外网访问接收请求的域名，upstream{}的组名是跳转后端服务器时站点访问的域名</span></span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>&nbsp;<img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/172889-20170419165116649-972950787.png" alt=""></p>
+<p>配置一下Windows的host将我们要访问的域名aaa.test.com指向Linux</p>
+<p><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/172889-20170419170949509-1331178335.png" alt=""></p>
+<p>因为硬件有限，我是将Windows中的IIS作为Nginx的后端服务器，所以配置一下IIS的站点域名</p>
+<p><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/172889-20170419171121993-488143433.png" alt=""></p>
+<p>打开cmd再ping一下aaa.test.com确实指向Linux系统了，再打开浏览器输入aaa.test.com会显示bbb这个站点就代表负载成功了。</p>
+<p><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/172889-20170419171408649-130031505.png" alt=""></p>
+<p>Nginx的负载功能就配置完成了，这只是简单设置了一下，生产环境中还有很多详细的调整，后续再逐渐增加，本人水平有限，如有不对之处还望指导谢谢。</p>
+<p>&nbsp;&nbsp;</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/taiyonghai/category/842116.html" target="_blank">Linux</a>,<a href="http://www.cnblogs.com/taiyonghai/category/842117.html" target="_blank">Nginx</a></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(6728707,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;78ffc3c3-a7dd-df11-ac81-842b2b196315&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/taiyonghai/" target="_blank"><img src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/20160623111209.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/taiyonghai/">taiyonghai</a><br>
+            <a href="http://home.cnblogs.com/u/taiyonghai/followees">关注 - 2</a><br>
+            <a href="http://home.cnblogs.com/u/taiyonghai/followers">粉丝 - 17</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;78ffc3c3-a7dd-df11-ac81-842b2b196315&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(6728707,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">1</span>
+    </div>
+    <div class="buryit" onclick="votePost(6728707,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/taiyonghai/p/6700240.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/taiyonghai/p/6700240.html" title="发布于2017-04-12 17:15">IIS7中JS、CSS、Image无法显示和加载解决方案</a><br><a href="http://www.cnblogs.com/taiyonghai/p/6831385.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/taiyonghai/p/6831385.html" title="发布于2017-05-09 16:51">Google Authenticator 如何集成（U盾的实现原理相同）</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2017-04-18 18:18</span> <a href="http://www.cnblogs.com/taiyonghai/">taiyonghai</a> 阅读(<span id="post_view_count">5996</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=6728707" rel="nofollow">编辑</a> <a href="http://www.cnblogs.com/taiyonghai/p/6728707.html#" onclick="AddToWz(6728707);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=158251,cb_entryId=6728707,cb_blogApp=currentBlogApp,cb_blogUserGuid='78ffc3c3-a7dd-df11-ac81-842b2b196315',cb_entryCreatedDate='2017/4/18 18:18:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="http://www.cnblogs.com/taiyonghai/p/6728707.html#" onclick="return RefreshPage();">刷新页面</a><a href="http://www.cnblogs.com/taiyonghai/p/6728707.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】50万行VC++源码: 大型组态工控、电力仿真CAD与GIS源码库</a><br><a href="https://www.jiguang.cn/devservice?bky" target="_blank">【推荐】极光开发者服务平台，五大功能一站集齐</a><br><a href="http://click.aliyun.com/m/18488/" target="_blank">【推荐】阿里云“全民云计算”优惠升级</a><br><a href="https://cloud.tencent.com/developer/labs?fromSource=gwzcw.330910.330910.330910" target="_blank">【推荐】一小时搭建人工智能应用，让技术更容易入门</a><br></div>
+<div id="opt_under_post"></div>
+<div id="cnblogs_c1" class="c_ad_block"><a href="https://cn.udacity.com/dlnd/?utm_source=CNblogs&amp;utm_medium=cpc&amp;utm_campaign=DLND04&amp;utm_content=SVcertificated" target="_blank"><img width="300" height="250" src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/24442-20170807180046846-1950239834.jpg" alt="Udacity_0807"></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/575609/" target="_blank">美ITC对高通诉苹果侵权展开调查 iPhone在美或遭禁售</a><br> ·  <a href="http://news.cnblogs.com/n/575608/" target="_blank">亚马逊：年末或将有半数美国家庭成为Prime会员</a><br> ·  <a href="http://news.cnblogs.com/n/575607/" target="_blank">微软放出了Build 16251秋季创意者更新的ISO镜像</a><br> ·  <a href="http://news.cnblogs.com/n/575606/" target="_blank">乐视破碎的保险梦 资金链断裂成硬伤</a><br> ·  <a href="http://news.cnblogs.com/n/575605/" target="_blank">苹果正在与电影制作公司初步谈内容收购</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="cnblogs_c2" class="c_ad_block"><a href="https://www.jiguang.cn/devservice?source=bky&amp;hmsr=%E5%8D%9A%E5%AE%A2%E5%9B%AD&amp;hmpl=&amp;hmcu=&amp;hmkw=&amp;hmci=" target="_blank"><img width="468" height="60" src="./Nginx详细安装部署教程 - taiyonghai - 博客园_files/24442-20170727100914671-839522651.gif" alt="极光0801"></a></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/572854/" target="_blank">学会思考，而不只是编程</a><br> ·  <a href="http://kb.cnblogs.com/page/574767/" target="_blank">编写Shell脚本的最佳实践</a><br> ·  <a href="http://kb.cnblogs.com/page/571915/" target="_blank">为什么你该开始学习编程了？</a><br> ·  <a href="http://kb.cnblogs.com/page/570194/" target="_blank">小printf的故事：什么是真正的程序员？</a><br> ·  <a href="http://kb.cnblogs.com/page/569992/" target="_blank">程序员的工作、学习与绩效</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/taiyonghai/">taiyonghai</a><br>园龄：<a href="http://home.cnblogs.com/u/taiyonghai/" title="入园时间：2010-10-22">6年9个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/taiyonghai/followers/">17</a><br>关注：<a href="http://home.cnblogs.com/u/taiyonghai/followees/">2</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;78ffc3c3-a7dd-df11-ac81-842b2b196315&#39;)">+加关注</a></div></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2017/07/01&#39;);return false;">&lt;</a></td><td align="center">2017年8月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2017/09/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">30</td><td class="CalOtherMonthDay" align="center">31</td><td align="center">1</td><td align="center">2</td><td align="center">3</td><td align="center">4</td><td class="CalWeekendDay" align="center">5</td></tr><tr><td class="CalWeekendDay" align="center">6</td><td align="center">7</td><td align="center">8</td><td class="CalTodayDay" align="center">9</td><td align="center">10</td><td align="center">11</td><td class="CalWeekendDay" align="center">12</td></tr><tr><td class="CalWeekendDay" align="center">13</td><td align="center">14</td><td align="center">15</td><td align="center">16</td><td align="center">17</td><td align="center">18</td><td class="CalWeekendDay" align="center">19</td></tr><tr><td class="CalWeekendDay" align="center">20</td><td align="center">21</td><td align="center">22</td><td align="center">23</td><td align="center">24</td><td align="center">25</td><td class="CalWeekendDay" align="center">26</td></tr><tr><td class="CalWeekendDay" align="center">27</td><td align="center">28</td><td align="center">29</td><td align="center">30</td><td align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td></tr><tr><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td><td class="CalOtherMonthDay" align="center">8</td><td class="CalOtherMonthDay" align="center">9</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/taiyonghai/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/taiyonghai/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/taiyonghai/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/taiyonghai/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/taiyonghai/tag/" title="我的博客的标签列表">我的标签</a></li>
+<li><a id="itemListLink" onclick="this.blur();WarpClass(&#39;itemListLink&#39;, &#39;itemListLin_con&#39;);return false;" href="http://www.cnblogs.com/taiyonghai/p/6728707.html#">更多链接</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div></div><div id="sidebar_toptags" class="sidebar-block"></div><div id="sidebar_categories">
+<div class="catListPostCategory">
+<h3 class="catListTitle">随笔分类</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/taiyonghai/category/843784.html">C#(29)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/taiyonghai/category/842120.html">C#-Asp.Net MVC(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/taiyonghai/category/965816.html">Docker(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/taiyonghai/category/843762.html">HTML(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/taiyonghai/category/843801.html">IIS(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/taiyonghai/category/843800.html">Java(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="http://www.cnblogs.com/taiyonghai/category/885676.html">Java-MyBatis</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_7" href="http://www.cnblogs.com/taiyonghai/category/843786.html">JavaScript(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_8" href="http://www.cnblogs.com/taiyonghai/category/885674.html">Java-Spring</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_9" href="http://www.cnblogs.com/taiyonghai/category/885673.html">Java-Spring.MVC(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_10" href="http://www.cnblogs.com/taiyonghai/category/842116.html">Linux(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_11" href="http://www.cnblogs.com/taiyonghai/category/842125.html">MobileWeb(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_12" href="http://www.cnblogs.com/taiyonghai/category/842117.html">Nginx(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_13" href="http://www.cnblogs.com/taiyonghai/category/874635.html">Redis(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_14" href="http://www.cnblogs.com/taiyonghai/category/842121.html">SQL Server(14)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_15" href="http://www.cnblogs.com/taiyonghai/category/842119.html">WebFrom(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_16" href="http://www.cnblogs.com/taiyonghai/category/843798.html">Windows(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_17" href="http://www.cnblogs.com/taiyonghai/category/873227.html">程序测试(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_18" href="http://www.cnblogs.com/taiyonghai/category/843785.html">程序设计(7)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_19" href="http://www.cnblogs.com/taiyonghai/category/921408.html">加解密算法(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_20" href="http://www.cnblogs.com/taiyonghai/category/976529.html">监控(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_21" href="http://www.cnblogs.com/taiyonghai/category/842123.html">生活感悟(4)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catListPostArchive">
+<h3 class="catListTitle">随笔档案</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/taiyonghai/archive/2017/07.html">2017年7月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/taiyonghai/archive/2017/05.html">2017年5月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="http://www.cnblogs.com/taiyonghai/archive/2017/04.html">2017年4月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="http://www.cnblogs.com/taiyonghai/archive/2017/03.html">2017年3月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_4" href="http://www.cnblogs.com/taiyonghai/archive/2016/12.html">2016年12月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_5" href="http://www.cnblogs.com/taiyonghai/archive/2016/11.html">2016年11月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_6" href="http://www.cnblogs.com/taiyonghai/archive/2016/10.html">2016年10月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_7" href="http://www.cnblogs.com/taiyonghai/archive/2016/09.html">2016年9月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_8" href="http://www.cnblogs.com/taiyonghai/archive/2016/08.html">2016年8月 (14)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_9" href="http://www.cnblogs.com/taiyonghai/archive/2016/07.html">2016年7月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_10" href="http://www.cnblogs.com/taiyonghai/archive/2016/06.html">2016年6月 (34)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_11" href="http://www.cnblogs.com/taiyonghai/archive/2016/04.html">2016年4月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_12" href="http://www.cnblogs.com/taiyonghai/archive/2016/03.html">2016年3月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_13" href="http://www.cnblogs.com/taiyonghai/archive/2015/09.html">2015年9月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_14" href="http://www.cnblogs.com/taiyonghai/archive/2015/08.html">2015年8月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_15" href="http://www.cnblogs.com/taiyonghai/archive/2013/07.html">2013年7月 (1)</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/taiyonghai/p/5695666.html#3750418">1. Re:C#程序员应该养成的程序性能优化写法</a></li>
+        <li class="recent_comment_body">谢谢，有很多没注意到，想问一下，这些代码你都测试过吗？还是从书上找的？</li>
+        <li class="recent_comment_author">--田云</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/taiyonghai/p/6124781.html#3672845">2. Re:Log4net日志使用教程-控制台、文本、数据库三种记录方式</a></li>
+        <li class="recent_comment_body">没有数据</li>
+        <li class="recent_comment_author">--itwwg</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/taiyonghai/p/5810150.html#3660729">3. Re:Apache ab测试工具使用方法（无参、get传参、post传参）</a></li>
+        <li class="recent_comment_body">get方法请求多个参数，只能传第一个参数，其他传不进去ab -n 10 -c 2 :8080/api/YySeatAppointment/add.html?libraryid=1&amp;userid=264......</li>
+        <li class="recent_comment_author">--藤藤tengteng</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/taiyonghai/p/5780907.html#3626406">4. Re:学习如何看懂SQL Server执行计划——基本知识篇</a></li>
+        <li class="recent_comment_body">语句执行花费时间  可以用set statistics time on 指令查看</li>
+        <li class="recent_comment_author">--AlwaysOnTheRoad</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/taiyonghai/p/5810150.html#3586122">5. Re:Apache ab测试工具使用方法（无参、get传参、post传参）</a></li>
+        <li class="recent_comment_body">对于第一个问题，你可以尝试如下：ab -n 10 -c 10 -p querypay.json -T 'application/json' xxxquerypay.json内容如下：【Version=......</li>
+        <li class="recent_comment_author">--凉水也塞牙</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/taiyonghai/p/5604257.html">1. 解读支付宝接口实现步骤(14239)</a></li><li><a href="http://www.cnblogs.com/taiyonghai/p/5610112.html">2. Nginx 1.10.1 版本nginx.conf优化配置及详细注释(6221)</a></li><li><a href="http://www.cnblogs.com/taiyonghai/p/5622368.html">3. ASP.Net MVC 布局页 模板页 使用方法详细说明(6037)</a></li><li><a href="http://www.cnblogs.com/taiyonghai/p/6728707.html">4. Nginx详细安装部署教程(5992)</a></li><li><a href="http://www.cnblogs.com/taiyonghai/p/5826134.html">5. Redis 外部访问设置(4355)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/taiyonghai/p/5810150.html">1. Apache ab测试工具使用方法（无参、get传参、post传参）(2)</a></li><li><a href="http://www.cnblogs.com/taiyonghai/p/5780907.html">2. 学习如何看懂SQL Server执行计划——基本知识篇(1)</a></li><li><a href="http://www.cnblogs.com/taiyonghai/p/5695666.html">3. C#程序员应该养成的程序性能优化写法(1)</a></li><li><a href="http://www.cnblogs.com/taiyonghai/p/6124781.html">4. Log4net日志使用教程-控制台、文本、数据库三种记录方式(1)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/taiyonghai/p/5594826.html">1. 学习如何看懂SQL Server执行计划（一）——数据查询篇(1)</a></li><li><a href="http://www.cnblogs.com/taiyonghai/p/5604174.html">2. 程序员网站开发时应该注意的SEO问题(1)</a></li><li><a href="http://www.cnblogs.com/taiyonghai/p/5622368.html">3. ASP.Net MVC 布局页 模板页 使用方法详细说明(1)</a></li><li><a href="http://www.cnblogs.com/taiyonghai/p/5604257.html">4. 解读支付宝接口实现步骤(1)</a></li><li><a href="http://www.cnblogs.com/taiyonghai/p/5604226.html">5. 悟透JavaScript (一)(1)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2017 taiyonghai
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+</body></html>

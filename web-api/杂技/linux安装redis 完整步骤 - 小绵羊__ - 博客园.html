@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://www.cnblogs.com/lauhp/p/8487029.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="origin">
+<title>linux安装redis 完整步骤 - 小绵羊~~ - 博客园</title>
+<meta property="og:description" content="安装： 1.获取redis资源 wget http://download.redis.io/releases/redis-4.0.8.tar.gz 2.解压 tar xzvf redis-4.0.8.">
+<link type="text/css" rel="stylesheet" href="./linux安装redis 完整步骤 - 小绵羊__ - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./linux安装redis 完整步骤 - 小绵羊__ - 博客园_files/bundle-BlackLowKey.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./linux安装redis 完整步骤 - 小绵羊__ - 博客园_files/bundle-BlackLowKey-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/lauhp/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/lauhp/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/lauhp/wlwmanifest.xml">
+<script src="./linux安装redis 完整步骤 - 小绵羊__ - 博客园_files/osd.js.下载"></script><script src="./linux安装redis 完整步骤 - 小绵羊__ - 博客园_files/amp4ads-host-v0.js.下载"></script><script src="./linux安装redis 完整步骤 - 小绵羊__ - 博客园_files/pubads_impl_rendering_281.js.下载"></script><script async="" src="./linux安装redis 完整步骤 - 小绵羊__ - 博客园_files/analytics.js.下载"></script><script src="./linux安装redis 完整步骤 - 小绵羊__ - 博客园_files/jquery-2.2.0.min.js.下载"></script>
+<script type="text/javascript">var currentBlogApp = 'lauhp', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="./linux安装redis 完整步骤 - 小绵羊__ - 博客园_files/blog-common.js.下载" type="text/javascript"></script>
+<link rel="preload" href="./linux安装redis 完整步骤 - 小绵羊__ - 博客园_files/integrator.js.下载" as="script"><script type="text/javascript" src="./linux安装redis 完整步骤 - 小绵羊__ - 博客园_files/integrator.js.下载"></script><script src="./linux安装redis 完整步骤 - 小绵羊__ - 博客园_files/pubads_impl_281.js.下载" async=""></script></head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="https://www.cnblogs.com/lauhp/"><img id="blogLogo" src="./linux安装redis 完整步骤 - 小绵羊__ - 博客园_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/lauhp/">小绵羊~~</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/lauhp/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E5%B0%8F%E7%BB%B5%E7%BE%8A~~">联系</a></li>
+<li><a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/lauhp/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="https://www.cnblogs.com/lauhp/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 59&nbsp; </span>
+<span id="stats_article_count">文章 - 0&nbsp; </span>
+<span id="stats-comment_count">评论 - 0</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/lauhp/p/8487029.html">linux安装redis 完整步骤</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body"><p>安装：</p>
+<p>1.获取redis资源</p>
+<p>　　wget http://download.redis.io/releases/redis-4.0.8.tar.gz</p>
+<p>2.解压</p>
+<p>　　tar xzvf redis-4.0.8.tar.gz</p>
+<p>3.安装</p>
+<p>　　cd redis-4.0.8</p>
+<p>　　make</p>
+<p>　　cd src</p>
+<p>　　make install PREFIX=/usr/local/redis</p>
+<p>4.移动配置文件到安装目录下</p>
+<p>　　cd ../</p>
+<p>　　mkdir /usr/local/redis/etc</p>
+<p>　　mv redis.conf /usr/local/redis/etc</p>
+<p>&nbsp;5.配置redis为后台启动</p>
+<p>　　vi /usr/local/redis/etc/redis.conf //将<strong>daemonize no</strong> 改成<span style="color: #ff0000">daemonize yes</span></p>
+<p><span style="color: #000000">6.将redis加入到开机启动</span></p>
+<p><span style="color: #000000">　　vi /etc/rc.local //在里面添加内容：/usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf (意思就是开机调用这段开启redis的命令)</span></p>
+<p><span style="color: #000000">7.开启redis</span></p>
+<p><span style="color: #000000">　　/usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf&nbsp;</span></p>
+<p>&nbsp;</p>
+<p><span style="color: #000000">常用命令</span><span>　　</span></p>
+<p>　　redis-server /usr/local/redis/etc/redis.conf //启动redis</p>
+<p>　　pkill redis&nbsp; //停止redis</p>
+<p>　　卸载redis：</p>
+<p>　　　　rm -rf /usr/local/redis //删除安装目录</p>
+<p>　　　　rm -rf /usr/bin/redis-* //删除所有redis相关命令脚本</p>
+<p>　　　　rm -rf /root/download/redis-4.0.4 //删除redis解压文件夹</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="color: #000000">　　</span></p>
+<p>　　</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="https://www.cnblogs.com/lauhp/category/1168182.html" target="_blank">linux</a></div>
+<div id="EntryTag">标签: <a href="https://www.cnblogs.com/lauhp/tag/redis/">redis</a></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(8487029,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;7c9abdda-a494-48dc-e30f-08d52f269005&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./linux安装redis 完整步骤 - 小绵羊__ - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./linux安装redis 完整步骤 - 小绵羊__ - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/lauhp/" target="_blank"><img src="./linux安装redis 完整步骤 - 小绵羊__ - 博客园_files/sample_face.gif" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/lauhp/">小绵羊~~</a><br>
+            <a href="http://home.cnblogs.com/u/lauhp/followees">关注 - 0</a><br>
+            <a href="http://home.cnblogs.com/u/lauhp/followers">粉丝 - 2</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;7c9abdda-a494-48dc-e30f-08d52f269005&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(8487029,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">5</span>
+    </div>
+    <div class="buryit" onclick="votePost(8487029,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="https://www.cnblogs.com/lauhp/p/8484814.html" class="p_n_p_prefix">« </a> 上一篇：<a href="https://www.cnblogs.com/lauhp/p/8484814.html" title="发布于2018-02-28 17:31">阿里云服务器安装svn完整步骤，避免新手可能出现的所有错误</a><br><a href="https://www.cnblogs.com/lauhp/p/8494377.html" class="p_n_p_prefix">» </a> 下一篇：<a href="https://www.cnblogs.com/lauhp/p/8494377.html" title="发布于2018-03-02 17:34">阿里云服务器 lnmp安装流程</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2018-03-01 10:03</span> <a href="https://www.cnblogs.com/lauhp/">小绵羊~~</a> 阅读(<span id="post_view_count">13469</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=8487029" rel="nofollow">编辑</a> <a href="https://www.cnblogs.com/lauhp/p/8487029.html#" onclick="AddToWz(8487029);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=398461,cb_entryId=8487029,cb_blogApp=currentBlogApp,cb_blogUserGuid='7c9abdda-a494-48dc-e30f-08d52f269005',cb_entryCreatedDate='2018/3/1 10:03:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/lauhp/p/8487029.html#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/lauhp/p/8487029.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】超50万VC++源码: 大型组态工控、电力仿真CAD与GIS源码库！</a><br><a href="http://clickc.admaster.com.cn/c/a113612,b3081535,c1705,i0,m101,8a1,8b3,h" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-EH&#39;)">【活动】华为云12.12会员节全场1折起 满额送Mate20</a><br><a href="http://clickc.admaster.com.cn/c/a116493,b2949399,c1705,i0,m101,8a1,8b3,h" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-会员节&#39;)">【活动】华为云会员节云服务特惠1折起</a><br><a href="https://cloud.tencent.com/developer/conf/2018-beijing?fromSource=gwzcw.1768694.1768694.1768694" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-腾讯云&#39;)">【活动】腾讯云+社区开发者大会12月15日首都北京盛大起航！</a><br></div>
+<div id="opt_under_post"></div>
+<div id="cnblogs_c1" class="c_ad_block"><a href="https://cloud.tencent.com/act/special/amd?fromSource=gwzcw.1351353.1351353.1351353" target="_blank"><img width="300" height="250" src="./linux安装redis 完整步骤 - 小绵羊__ - 博客园_files/24442-20181129113406214-695115565.jpg" alt="腾讯云1129" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;C1&#39;);"></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>相关博文：</b><br>·  <a href="https://www.cnblogs.com/fanjp666888/p/9299491.html" target="_blank" onclick="clickRecomItmem(9299491,&#39;sFg9xgXHpJH6KEIE+P77rqfLa/H1NI5yAszYPzDVuSAOesRPn/Q/sG66+/dtl4RbTCPxsSjV5SK7P0L2y/pVc40SOH2Pp83+S8iMKgrpaaeeaM2J1EsRsXzQWbmorDpPieNMqZ4tDousvZexVOQ=&#39;)">Linux 下载安装配置Redis完整步骤</a><br>·  <a href="https://www.cnblogs.com/xiaoliwang/p/9286876.html" target="_blank" onclick="clickRecomItmem(9286876,&#39;IJIfEWM96lCbTXqe/4qrvcQQhMJBE4aYh9u9Eh2mq/Soo0kbGdbKgrv3483gixXa5wiq/IrwnN4eEbuoDs6x1Fr4NmngcliukFUWyhqoPhaGp/XB3xyV3JQPyIr2eHnz4pxuKLIj4pIAxNIABlc=&#39;)">&lt;记录&gt; Ubuntu16.04 安装Redis以及phpredis扩展</a><br>·  <a href="https://www.cnblogs.com/jingjiaming/p/8945234.html" target="_blank" onclick="clickRecomItmem(8945234,&#39;Y+l8D5pKlPKzYKb6tjvhFq+yeB+EUrV2aCtVfjRCxtIBFu2Oql/5xyS3ESMyYT5Q57XKnhnTfXLW+BtEWviSTxVvvPQ0MJ0BVSQ1zFUReShSN9MRkFwooqINQHpuSwWO22C3ksoWXbLXDs3bh6o=&#39;)">linux 安装JDK完整步骤</a><br>·  <a href="https://www.cnblogs.com/qinxu/p/9007617.html" target="_blank" onclick="clickRecomItmem(9007617,&#39;Spxl7bhGZZJQmUWBbb+jdUhtaQKjuALsT9/8U0r2lIKdNwG0Y8L4irXpjF26BDFBN3NZzRCT/MnI1gCDvsOxpMwQmg6QcwTf+ITQnEHYQNcpdUaxIS+iGOtoe7p+SVuZOOcMVSMyfxW3TwQgMmk=&#39;)">Linux上安装redis</a><br>·  <a href="https://www.cnblogs.com/jimboi/p/8538768.html" target="_blank" onclick="clickRecomItmem(8538768,&#39;WVS3nxhGvJJHfIUnAxjlRxcYh7CxXaPkXnfWBIyb1xQHH/mnWs19USHrOERUeW/shQ1wbuAJEr/zuyowbzFHYsm+O4T8IRnDmlZ9gBL2cl4UIm6cuzA37NgIpZtsv1Q7duV5TNA5Di+1dDn+7/M=&#39;)">Redis安装-CentOs7</a><br></div></div>
+<script async="async" src="./linux安装redis 完整步骤 - 小绵羊__ - 博客园_files/gpt.js.下载"></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id="cnblogs_c2" class="c_ad_block">
+    <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;" data-google-query-id="CNDQ6Y3alN8CFQVzYAodpZMHYQ">
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    <div id="google_ads_iframe_/1090369/C2_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C2_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C2_0" width="468" height="60" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" data-google-container-id="1" data-load-complete="true" src="./linux安装redis 完整步骤 - 小绵羊__ - 博客园_files/saved_resource.html"></iframe></div></div>
+</div>
+<div id="under_post_kb"><div class="itnews c_ad_block"><b>最新新闻</b>：<br> ·  <a href="https://news.cnblogs.com/n/614448/" target="_blank">二次元文化从小众走向大众 用户规模已达3.4亿</a><br> ·  <a href="https://news.cnblogs.com/n/614460/" target="_blank">神秘研发团队是如何帮助乐高进化成玩具界的苹果的？</a><br> ·  <a href="https://news.cnblogs.com/n/614478/" target="_blank">360金融路演PPT曝光：周鸿祎持股14% 预计中旬上市</a><br> ·  <a href="https://news.cnblogs.com/n/614451/" target="_blank">保罗·穆勒：一个奇迹的破灭</a><br> ·  <a href="https://news.cnblogs.com/n/614462/" target="_blank">那些离开VC/FA的人和他们的投资围城</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="https://home.cnblogs.com/u/lauhp/">小绵羊~~</a><br>园龄：<a href="https://home.cnblogs.com/u/lauhp/" title="入园时间：2017-11-29">1年</a><br>粉丝：<a href="https://home.cnblogs.com/u/lauhp/followers/">2</a><br>关注：<a href="https://home.cnblogs.com/u/lauhp/followees/">0</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;7c9abdda-a494-48dc-e30f-08d52f269005&#39;)">+加关注</a></div><script>getFollowStatus('7c9abdda-a494-48dc-e30f-08d52f269005')</script></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2018/11/01&#39;);return false;">&lt;</a></td><td align="center">2018年12月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2019/01/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">25</td><td class="CalOtherMonthDay" align="center">26</td><td class="CalOtherMonthDay" align="center">27</td><td class="CalOtherMonthDay" align="center">28</td><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td class="CalWeekendDay" align="center">1</td></tr><tr><td class="CalWeekendDay" align="center">2</td><td align="center">3</td><td align="center">4</td><td align="center">5</td><td align="center">6</td><td align="center">7</td><td class="CalWeekendDay" align="center">8</td></tr><tr><td class="CalWeekendDay" align="center">9</td><td class="CalTodayDay" align="center">10</td><td align="center">11</td><td align="center">12</td><td align="center">13</td><td align="center">14</td><td class="CalWeekendDay" align="center">15</td></tr><tr><td class="CalWeekendDay" align="center">16</td><td align="center">17</td><td align="center">18</td><td align="center">19</td><td align="center">20</td><td align="center">21</td><td class="CalWeekendDay" align="center">22</td></tr><tr><td class="CalWeekendDay" align="center">23</td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td align="center">27</td><td align="center">28</td><td class="CalWeekendDay" align="center">29</td></tr><tr><td class="CalWeekendDay" align="center">30</td><td align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="https://www.cnblogs.com/lauhp/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="https://www.cnblogs.com/lauhp/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="https://www.cnblogs.com/lauhp/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="https://www.cnblogs.com/lauhp/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="https://www.cnblogs.com/lauhp/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div></div><div id="sidebar_toptags" class="sidebar-block">
+<div class="catListTag">
+<h3 class="catListTitle">我的标签</h3>
+<ul>
+<li><a href="https://www.cnblogs.com/lauhp/tag/php/">php</a>(6)</li><li><a href="https://www.cnblogs.com/lauhp/tag/linux/">linux</a>(2)</li><li><a href="https://www.cnblogs.com/lauhp/tag/svn/">svn</a>(2)</li><li><a href="https://www.cnblogs.com/lauhp/tag/redis/">redis</a>(1)</li>
+</ul>
+</div></div><div id="sidebar_categories">
+<div id="sidebar_postcategory" class="catListPostCategory sidebar-block">
+<h3 class="catListTitle">随笔分类</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="https://www.cnblogs.com/lauhp/category/1197358.html">awk</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="https://www.cnblogs.com/lauhp/category/1168182.html">linux(13)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="https://www.cnblogs.com/lauhp/category/1169073.html">mysql(7)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="https://www.cnblogs.com/lauhp/category/1127576.html">php(36)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="https://www.cnblogs.com/lauhp/category/1127617.html">python(4)</a> </li>
+
+</ul>
+
+</div>
+
+<div id="sidebar_postarchive" class="catListPostArchive sidebar-block">
+<h3 class="catListTitle">随笔档案</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="https://www.cnblogs.com/lauhp/archive/2018/09.html">2018年9月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="https://www.cnblogs.com/lauhp/archive/2018/08.html">2018年8月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="https://www.cnblogs.com/lauhp/archive/2018/06.html">2018年6月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="https://www.cnblogs.com/lauhp/archive/2018/05.html">2018年5月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_4" href="https://www.cnblogs.com/lauhp/archive/2018/04.html">2018年4月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_5" href="https://www.cnblogs.com/lauhp/archive/2018/03.html">2018年3月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_6" href="https://www.cnblogs.com/lauhp/archive/2018/02.html">2018年2月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_7" href="https://www.cnblogs.com/lauhp/archive/2017/12.html">2017年12月 (43)</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap" style="display: none;">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"></div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="https://www.cnblogs.com/lauhp/p/8487029.html">1. linux安装redis 完整步骤(13468)</a></li><li><a href="https://www.cnblogs.com/lauhp/p/7999600.html">2. linux下xampp集成包安装配置方法(4749)</a></li><li><a href="https://www.cnblogs.com/lauhp/p/7999675.html">3. PHP实现WebService的简单示例和实现步骤(3321)</a></li><li><a href="https://www.cnblogs.com/lauhp/p/8979393.html">4. Http请求头和响应头(Get和Post)(2968)</a></li><li><a href="https://www.cnblogs.com/lauhp/p/7999425.html">5. php常见面试题(1152)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap" style="display: none;">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"><ul><li><a href="https://www.cnblogs.com/lauhp/p/8487029.html">1. linux安装redis 完整步骤(5)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2018 小绵羊~~
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+<iframe id="google_osd_static_frame_1605747065218" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./linux安装redis 完整步骤 - 小绵羊__ - 博客园_files/saved_resource(1).html"></iframe></body></html>

@@ -1,0 +1,13 @@
+进入ide主页面，help-register-license server,然后输入 http://idea.iteblog.com/key.PHP（注意：php要小写）即可~
+ lsb_release -a 查看liunx操作系统
+File -> Settings -> Version Control,  指定项目使用什么版本控制器
+mysql添加联合唯一约束 ADD UNIQUE KEY(resource_name, resource_type)
+4.用ps -aux | grep nginx查看状态
+[root@localhost nginx]# whereis libpcre.so.1
+[root@localhost nginx]# ln -s /usr/local/lib/libpcre.so.1 /lib64
+[root@localhost nginx]# sbin/nginx
+[root@localhost nginx]# ps -aux | grep nginx 
+
+ngnix服务器在/usr/local/nginx/
+
+http://www.cnblogs.com/taiyonghai/p/6728707.html
